@@ -2,12 +2,10 @@ body {
   background-color: rgb(170, 177, 213);
   font-family: Arial, Helvetica, sans-serif;
   overflow-y: auto;
-  color: rgb(44, 58, 129); ;
+  color: rgb(44, 58, 129);
 }
 
 /* BARRA DE NAVEGACION */
-
-/* Menu principal*/
 .menu-principal {
   position: fixed;
   top: 0;
@@ -21,7 +19,6 @@ body {
   /*padding: 0 30px;*/
   /*margin-top: 10px;*/
   background: white;
-  z-index: 1;
 }
 
 .logo img {
@@ -53,10 +50,8 @@ body {
   border-radius: 10px;
   border: 2px solid rgb(44, 58, 129);
   cursor: pointer;
-  background-color: aliceblue;   
+  background-color: aliceblue;
 }
-
-
 
 .icono-input i {
   color: rgb(44, 58, 129);
@@ -95,7 +90,10 @@ body {
 }
 
 li {
-  list-style-type: none;  
+  list-style-type: none;
+  font-weight: bold;
+  color: #537FE7;
+ 
 }
 
 /*Menu lateral izquierda*/
@@ -118,7 +116,7 @@ li {
 
 /* NUEVA PUBLICACION */
 
-.nueva-publicacion {  
+.nueva-publicacion {
   border: 1px solid black;
   height: auto;
   background-color: white;
@@ -151,16 +149,15 @@ li {
   margin: 10px 0 10px;
 }
 
-.autor{
+.autor {
   display: flex;
 }
 
-.autor img{
+.autor img {
   margin: 0 15px 0 0;
 }
 
 .new-post {
-  
   border-radius: 10px;
   background-color: aliceblue;
   border: 2px solid rgb(44, 58, 129);
@@ -175,14 +172,26 @@ li {
   width: 60px;
   height: auto;
   border-radius: 20%;
-  align-items: center; 
-  cursor: pointer; 
+  align-items: center;
+  cursor: pointer;
 }
 
 .logo {
   display: inline-flex;
   width: 60px;
   height: auto;
-  margin: 10px 0 ;
-  cursor: pointer; 
+  margin: 10px 0;
+}
+
+.mensajes {
+  position: fixed;
+  bottom: 1%;
+  right: 5%;
+  size: 5%;
+  min-width: 10%;
+  font-size: large;
+  padding: 10px;
+  background-color: rgb(44, 58, 129);
+  color: white;
+  cursor: pointer;
 }
