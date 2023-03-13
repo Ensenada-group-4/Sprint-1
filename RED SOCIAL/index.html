@@ -14,190 +14,206 @@
     />
   </head>
   <body>
-    <!--Menu principal-->
-    <div class="menu-principal">
-      <div class="logo" id="logo">
-        <img src="./img/logo.png" alt="Logo" />
-      </div>
-      <div class="menu-bar" id="menuBar">
-        <nav class="enlaces">
-          <div class="busqueda">
-            <div class="icono-input">
-              <i class="fas fa-search" title="Configuración"></i>
-              <input type="search" class="input" placeholder="Búsqueda..." />
+    <nav>
+      <!--BARRA DE NAVEGACIÓN-->
+      <div class="menu-principal">
+        <div class="logo" id="logo">
+          <img src="./img/logo.png" alt="Logo" />
+        </div>
+        <div class="menu-bar" id="menuBar">
+          <nav class="enlaces">
+            <div class="busqueda">
+              <div class="icono-input">
+                <i class="fas fa-search" title="Configuración"></i>
+                <input type="search" class="input" placeholder="Búsqueda..." />
+              </div>
             </div>
+          </nav>
+          <div class="opciones">
+            <a href="" title="Mensajes"
+              ><span class="fa fa-comment-dots"></span
+            ></a>
+            <a href="" title="Notificaciones"
+              ><span class="fas fa-bell"></span
+            ></a>
+            <a href="" title="Mi perfil"><span class="fa fa-user"></span></a>
+            <a href="" title="Configuración"><span class="fa fa-cog"></span></a>
           </div>
-        </nav>
-        <div class="opciones">
-          <a href="" title="Mensajes"
-            ><span class="fa fa-comment-dots"></span
-          ></a>
-          <a href="" title="Notificaciones"
-            ><span class="fas fa-bell"></span
-          ></a>
-          <a href="" title="Mi perfil"><span class="fa fa-user"></span></a>
-          <a href="" title="Configuración"><span class="fa fa-cog"></span></a>
         </div>
       </div>
-    </div>
-    <!--Menu lateral izquierda-->
-    <div class="menu-izquierdo">
-      <div class="menu amigos">
-        <h3>AMIGOS</h3>
-        <ul>
-          <li>
-            <img
-              src="img/avatares/adrian.png"
-              alt="Avatar"
-              class="avatar"
-            />Adrian
-          </li>
+    </nav>
+    <main>
+      <!--Menu lateral izquierda-->
+      <div class="menu-izquierdo">
+        <div class="menu amigos">
+          <h3>AMIGOS</h3>
+          <ul>
+            <li>
+              <img
+                src="img/avatares/adrian.png"
+                alt="Avatar"
+                class="avatar"
+              />Adrian
+            </li>
 
-          <li>
-            <img
-              src="img/avatares/lucia.png"
-              alt="Avatar"
-              class="avatar"
-            />Lucia
-          </li>
+            <li>
+              <img
+                src="img/avatares/lucia.png"
+                alt="Avatar"
+                class="avatar"
+              />Lucia
+            </li>
 
-          <li>
-            <img
-              src="img/avatares/jorge.png"
-              alt="Avatar"
-              class="avatar"
-            />Jorge
-          </li>
-        </ul>
-      </div>
-      <div class="menu solicitudes">
-        <h3>SOLICITUDES DE AMISTAD</h3>
-        <ul>
-          <li>
-            <img src="img/avatares/rafael.png" alt="avatar" class="avatar" />
-            Rafael
-          </li>
-
-          <input type="button" value="Aceptar" />
-          <input type="button" value="Denegar" />
-          <li>
-            <img
-              src="img/avatares/antonio.png"
-              alt="avatar"
-              class="avatar"
-            />Antonio
-          </li>
-
-          <input type="button" value="Aceptar" />
-          <input type="button" value="Denegar" />
-          <li>
-            <img
-              src="img/avatares/cristina.png"
-              alt="avatar"
-              class="avatar"
-            />Cristina
-          </li>
-
-          <input type="button" value="Aceptar" />
-          <input type="button" value="Denegar" />
-        </ul>
-      </div>
-    </div>
-
-    <!--Contenido-->
-    <div class="centro">
-      <div class="nueva-publicacion">
-        <h2>Nueva publicación</h2>
-        <form>
-          <textarea
-            class="new-post"
-            cols="70"
-            rows="5"
-            placeholder="ESCRIBIR POST"
-          ></textarea>
-        </form>
-        <button class="btn-post">Enviar</button>
-      </div>
-
-      <!-- Muro -->
-
-      <div class="publicacion-muro">
-        <div class="autor">
-          <img src="img/avatares/pepito.png" alt="avatar" class="avatar" />
-          <h3>Pepito</h3>
+            <li>
+              <img
+                src="img/avatares/jorge.png"
+                alt="Avatar"
+                class="avatar"
+              />Jorge
+            </li>
+          </ul>
         </div>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta,
-          velit, suscipit ratione dolore, quibusdam praesentium at amet adipisci
-          nihil similique tempore aspernatur? Nulla officiis veniam possimus
-          repudiandae enim! Est, cumque.
-        </p>
-      </div>
+        <div class="menu solicitudes">
+          <h3>SOLICITUDES DE AMISTAD</h3>
+          <ul>
+            <li>
+              <img src="img/avatares/rafael.png" alt="avatar" class="avatar" />
+              Rafael
+            </li>
 
-      <div class="publicacion-muro">
-        <div class="autor">
-          <img src="img/avatares/lupita.png" alt="avatar" class="avatar" />
-          <h3>Lupita</h3>
+            <input type="button" value="Aceptar" />
+            <input type="button" value="Denegar" />
+            <li>
+              <img
+                src="img/avatares/antonio.png"
+                alt="avatar"
+                class="avatar"
+              />Antonio
+            </li>
+
+            <input type="button" value="Aceptar" />
+            <input type="button" value="Denegar" />
+            <li>
+              <img
+                src="img/avatares/cristina.png"
+                alt="avatar"
+                class="avatar"
+              />Cristina
+            </li>
+
+            <input type="button" value="Aceptar" />
+            <input type="button" value="Denegar" />
+          </ul>
         </div>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta,
-          velit, suscipit ratione dolore, quibusdam praesentium at amet adipisci
-          nihil similique tempore aspernatur? Nulla officiis veniam possimus
-          repudiandae enim! Est, cumque.
-        </p>
       </div>
 
-      <div class="publicacion-muro">
-        <div class="autor">
-          <img src="img/avatares/alicia.png" alt="avatar" class="avatar" />
-          <h3>Alicia</h3>
+      <!--Contenido-->
+      <div class="centro">
+        <div class="nueva-publicacion">
+          <h2>Nueva publicación</h2>
+          <form>
+            <textarea
+              class="new-post"
+              cols="70"
+              rows="5"
+              placeholder="ESCRIBIR POST"
+            ></textarea>
+          </form>
+          <button class="btn-post">Enviar</button>
         </div>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta,
-          velit, suscipit ratione dolore, quibusdam praesentium at amet adipisci
-          nihil similique tempore aspernatur? Nulla officiis veniam possimus
-          repudiandae enim! Est, cumque.
-        </p>
-      </div>
-    </div>
 
-    <!--Menu lateral derecha-->
-    <div class="menu-derecho">
-      <div class="menu grupos">
-        <h3>GRUPOS</h3>
-        <ul>
-          <img src="img/grupo4.jpg" alt="Logo grupo" class="logo" />
-          <li>Principiantes</li>
-          <img
-            src="img/principiantes.jpg"
-            alt="logo principiantes"
-            class="logo"
-          />
-          <li>Teclers</li>
-          <img src="img/tecla.png" alt="logo tecla" class="logo" />
-          <li>Ensenada</li>
-          <img src="img/ENSENADA-logo.png" alt="logo ensenada" class="logo" />
-        </ul>
+        <!-- Muro -->
+
+        <div class="publicacion-muro">
+          <div class="autor">
+            <img src="img/avatares/pepito.png" alt="avatar" class="avatar" />
+            <h3>Pepito</h3>
+          </div>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta,
+            velit, suscipit ratione dolore, quibusdam praesentium at amet
+            adipisci nihil similique tempore aspernatur? Nulla officiis veniam
+            possimus repudiandae enim! Est, cumque.
+          </p>
+        </div>
+
+        <div class="publicacion-muro">
+          <div class="autor">
+            <img src="img/avatares/lupita.png" alt="avatar" class="avatar" />
+            <h3>Lupita</h3>
+          </div>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta,
+            velit, suscipit ratione dolore, quibusdam praesentium at amet
+            adipisci nihil similique tempore aspernatur? Nulla officiis veniam
+            possimus repudiandae enim! Est, cumque.
+          </p>
+        </div>
+
+        <div class="publicacion-muro">
+          <div class="autor">
+            <img src="img/avatares/alicia.png" alt="avatar" class="avatar" />
+            <h3>Alicia</h3>
+          </div>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta,
+            velit, suscipit ratione dolore, quibusdam praesentium at amet
+            adipisci nihil similique tempore aspernatur? Nulla officiis veniam
+            possimus repudiandae enim! Est, cumque.
+          </p>
+        </div>
       </div>
 
-      <div class="menu solicitudes">
-        <h3>PAGINAS SUGERIDAS</h3>
-        <ul>
-          <li>
-            <img
-              src="/img/logos/w3school.png"
-              alt="logo W3School"
-              class="logo"
-            />
-          </li>
-          <input type="button" value="Seguir" />
-          <li><img src="/img/logos/css3.png" alt="logo css" class="logo" /></li>
-          <input type="button" value="Seguir" />         <li>
-            <img src="/img/logos/google.png" alt="logo google" class="logo" /></li>
-          <input type="button" value="Seguir" />
-        </ul>
+      <!--Menu lateral derecha-->
+      <div class="menu-derecho">
+        <div class="menu grupos">
+          <h3>GRUPOS</h3>
+          <ul>
+            <li>
+              <img
+                src="img/principiantes.jpg"
+                alt="logo principiantes"
+                class="logo"
+              />Principiantes
+            </li>
+
+            <li>
+              <img src="img/tecla.png" alt="logo tecla" class="logo" />Teclers
+            </li>
+
+            <li>
+              <img
+                src="img/ENSENADA-logo.png"
+                alt="logo ensenada"
+                class="logo"
+              />Ensenada
+            </li>
+          </ul>
+        </div>
+
+        <div class="menu solicitudes">
+          <h3>PAGINAS SUGERIDAS</h3>
+          <ul>
+            <li>
+              <img
+                src="/img/logos/w3school.png"
+                alt="logo W3School"
+                class="logo"
+              />
+            </li>
+            <input type="button" value="Seguir" />
+            <li>
+              <img src="/img/logos/css3.png" alt="logo css" class="logo" />
+            </li>
+            <input type="button" value="Seguir" />
+            <li>
+              <img src="/img/logos/google.png" alt="logo google" class="logo" />
+            </li>
+            <input type="button" value="Seguir" />
+          </ul>
+        </div>
       </div>
-    </div>
-    <button class="mensajes">Mensajes</button>
+      <button class="mensajes">Chat</button>
+    </main>
   </body>
 </html>
