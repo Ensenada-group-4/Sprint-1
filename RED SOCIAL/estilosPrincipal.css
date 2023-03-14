@@ -94,6 +94,70 @@ li {
  
 }
 
+/*Menu busqueda amigos*/
+.buscar {
+  position: absolute;
+  top: 15%;
+  width: 70%;
+  height: auto;
+  left: 25%;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.cuadro-logo{
+  display: flex;
+  margin: 0 5%;
+}
+
+.buscar-amigos{
+  position: relative;
+  width: 271px;
+  display: flex;
+}
+
+.buscar-amigos input{
+  box-sizing: border-box;
+  padding: 10px 10px 10px 35px;
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid rgb(44, 58, 129);
+  cursor: pointer;
+  background-color: aliceblue;
+}
+
+.buscar-amigos i{
+  color: rgb(44, 58, 129);
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-40%);
+  transition: all 0.5s;
+}
+
+.filtros a{
+color: rgb(44, 58, 129);
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-40%);
+  transition: all 0.5s;
+}
+
+.buscar .etiqueta{
+  font-weight: 700;
+  font-size: 30px;
+}
+
 /*Menu lateral izquierda*/
 .menu-izquierdo {
   position: absolute;
@@ -110,6 +174,75 @@ li {
   height: 60%;
   top: 15%;
   right: 2%;
+}
+
+/*Menu amigos*/
+.posibles-amigos{
+  position: absolute;
+  top: 30%;
+  width: 72%;
+  height: auto;
+  left: 25%;
+  background-color: rgb(170, 177, 213);
+  display: grid;
+  text-align: center;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  row-gap: 5%;
+  column-gap: 5%;
+  justify-content: center;
+  align-items: center;
+}
+
+.posibles-amigos .amigo{
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  padding: 5%;
+}
+
+.posibles-amigos .amigo div{
+  padding: 5px;
+}
+
+.posibles-amigos .amigo img{
+  width: 50%;
+  height: 50%;
+}
+
+.posibles-amigos .amigo h3{
+margin: 0;
+}
+
+.posibles-amigos .amigo a{
+  text-decoration: none;
+  text-align: center;
+  margin: 20px;
+}
+
+.posibles-amigos .amigo button{
+  border-radius: 10px;
+  color: white;
+  background-color: green;
+  width: 70%;
+  height: auto;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.posibles-amigos .amigo button:hover{
+  color: green;
+  background-color: white;
+}
+
+.posibles-amigos .amigo button.agregado{
+  color: white;
+  background-color: red;
+}
+
+.posibles-amigos .amigo button.agregado:hover{
+  color: red;
+  background-color: white;
 }
 
 /* NUEVA PUBLICACION */
