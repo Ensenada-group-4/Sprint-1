@@ -187,7 +187,7 @@ color: rgb(44, 58, 129);
   display: grid;
   text-align: center;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-rows: repeat(4, 1fr);
   row-gap: 5%;
   column-gap: 5%;
   justify-content: center;
