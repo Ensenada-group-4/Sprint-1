@@ -281,10 +281,13 @@ li p{
 
 .avatar {
   width: 60px;
-  height: auto;
-  border-radius: 20%;
+  height: auto;  
   align-items: center;
   cursor: pointer;
+}
+
+.avatar-perfil{
+  width: 25%;
 }
 
 .logo {
