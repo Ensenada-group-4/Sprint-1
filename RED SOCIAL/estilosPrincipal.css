@@ -67,7 +67,7 @@ body {
   color: lightskyblue;
 }
 
-.menu-bar .opciones a {
+.icon {
   font-size: 20px;
   padding: 0 10px;
   text-decoration: none;
@@ -75,7 +75,7 @@ body {
   transition: all 0.5s;
 }
 
-.menu-bar .opciones a:hover {
+.icon:hover {
   color: lightskyblue;
 }
 
@@ -297,6 +297,11 @@ li p{
   margin: 10px 0;
 }
 
+.paginas{
+  border-radius: 50%;
+  margin-right: 5px;;
+}
+
 /* CHAT */
 
 .mensajes {
@@ -332,12 +337,12 @@ li p{
   height: 100px;
 }
 
-.btn {
+.btn-chat {
   background-color: #4caf50;
   color: white;
 }
 
-.btn:hover {
+.btn-chat:hover {
   background-color: #3e8e41;
 }
 
