@@ -21,7 +21,7 @@ body {
 }
 
 .logo img {
-  width: 130px;
+  width: 100px;
   padding: 0 20%;
 }
 
@@ -181,9 +181,9 @@ li p{
 .posibles-amigos {
   position: absolute;
   top: 30%;
+  left: 50%;
+  transform: translateX(-50%); /* propiedad transform para reescalar elementos + función translateX para mover el elemento horizontalmente hacia la izquierda en un 50% de su propio ancho */
   width: 80%;
-  /* height: auto; */
-  /* left: 25%; */
   display: grid;
   text-align: center;
   grid-template-columns: repeat(4, 1fr);
@@ -192,14 +192,13 @@ li p{
   column-gap: 5%;
   align-items: auto;
   justify-content: center;
-  
 }
 
-/* .contenedor-amigos {
-  background-color: red;
-  z-index: 1;
-} */
+.contenedor-amigos {
+  /* background-color: red;
+  z-index: 1; */
 
+}
 
 .amigo {
   width: 100%;
