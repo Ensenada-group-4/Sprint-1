@@ -1,21 +1,22 @@
 body {
-  background-color: rgb(170, 177, 213);
-  font-family: Arial, Helvetica, sans-serif;
   overflow-y: auto;
   color: rgb(44, 58, 129);
+  background-image: url("https://images.unsplash.com/photo-1468276311594-df7cb65d8df6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");
+  background-attachment: fixed;
+  background-position: center;
+  color: aliceblue;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* BARRA DE NAVEGACION */
 .menu-principal {
   position: fixed;
-  top: 0;
-  right: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 10%;
-  background: white;
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
@@ -31,7 +32,7 @@ body {
   padding: 0 5%;
 }
 
-.menu-bar .enlaces .busqueda {
+.busqueda {
   display: inline-block;
   padding: 0 20%;
 }
@@ -46,13 +47,13 @@ body {
   padding: 10px 10px 10px 35px;
   width: 100%;
   border-radius: 10px;
-  border: 2px solid rgb(44, 58, 129);
+  border: 2px solid #b17aa2;
   cursor: pointer;
   background-color: aliceblue;
 }
 
 .icono-input i {
-  color: rgb(44, 58, 129);
+  color: #b17aa2;
   position: absolute;
   width: 20px;
   height: 20px;
@@ -70,7 +71,7 @@ body {
   font-size: 20px;
   padding: 0 10px;
   text-decoration: none;
-  color: rgb(44, 58, 129);
+  color: #ffc312;
   transition: all 0.5s;
 }
 
@@ -79,83 +80,17 @@ body {
 }
 
 /* CAJAS MENUS */
+
 .menu {
+  color: aliceblue;
   padding: 5%;
-  border: 1px solid black;
   border-radius: 10px;
   margin: 0 0 10px;
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-li {
-  list-style-type: none;
-  font-weight: bold;
-  color: #537FE7;
- 
-}
-
-/*Menu busqueda amigos*/
-.buscar {
-  position: absolute;
-  top: 15%;
-  width: 70%;
-  height: auto;
-  left: 25%;
-  text-align: center;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  background-color: white;
-  border: 1px solid black;
-  border-radius: 10px;
-}
-
-.cuadro-logo{
-  display: flex;
-  margin: 0 5%;
-}
-
-.buscar-amigos{
-  position: relative;
-  width: 271px;
-  display: flex;
-}
-
-.buscar-amigos input{
-  box-sizing: border-box;
-  padding: 10px 10px 10px 35px;
-  width: 100%;
-  border-radius: 10px;
-  border: 2px solid rgb(44, 58, 129);
-  cursor: pointer;
-  background-color: aliceblue;
-}
-
-.buscar-amigos i{
-  color: rgb(44, 58, 129);
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  right: 30px;
-  top: 50%;
-  transform: translateY(-40%);
-  transition: all 0.5s;
-}
-
-.filtros a{
-color: rgb(44, 58, 129);
-  position: absolute;
-  width: auto;
-  height: auto;
-  right: 2%;
-  top: 50%;
-  transform: translateY(-40%);
-  transition: all 0.5s;
-}
-
-.buscar .etiqueta{
-  font-weight: 700;
-  font-size: 30px;
+.menu h4 {
+  /* font-size: x-large; */
 }
 
 /*Menu lateral izquierda*/
@@ -176,73 +111,111 @@ color: rgb(44, 58, 129);
   right: 2%;
 }
 
+li {
+  list-style-type: none;
+  font-weight: bold;
+  color: white;
+}
+
+/*Menu busqueda amigos*/
+.buscar {
+  position: absolute;
+  top: 15%;
+  width: 70%;
+  /* height: auto; */
+  /* left: 25%; */
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  color: aliceblue;
+}
+
+.cuadro-logo {
+  display: flex;
+  margin: 0 5%;
+}
+
+.buscar-amigos {
+  position: relative;
+  width: 271px;
+  display: flex;
+}
+
+.buscar-amigos i {
+  color: #b17aa2;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-40%);
+  transition: all 0.5s;
+}
+
+.filtros a {
+  color: #ffc312;
+  position: absolute;
+  width: auto;
+  height: auto;
+  right: 2%;
+  top: 50%;
+  transform: translateY(-40%);
+  transition: all 0.5s;
+}
+
+.buscar .etiqueta {
+  font-weight: 700;
+  font-size: 30px;
+}
+
 /*Menu amigos*/
-.posibles-amigos{
+
+.posibles-amigos {
   position: absolute;
   top: 30%;
-  width: 72%;
-  height: auto;
-  left: 25%;
-  background-color: rgb(170, 177, 213);
+  width: 80%;
+  /* height: auto; */
+  /* left: 25%; */
   display: grid;
   text-align: center;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
   row-gap: 5%;
   column-gap: 5%;
+  align-items: auto;
   justify-content: center;
-  align-items: center;
+  
 }
 
-.posibles-amigos .amigo{
-  background-color: white;
+/* .contenedor-amigos {
+  background-color: red;
+  z-index: 1;
+} */
+
+
+.amigo {
   width: 100%;
   height: 100%;
   padding: 5%;
 }
 
-.posibles-amigos .amigo div{
+.posibles-amigos .amigo div {
   padding: 5px;
 }
 
-.posibles-amigos .amigo img{
+.posibles-amigos .amigo img {
   width: 50%;
   height: 50%;
 }
 
-.posibles-amigos .amigo h3{
-margin: 0;
-}
-
-.posibles-amigos .amigo a{
+.posibles-amigos .amigo a {
   text-decoration: none;
   text-align: center;
   margin: 20px;
-}
-
-.posibles-amigos .amigo button{
-  border-radius: 10px;
-  color: white;
-  background-color: green;
-  width: 70%;
-  height: auto;
-  cursor: pointer;
-  transition: all 0.5s;
-}
-
-.posibles-amigos .amigo button:hover{
-  color: green;
-  background-color: white;
-}
-
-.posibles-amigos .amigo button.agregado{
-  color: white;
-  background-color: red;
-}
-
-.posibles-amigos .amigo button.agregado:hover{
-  color: red;
-  background-color: white;
+  color: lightskyblue;
 }
 
 /* NUEVA PUBLICACION */
@@ -250,10 +223,11 @@ margin: 0;
 .nueva-publicacion {
   border: 1px solid black;
   height: auto;
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0.5);
   overflow-y: auto;
   border-radius: 10px;
   text-align: center;
+  color: aliceblue;
 }
 
 .btn-post {
@@ -276,8 +250,9 @@ margin: 0;
   padding: 3%;
   border: 1px solid black;
   border-radius: 10px;
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0.5);
   margin: 10px 0 10px;
+  color: aliceblue;
 }
 
 .autor {
@@ -291,7 +266,7 @@ margin: 0;
 .new-post {
   border-radius: 10px;
   background-color: aliceblue;
-  border: 2px solid rgb(44, 58, 129);
+  border: 2px solid #b17aa2;
   padding: 10px 10px 10px 35px;
   box-sizing: border-box;
   width: 80%;
@@ -350,7 +325,7 @@ margin: 0;
 }
 
 .btn {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
 }
 
@@ -366,129 +341,8 @@ margin: 0;
 }
 
 /* Crear nuevo usuario */
-.registro-nuevo-usuario{
-  text-align: center; 
-  margin-top: 30px; 
-  font-family: 'Georgia', serif;
+.registro-nuevo-usuario {
+  text-align: center;
+  margin-top: 30px;
+  font-family: "Georgia", serif;
 }
-
-/*MEDIA QUERY*/
-@media screen and (max-width:1020px) {
-  .menu-izquierdo{
-    display: none;
-  }
-
-  .posibles-amigos{
-    top: 30%;
-    width: auto;
-    height: auto;
-    right: 25%;
-    background-color: rgb(170, 177, 213);
-    display: grid;
-    text-align: center;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(8, 1fr);
-    column-gap: 15%;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .posibles-amigos .amigo img{
-    width: 40%;
-    height: 40%;
-  }
-
-  .buscar {
-    top: 15%;
-    width: 50%;
-    height: auto;
-    left: 25%;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 10px;
-  }
-
-  .cuadro-logo{
-    display: flex;
-    margin: 0 5%;
-    width: 50%;
-    height: auto;
-  }
-
-  .buscar-amigos{
-    position: relative;
-    width: auto;
-    display: flex;
-  }
-
-  .buscar-amigos i{
-    color: rgb(44, 58, 129);
-    position: absolute;
-    width: auto;
-    height: auto;
-    right: 10%;
-    top: 50%;
-    transform: translateY(-40%);
-    transition: all 0.5s;
-  }
-
-  .menu-bar .enlaces .busqueda {
-    display: none;
-  }
-}
-@media screen and (max-width:650px) {
-  .buscar {
-    position: absolute;
-    top: 15%;
-    width: 45%;
-    height: auto;
-    left: 25%;
-    text-align: center;
-    /*display: flex;*/
-    display: inline-block;
-    justify-content: space-between;
-    padding: 10px;
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 10px;
-  }
-
-  .cuadro-logo{
-    display: flex;
-    margin: 0 5%;
-    width: 90%;
-    height: auto;
-    justify-content: center;
-  }
-
-  .filtros a{
-    display: none;
-    }
-
-    .posibles-amigos{
-      position: absolute;
-      top: 35%;
-      width: auto;
-      height: auto;
-      right: 30%;
-      background-color: rgb(170, 177, 213);
-      display: grid;
-      text-align: center;
-      grid-template-columns: 1fr;
-      grid-template-rows: repeat(8, 1fr);
-      row-gap: 5%;
-      column-gap: 5%;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .posibles-amigos .amigo img{
-      width: 20%;
-      height: 20%;
-    }
-}
-

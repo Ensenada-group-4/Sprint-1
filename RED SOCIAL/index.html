@@ -15,7 +15,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   </head>
   <body>
-
     <nav>
       <!--BARRA DE NAVEGACIÓN-->
       <div class="menu-principal">
@@ -48,7 +47,7 @@
       <!--Menu lateral izquierda-->
       <div class="menu-izquierdo">
         <div class="menu amigos">
-          <h3>AMIGOS</h3>
+          <h4>AMIGOS<i class="bi bi-book"></i></h4>
           <ul>
             <li>
               <img
@@ -76,15 +75,23 @@
           </ul>
         </div>
         <div class="menu solicitudes">
-          <h3>SOLICITUDES DE AMISTAD</h3>
+          <h4>SOLICITUDES DE AMISTAD</h4>
           <ul>
             <li>
               <img src="img/avatares/rafael.png" alt="avatar" class="avatar" />
               Rafael
             </li>
 
-            <input type="button" value="Aceptar" />
-            <input type="button" value="Denegar" />
+            <input
+              type="button"
+              value="Aceptar"
+              class="btn btn-outline-warning btn-sm"
+            />
+            <input
+              type="button"
+              value="Denegar"
+              class="btn btn-outline-danger btn-sm"
+            />
             <li>
               <img
                 src="img/avatares/antonio.png"
@@ -93,8 +100,16 @@
               />Antonio
             </li>
 
-            <input type="button" value="Aceptar" />
-            <input type="button" value="Denegar" />
+            <input
+              type="button"
+              value="Aceptar"
+              class="btn btn-outline-warning btn-sm"
+            />
+            <input
+              type="button"
+              value="Denegar"
+              class="btn btn-outline-danger btn-sm"
+            />
             <li>
               <img
                 src="img/avatares/cristina.png"
@@ -103,8 +118,16 @@
               />Cristina
             </li>
 
-            <input type="button" value="Aceptar" />
-            <input type="button" value="Denegar" />
+            <input
+              type="button"
+              value="Aceptar"
+              class="btn btn-outline-warning btn-sm"
+            />
+            <input
+              type="button"
+              value="Denegar"
+              class="btn btn-outline-danger btn-sm"
+            />
           </ul>
         </div>
       </div>
@@ -118,10 +141,10 @@
               class="new-post"
               cols="70"
               rows="5"
-              placeholder="ESCRIBIR POST"
+              placeholder="ESCRIBIR POST..."
             ></textarea>
           </form>
-          <button class="btn-post">Enviar</button>
+          <button class="btn-post btn btn-warning btn-sm">Enviar</button>
         </div>
 
         <!-- Muro -->
@@ -129,7 +152,7 @@
         <div class="publicacion-muro">
           <div class="autor">
             <img src="img/avatares/pepito.png" alt="avatar" class="avatar" />
-            <h3>Pepito</h3>
+            <h4>Pepito</h4>
           </div>
           <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta,
@@ -142,7 +165,7 @@
         <div class="publicacion-muro">
           <div class="autor">
             <img src="img/avatares/lupita.png" alt="avatar" class="avatar" />
-            <h3>Lupita</h3>
+            <h4>Lupita</h4>
           </div>
           <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta,
@@ -155,7 +178,7 @@
         <div class="publicacion-muro">
           <div class="autor">
             <img src="img/avatares/alicia.png" alt="avatar" class="avatar" />
-            <h3>Alicia</h3>
+            <h4>Alicia</h4>
           </div>
           <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta,
@@ -169,7 +192,7 @@
       <!--Menu lateral derecha-->
       <div class="menu-derecho">
         <div class="menu grupos">
-          <h3>GRUPOS</h3>
+          <h4>GRUPOS</h4>
           <ul>
             <li>
               <img
@@ -194,7 +217,7 @@
         </div>
 
         <div class="menu solicitudes">
-          <h3>PAGINAS SUGERIDAS</h3>
+          <h4>PAGINAS SUGERIDAS</h4>
           <ul>
             <li>
               <img
@@ -203,28 +226,32 @@
                 class="logo"
               />
             </li>
-            <input type="button" value="Seguir" />
+            <input type="button" value="Seguir" class="btn btn-warning btn-sm" />
             <li>
               <img src="img/logos/css3.png" alt="logo css" class="logo" />
             </li>
-            <input type="button" value="Seguir" />
+            <input type="button" value="Seguir" class="btn btn-warning btn-sm"/>
             <li>
               <img src="img/logos/google.png" alt="logo google" class="logo" />
             </li>
-            <input type="button" value="Seguir" />
+            <input type="button" value="Seguir" class="btn btn-warning btn-sm"/>
           </ul>
         </div>
       </div>
       <!-- chat -->
       <div class="chat position-fixed bottom-0 end-0">
-        <input type="checkbox" id="chat-open">
+        <input type="checkbox" id="chat-open" />
         <label for="chat-open">Abrir chat</label>
         <div class="chat-popup" id="openchatform">
           <!-- base para el envio de mensajes -->
           <form action="/action_page.php" class="form-container">
             <h1>Chat</h1>
             <label for="msg"><b>Mensaje</b></label>
-            <textarea placeholder="Escribe el mensaje.." name="msg" required></textarea>
+            <textarea
+              placeholder="Escribe el mensaje.."
+              name="msg"
+              required
+            ></textarea>
             <button type="submit" class="btn">Enviar</button>
             <label for="chat-open" class="btn cancel">Cerrar</label>
           </form>
@@ -232,11 +259,12 @@
       </div>
     </main>
     <!-- un pequeño footer -->
-    <footer class="bg-light text-center text-lg-start">
+    <!-- <footer class="bg-light text-center text-lg-start fixed-bottom">
       <div class="text-center p-3">
         2023 Keybook ©
         <a class="text-dark" href="#">Keybook.com</a>
       </div>
-    </footer>
+    </footer> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
   </body>
 </html>
