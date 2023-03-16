@@ -314,6 +314,8 @@ margin: 0;
   margin: 10px 0;
 }
 
+/* CHAT */
+
 .mensajes {
   position: fixed;
   bottom: 1%;
@@ -325,4 +327,47 @@ margin: 0;
   background-color: rgb(44, 58, 129);
   color: white;
   cursor: pointer;
+}
+#chat-open {
+  display: none;
+}
+
+#openchatform {
+  display: none;
+}
+
+#chat-open:checked ~ #openchatform {
+  display: block;
+}
+.form-container {
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+.form-container textarea {
+  width: 100%;
+  height: 100px;
+}
+
+.btn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.btn:hover {
+  background-color: #3e8e41;
+}
+
+.cancel {
+  background-color: #f44336;
+}
+#chat-open:checked ~ label[for="chat-open"] {
+  display: none;
+}
+
+/* Crear nuevo usuario */
+.registro-nuevo-usuario{
+  text-align: center; 
+  margin-top: 30px; 
+  font-family: 'Georgia', serif;
 }
