@@ -357,3 +357,8 @@ li p{
   margin-top: 30px;
   font-family: "Georgia", serif;
 }
+
+footer{
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+}
