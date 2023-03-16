@@ -115,6 +115,11 @@ li {
   list-style-type: none;
   font-weight: bold;
   color: white;
+  margin: 15px 0;
+}
+
+li p{
+  font-weight: 400;
 }
 
 /*Menu busqueda amigos*/
