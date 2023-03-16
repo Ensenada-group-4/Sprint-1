@@ -14,7 +14,7 @@ html,body{
     }
     
     .card{
-    height: 370px;
+    height: 400px;
     margin-top: auto;
     margin-bottom: auto;
     width: 400px;
@@ -46,6 +46,8 @@ html,body{
 
     .card-header h4{
     color: white;
+    margin-top: 20px;
+    text-align: center;
     }
     
     .social_icon{
