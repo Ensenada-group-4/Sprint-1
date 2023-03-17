@@ -17,7 +17,7 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 10%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 1;
 }
 
@@ -87,7 +87,7 @@ body {
   padding: 5%;
   border-radius: 10px;
   margin: 0 0 10px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .menu h4 {
@@ -134,7 +134,7 @@ li p{
   display: flex;
   justify-content: space-between;
   padding: 10px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8);
   border-radius: 10px;
   color: aliceblue;
 }
@@ -198,7 +198,6 @@ li p{
 .contenedor-amigos {
   /* background-color: red;
   z-index: 1; */
-
 }
 
 .amigo {
@@ -228,7 +227,7 @@ li p{
 .nueva-publicacion {
   border: 1px solid black;
   height: auto;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8);
   overflow-y: auto;
   border-radius: 10px;
   text-align: center;
@@ -255,7 +254,7 @@ li p{
   padding: 3%;
   border: 1px solid black;
   border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8);
   margin: 10px 0 10px;
   color: aliceblue;
 }
@@ -306,8 +305,8 @@ li p{
   position: fixed;
   bottom: 1%;
   right: 5%;
-  size: 5%;
-  min-width: 10%;
+  size: 10%;
+  min-width: 15%;
   font-size: large;
   padding: 10px;
   background-color: rgb(44, 58, 129);
@@ -326,7 +325,7 @@ li p{
   display: block;
 }
 .form-container {
-  border: 1px solid #ccc;
+  border: 10px solid #ccc;
   background-color: #f1f1f1;
 }
 
@@ -359,6 +358,12 @@ li p{
 }
 
 footer{
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8);
   color: #f1f1f1;
+  position: fixed;
+  bottom: 1%;
+  size: 50%;
+  min-width: 10%;
+  font-size: large;
+  padding: 10px;
 }
