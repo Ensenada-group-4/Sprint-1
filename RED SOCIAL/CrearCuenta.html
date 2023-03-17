@@ -46,16 +46,16 @@
     <h1 class="registro-nuevo-usuario">Registrar Nuevo Usuario</h1>
     <!-- formulario con bootstrap -->
     <main>
-    <form class="border shadow p-3 mb-5 bg-white rounded">
-      <div class="forumulario-usuario row">
-        <div class="col-md-6">
-          <div class="form-group">
+    <form class="border shadow p-3 mb-5 " id="form-register">
+      <div class="row justify-content-center">
+        <div class="col-md-12">
+          <div class="form-group text-center">
         <label for="profilePicture">Foto de perfil</label>
         <input type="file" class="form-control-file" id="profilePicture">
       </div>
     </div>
   </div>
-    <div class="row">
+    <div class="row justify-content-center">
       <div class="col-md-6">
       <div class="form-group">
         <label for="fullName">Nombre completo</label>
@@ -63,14 +63,16 @@
       </div>
     </div>
   </div>
-      <div class="col-md-6">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
       <div class="form-group">
         <label for="cityCountry">Ciudad y país de residencia</label>
         <input type="text" class="form-control" id="cityCountry" placeholder="Ejemplo: Gijón/España">
       </div>
     </div>
   </div>
-    <div class="row">
+  </div>
+    <div class="row justify-content-center">
       <div class="col-md-6">
       <div class="form-group">
         <label for="age">Edad</label>
@@ -78,15 +80,15 @@
       </div>
     </div>
   </div>
-      <div class="row">
-        <div class="col-md-6">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
       <div class="form-group">
         <label for="studies">Estudios (Universitarios y certificaciones)</label>
         <textarea class="form-control" id="studies" placeholder="Ejemplo: Grado en historia/Formación profesional en chapa y pintura"></textarea>
       </div>
     </div>
   </div>
-  <div class="row">
+  <div class="row justify-content-center">
     <div class="col-md-6">
       <div class="form-group">
         <label for="languages">Idiomas</label>
@@ -97,7 +99,7 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row justify-content-center">
       <div class="col-md-6">
         <div class="form-group">
           <label for="hobbies">Hobbies</label>
@@ -105,11 +107,9 @@
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
         <button type="submit" class="btn btn-outline-primary btn-block">Enviar</button>
-      </div>
-      <div class="col-md-5">
         <button type="reset" class="btn btn-outline-secondary btn-block">Restablecer</button>
       </div>
     </div>
