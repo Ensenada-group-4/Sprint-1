@@ -1,10 +1,10 @@
-html,body {
+html, body {
   overflow-y: auto;
   color: rgb(44, 58, 129);
   background-image: url("https://images.unsplash.com/photo-1468276311594-df7cb65d8df6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");
   background-attachment: fixed;
   background-position: center;
-  background-size: cover auto;
+  background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
   color: aliceblue;
@@ -329,6 +329,8 @@ li p{
 .form-container {
   border: 10px solid #ccc;
   background-color: #f1f1f1;
+  color: black;
+  font-size: 20px;
 }
 
 .form-container textarea {
@@ -356,8 +358,21 @@ li p{
 .registro-nuevo-usuario {
   text-align: center;
   margin-top: 30px;
+  font-family: "Georgia", serif; 
+  color: white;
+
+}
+.form-group{
+  color: #ccc;
+}
+#form-register{
   font-family: "Georgia", serif;
-  color: #f1f1f1;
+  background-color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  align-items: center;
+  height: auto;
+  width: auto;
+  padding: 20px;
 }
 
  /* footer */
@@ -384,7 +399,7 @@ footer{
   margin-top: auto;
   margin-bottom: auto;
   width: 400px;
-  background-color: rgba(0,0,0,0.5) !important;
+  background-color: rgba(0,0,0,0.8) !important;
   text-align: center;padding-top: 25px;
   }
   
