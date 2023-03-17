@@ -1,4 +1,4 @@
-body {
+html,body {
   overflow-y: auto;
   color: rgb(44, 58, 129);
   background-image: url("https://images.unsplash.com/photo-1468276311594-df7cb65d8df6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");
@@ -363,7 +363,7 @@ li p{
 }
  /* footer */
 footer{
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0,0,0,0.5) !important;
   color: #f1f1f1;
 /*   position: fixed;
   bottom: 1%;
@@ -381,12 +381,13 @@ footer{
   }
   
   .card{
-  height: 400px;
+  height: 420px;
   margin-top: auto;
   margin-bottom: auto;
   width: 400px;
   background-color: rgba(0,0,0,0.5) !important;
-  text-align: center;padding-top: 25px;
+  text-align: center;
+  padding-top: 25px;
   }
   
   .social_icon span{
@@ -412,7 +413,7 @@ footer{
   cursor: pointer;
   }
 
-  .card-header h4{
+  .card-header h3{
   color: white;
   margin-top: 20px;
   text-align: center;
@@ -425,11 +426,11 @@ footer{
   }
   
   .input-group-prepend span{
-  width: 50px;
-  background-color: #FFC312;
-  color: black;
-  border:0 !important;
-  }
+    width: 50px;
+    background-color: #FFC312;
+    color: black;
+    border:0 !important;
+    }
   
   input:focus{
   outline: 0 0 0 0  !important;
