@@ -354,7 +354,7 @@ li p{
   display: none;
 }
 
-/* Crear nuevo usuario */
+/* col-md-11r nuevo usuario */
 .registro-nuevo-usuario {
   text-align: center;
   margin-top: 30px;
@@ -370,9 +370,15 @@ li p{
   background-color: rgba(0, 0, 0, 0.8);
   text-align: center;
   align-items: center;
-  height: auto;
-  width: auto;
-  padding: 20px;
+  box-sizing: border-box;
+  width: 50%;
+  margin-left: 25%;
+}
+#register-send-restore{
+  margin-top: 1%;
+}
+#register-send{
+  margin-right: 5%;
 }
 
  /* footer */

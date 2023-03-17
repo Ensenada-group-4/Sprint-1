@@ -15,34 +15,7 @@
     <title>Crear cuenta</title>
 </head>
 <body>
-    <nav>
-        <!--BARRA DE NAVEGACIÓN-->
-        <div class="menu-principal">
-          <div class="logo" id="logo">
-            <img src="./img/logo2.png" alt="Logo" />
-          </div>
-          <div class="menu-bar" id="menuBar">
-            <nav class="enlaces">
-              <div class="busqueda">
-                <div class="icono-input">
-                  <i class="fas fa-search" title="Configuración"></i>
-                  <input type="search" class="input" placeholder="Búsqueda..." />
-                </div>
-              </div>
-            </nav>
-            <div class="opciones">
-              <a href="" title="Mensajes"
-              ><span class="fa fa-comment-dots icon"></span
-            ></a>
-            <a href="" title="Notificaciones"
-              ><span class="fas fa-bell icon"></span
-            ></a>
-            <a href="./perfilPropio.html" title="Mi perfil"><span class="fa fa-user icon"></span></a>
-            <a href="" title="Configuración"><span class="fa fa-cog icon"></span></a>
-            </div>
-          </div>
-        </div>
-      </nav>
+    <nav> 
     <h1 class="registro-nuevo-usuario">Registrar Nuevo Usuario</h1>
     <!-- formulario con bootstrap -->
     <main>
@@ -56,7 +29,7 @@
     </div>
   </div>
     <div class="row justify-content-center">
-      <div class="col-md-6">
+      <div class="col-md-11">
       <div class="form-group">
         <label for="fullName">Nombre completo</label>
         <input type="text" class="form-control" id="fullName" placeholder="Ejemplo: Daniel Ruperez">
@@ -64,7 +37,7 @@
     </div>
   </div>
   <div class="row justify-content-center">
-    <div class="col-md-6">
+    <div class="col-md-11">
       <div class="form-group">
         <label for="cityCountry">Ciudad y país de residencia</label>
         <input type="text" class="form-control" id="cityCountry" placeholder="Ejemplo: Gijón/España">
@@ -73,7 +46,7 @@
   </div>
   </div>
     <div class="row justify-content-center">
-      <div class="col-md-6">
+      <div class="col-md-11">
       <div class="form-group">
         <label for="age">Edad</label>
         <input type="number" class="form-control" id="age" min="18" max="99">
@@ -81,7 +54,7 @@
     </div>
   </div>
   <div class="row justify-content-center">
-    <div class="col-md-6">
+    <div class="col-md-11">
       <div class="form-group">
         <label for="studies">Estudios (Universitarios y certificaciones)</label>
         <textarea class="form-control" id="studies" placeholder="Ejemplo: Grado en historia/Formación profesional en chapa y pintura"></textarea>
@@ -89,7 +62,7 @@
     </div>
   </div>
   <div class="row justify-content-center">
-    <div class="col-md-6">
+    <div class="col-md-11">
       <div class="form-group">
         <label for="languages">Idiomas</label>
         <input type="text" class="form-control" id="languaje" placeholder="Ejemplo: Español">
@@ -100,16 +73,16 @@
       </div>
     </div>
     <div class="row justify-content-center">
-      <div class="col-md-6">
+      <div class="col-md-11">
         <div class="form-group">
           <label for="hobbies">Hobbies</label>
           <textarea class="form-control" id="hobbies" placeholder="Ejemplo: Ver series, jugar a videojuegos."></textarea>
         </div>
       </div>
     </div>
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <button type="submit" class="btn btn-outline-primary btn-block">Enviar</button>
+    <div class="row justify-content-center" id="register-send-restore">
+      <div class="col-md-11">
+        <button type="submit" class="btn btn-outline-primary btn-block" id="register-send">Enviar</button>
         <button type="reset" class="btn btn-outline-secondary btn-block">Restablecer</button>
       </div>
     </div>
