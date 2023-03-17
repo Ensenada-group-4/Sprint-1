@@ -120,6 +120,7 @@ body {
 
 .personal-details {
   display: flex;
+  justify-content: space-between;
 }
 
 .perfil .avatar-perfil {
