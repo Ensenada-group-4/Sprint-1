@@ -155,11 +155,11 @@ a p {
 
 /*Menu busqueda amigos*/
 .buscar {
-  position: absolute;
+  position: fixed;
   top: 15%;
   width: 70%;
-  /* height: auto; */
-  /* left: 25%; */
+  height: auto; 
+  left: 15%; 
   text-align: center;
   display: flex;
   justify-content: space-between;
@@ -182,7 +182,7 @@ a p {
 
 .buscar-amigos i {
   color: #b17aa2;
-  position: absolute;
+  position: fixed;
   width: 20px;
   height: 20px;
   right: 30px;
@@ -209,6 +209,7 @@ a p {
 
 /*Menu amigos*/
 
+/*antiguo, pero aun popdría ser util
 .posibles-amigos {
   position: absolute;
   top: 30%;
@@ -216,7 +217,7 @@ a p {
   transform: translateX(
     -50%
   ); /* propiedad transform para reescalar elementos + función translateX para mover el elemento horizontalmente hacia la izquierda en un 50% de su propio ancho */
-  width: 80%;
+ /* width: 80%;
   display: grid;
   text-align: center;
   grid-template-columns: repeat(4, 1fr);
@@ -225,30 +226,27 @@ a p {
   column-gap: 5%;
   align-items: auto;
   justify-content: center;
+} */
+
+.friends-cont{
+margin-top: 15%;
+margin-bottom: 5%;
 }
-
-
-.amigo {
-  width: 100%;
-  height: 100%;
-  padding: 5%;
+.friends-row{
+  margin-bottom: 5%;
 }
-
-.posibles-amigos .amigo div {
-  padding: 5px;
-}
-
-.posibles-amigos .amigo img {
+.friend-images {
   width: 50%;
   height: 50%;
 }
-
-.posibles-amigos .amigo a {
-  text-decoration: none;
+.friend-box {
+  border: 2px solid black;
+  border-radius: 45px;
+  background-color: rgba(0, 0, 0, 0.8);
   text-align: center;
-  margin: 20px;
-  color: lightskyblue;
+  font-family: 'Arial', sans-serif;
 }
+
 
 /* NUEVA PUBLICACION */
 
@@ -525,7 +523,6 @@ input:focus {
     width: auto;
     height: auto;
     right: 25%;
-    background-color: rgb(170, 177, 213);
     display: grid;
     text-align: center;
     grid-template-columns: repeat(2, 1fr);
@@ -549,7 +546,6 @@ input:focus {
     display: flex;
     justify-content: space-between;
     padding: 10px;
-    background-color: white;
     border: 1px solid black;
     border-radius: 10px;
   }
@@ -594,7 +590,6 @@ input:focus {
     display: inline-block;
     justify-content: space-between;
     padding: 10px;
-    background-color: white;
     border: 1px solid black;
     border-radius: 10px;
   }
