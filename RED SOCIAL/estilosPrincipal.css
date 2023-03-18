@@ -19,7 +19,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 10%;
+  height: 12%;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 1;
 }
@@ -27,6 +27,12 @@ body {
 .logo img {
   width: 100px;
   padding: 0 20%;
+}
+.icons-nav{
+  position: fixed;
+  top: 4%; 
+  left: 90%; 
+  transform: translate(-50%, -50%);
 }
 
 .menu-bar {
@@ -39,6 +45,7 @@ body {
 .busqueda {
   display: inline-block;
   padding: 0 20%;
+  margin-top: 3%;
 }
 
 .icono-input {
@@ -321,7 +328,21 @@ margin-bottom: 5%;
   width: 30%;
 }
 
+.logo-principal {
+  width: 60px;
+  border-radius: 50%;
+  position: fixed;
+  right: 91%; 
+  top: 3%;
+  transform: translate(-50%, -50%);
+}
 .logo {
+  width: 60px;
+  margin: 10px 0;
+  margin-right: 15px;
+}
+/* viejo */
+#logo {
   width: 60px;
   margin: 10px 0;
   border-radius: 50%;
