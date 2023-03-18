@@ -94,7 +94,7 @@ body {
 }
 
 /*Menu lateral izquierda*/
-.menu-izquierdo {
+.menu-left {
   position: absolute;
   width: 20%;
   height: 60%;
@@ -103,7 +103,7 @@ body {
 }
 
 /*Menu lateral derecha*/
-.menu-derecho {
+.menu-right {
   position: absolute;
   width: 20%;
   height: 60%;
@@ -111,7 +111,7 @@ body {
   right: 2%;
 }
 
-.perfil {
+.profile {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -123,11 +123,11 @@ body {
   justify-content: space-between;
 }
 
-.perfil .avatar-perfil {
+.profile .avatar-profile {
   width: 100%;
 }
-
-.perfil-usuario {
+/* inglés revisado hasta aquí */
+.profile-usuario {
   display: inline-flex;
   align-items: center;
 }
@@ -145,7 +145,7 @@ li img {
   margin-right: 15px;
 }
 
-/* Menus perfils */
+/* Menus profiles */
 .menu a {
   font-weight: 700;
 }
@@ -316,7 +316,7 @@ margin-bottom: 5%;
   cursor: pointer;
 }
 
-.avatar-perfil {
+.avatar-profile {
   box-sizing: content-box;
   width: 30%;
 }
