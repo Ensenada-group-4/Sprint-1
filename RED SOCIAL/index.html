@@ -5,21 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Principal</title>
-     <!-- BOOTSTRAP CSS -->
-     <link
-     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-     rel="stylesheet"
-     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-     crossorigin="anonymous"
-   />
+    <!-- BOOTSTRAP CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
 
-   <!-- FONT AWESOME -->
-   <script
-     src="https://kit.fontawesome.com/43124feaf5.js"
-     crossorigin="anonymous"
-   ></script>
+    <!-- FONT AWESOME -->
+    <script
+      src="https://kit.fontawesome.com/43124feaf5.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- CSS STYLESHEETS (después de Bootstrap!)-->
-   <link rel="stylesheet" href="estilosPrincipal.css" />
+    <link rel="stylesheet" href="estilosPrincipal.css" />
   </head>
   <body>
     <nav>
@@ -44,8 +44,12 @@
             <a href="" title="Notificaciones"
               ><span class="fas fa-bell icon"></span
             ></a>
-            <a href="perfilPropio.html" title="Mi perfil"><span class="fa fa-user icon"></span></a>
-            <a href="" title="Configuración"><span class="fa fa-cog icon"></span></a>
+            <a href="perfilPropio.html" title="Mi perfil"
+              ><span class="fa fa-user icon"></span
+            >
+            <a href="" title="Configuración"
+              ><span class="fa fa-cog icon"></span
+            ></a>
           </div>
         </div>
       </div>
@@ -53,8 +57,20 @@
     <main>
       <!--Menu lateral izquierda-->
       <div class="menu-izquierdo">
+        <div class="menu perfil">
+          <a href="perfilPropio.html" title="Mi perfil"
+              ><img 
+              src="img/avatares/alicia.png"
+              alt="avatar"
+              class="avatar avatar-perfil"
+            /></a>
+         
+          <h4>Alicia Gimenez</h4>
+        </div>
         <div class="menu amigos">
-          <h4>AMIGOS<i class="fa-regular fa-address-book icon" title="Amigos"></i></h4>
+          <h4>
+            <a class="fa-regular fa-address-book icon" href="amigos.html" title="Amigos"></a>AMIGOS
+          </h4>
           <ul>
             <li>
               <img
@@ -82,7 +98,10 @@
           </ul>
         </div>
         <div class="menu solicitudes">
-          <h4>SOLICITUDES<i class="fa-solid fa-person icon" title="Solicitudes"></i></h4>
+          <h4>
+            <i class="fa-solid fa-person icon" title="Solicitudes"></i
+            >SOLICITUDES
+          </h4>
           <ul>
             <li>
               <img src="img/avatares/rafael.png" alt="avatar" class="avatar" />
@@ -142,25 +161,33 @@
       <!--Contenido-->
       <div class="centro">
         <div class="nueva-publicacion">
-          <h3>NUEVA PUBLICACIÓN<i class="fa-solid fa-pen-nib icon" title="Nueva publicación"></i> </i></h2>
+          <h3>
+            <i class="fa-solid fa-pen-nib icon" title="Nueva publicación"></i
+            >NUEVA PUBLICACIÓN
+          </h3>
           <form>
             <textarea
               class="new-post"
               cols="70"
-              rows="5"
+              rows="2"
               placeholder="ESCRIBIR POST..."
             ></textarea>
-            <div class="insertar"><i class="fa-solid fa-image icon"></i><i class="fa-solid fa-location-dot icon"></i><i class="fa-solid fa-file icon"></i></div>
-            
+            <div class="insertar">
+              <i class="fa-solid fa-image icon"></i
+              ><i class="fa-solid fa-location-dot icon"></i
+              ><i class="fa-solid fa-file icon"></i
+              ><button class="btn-post btn btn-warning btn-sm">Enviar</button>
+            </div>
           </form>
-          <button class="btn-post btn btn-warning btn-sm">Enviar</button>
         </div>
 
         <!-- Muro -->
 
         <div class="publicacion-muro">
           <div class="autor">
-            <a href="perfilPepito.html"><img src="img/avatares/pepito.png"  alt="avatar" class="avatar" /></a>
+            <a href="perfilPepito.html"
+              ><img src="img/avatares/pepito.png" alt="avatar" class="avatar"
+            /></a>
             <h4>Pepito</h4>
           </div>
           <p>
@@ -201,7 +228,10 @@
       <!--Menu lateral derecha-->
       <div class="menu-derecho">
         <div class="menu grupos">
-          <h4>GRUPOS <i class="fa-solid fa-group-arrows-rotate icon" title="Grupos"></i></h4>
+          <h4>
+            <i class="fa-solid fa-group-arrows-rotate icon" title="Grupos"></i
+            >GRUPOS
+          </h4>
           <ul>
             <li>
               <img
@@ -226,7 +256,7 @@
         </div>
 
         <div class="menu solicitudes">
-          <h4>PAGINAS<i class="fa-solid fa-book icon" title="Paginas"></i></h4>
+          <h4><i class="fa-solid fa-book icon" title="Paginas"></i>PAGINAS</h4>
           <ul>
             <li>
               <img
@@ -242,7 +272,7 @@
             </li>
 
             <li>
-              <img src="./img/logo2.png" alt="logo css" class="logo" />
+              <img src="./img/logos/css3.png" alt="logo css" class="logo" />
               <input
                 type="button"
                 value="Seguir"

@@ -1,10 +1,11 @@
-html,body {
+html,
+body {
   overflow-y: auto;
   color: rgb(44, 58, 129);
   background-image: url("https://images.unsplash.com/photo-1468276311594-df7cb65d8df6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");
   background-attachment: fixed;
   background-position: center;
-  background-size: cover auto;
+  background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
   color: aliceblue;
@@ -92,10 +93,6 @@ html,body {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-.menu h4 {
-  /* font-size: x-large; */
-}
-
 /*Menu lateral izquierda*/
 .menu-izquierdo {
   position: absolute;
@@ -114,24 +111,55 @@ html,body {
   right: 2%;
 }
 
+.perfil {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5%;
+}
+
+.personal-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.perfil .avatar-perfil {
+  width: 100%;
+}
+
+.perfil-usuario {
+  display: inline-flex;
+  align-items: center;
+}
+
 li {
   list-style-type: none;
   font-weight: bold;
-  color: white;
+  color: aliceblue;
   margin: 15px 0;
+  display: flex;
+  align-items: center;
 }
 
-li p{
+li img {
+  margin-right: 15px;
+}
+
+/* Menus perfils */
+.menu a {
+  font-weight: 700;
+}
+a p {
   font-weight: 400;
 }
 
 /*Menu busqueda amigos*/
 .buscar {
-  position: absolute;
+  position: fixed;
   top: 15%;
   width: 70%;
-  /* height: auto; */
-  /* left: 25%; */
+  height: auto; 
+  left: 15%; 
   text-align: center;
   display: flex;
   justify-content: space-between;
@@ -154,7 +182,7 @@ li p{
 
 .buscar-amigos i {
   color: #b17aa2;
-  position: absolute;
+  position: fixed;
   width: 20px;
   height: 20px;
   right: 30px;
@@ -181,12 +209,15 @@ li p{
 
 /*Menu amigos*/
 
+/*antiguo, pero aun popdría ser util
 .posibles-amigos {
   position: absolute;
   top: 30%;
   left: 50%;
-  transform: translateX(-50%); /* propiedad transform para reescalar elementos + función translateX para mover el elemento horizontalmente hacia la izquierda en un 50% de su propio ancho */
-  width: 80%;
+  transform: translateX(
+    -50%
+  ); /* propiedad transform para reescalar elementos + función translateX para mover el elemento horizontalmente hacia la izquierda en un 50% de su propio ancho */
+ /* width: 80%;
   display: grid;
   text-align: center;
   grid-template-columns: repeat(4, 1fr);
@@ -195,34 +226,27 @@ li p{
   column-gap: 5%;
   align-items: auto;
   justify-content: center;
-}
+} */
 
-.contenedor-amigos {
-  /* background-color: red;
-  z-index: 1; */
+.friends-cont{
+margin-top: 15%;
+margin-bottom: 5%;
 }
-
-.amigo {
-  width: 100%;
-  height: 100%;
-  padding: 5%;
+.friends-row{
+  margin-bottom: 5%;
 }
-
-.posibles-amigos .amigo div {
-  padding: 5px;
-}
-
-.posibles-amigos .amigo img {
+.friend-images {
   width: 50%;
   height: 50%;
 }
-
-.posibles-amigos .amigo a {
-  text-decoration: none;
+.friend-box {
+  border: 2px solid black;
+  border-radius: 45px;
+  background-color: rgba(0, 0, 0, 0.8);
   text-align: center;
-  margin: 20px;
-  color: lightskyblue;
+  font-family: Arial, Helvetica, sans-serif;
 }
+
 
 /* NUEVA PUBLICACION */
 
@@ -234,11 +258,15 @@ li p{
   border-radius: 10px;
   text-align: center;
   color: aliceblue;
+  padding: 2%;
 }
 
-.btn-post {
-  margin: 2%;
+.insertar {
+  display: flex;
+  justify-content: space-around;
+  margin: 1% 10%;
 }
+
 
 /* PUBLICACIONES */
 
@@ -252,7 +280,7 @@ li p{
   text-align: justify;
 }
 
-.publicacion-muro {
+.publicacion-muro, .hoja-vida{
   padding: 3%;
   border: 1px solid black;
   border-radius: 10px;
@@ -263,6 +291,7 @@ li p{
 
 .autor {
   display: flex;
+  align-items: center;
 }
 
 .autor img {
@@ -282,24 +311,22 @@ li p{
 
 .avatar {
   width: 60px;
-  height: auto;  
+  height: auto;
   align-items: center;
   cursor: pointer;
 }
 
-.avatar-perfil{
-  width: 25%;
+.avatar-perfil {
+  box-sizing: content-box;
+  width: 30%;
 }
 
 .logo {
-  display: inline-flex;
   width: 60px;
-  height: auto;
   margin: 10px 0;
   border-radius: 50%;
-  margin-right: 5px;;
+  margin-right: 15px;
 }
-
 
 /* CHAT */
 
@@ -329,6 +356,8 @@ li p{
 .form-container {
   border: 10px solid #ccc;
   background-color: #f1f1f1;
+  color: black;
+  font-size: 20px;
 }
 
 .form-container textarea {
@@ -352,20 +381,39 @@ li p{
   display: none;
 }
 
-/* Crear nuevo usuario */
+/* col-md-11r nuevo usuario */
 .registro-nuevo-usuario {
   text-align: center;
   margin-top: 30px;
-  font-family: "Georgia", serif;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
 }
-.registro-h1{ color: white; 
-  font-family: Arial; 
+.form-group {
+  color: #ccc;
+}
+#form-register {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 50%;
+  margin-left: 25%;
+}
+#register-send-restore {
+  margin-top: 1%;
+}
+#register-send {
+  margin-right: 5%;
+}
+#profilePicture::after{
+    display: none;
 }
  /* footer */
 footer{
-  background-color: rgba(0,0,0,0.5) !important;
+  background-color: rgba(0, 0, 0, 0.8);
   color: #f1f1f1;
-/*   position: fixed;
+  /*   position: fixed;
   bottom: 1%;
   size: 50%;
   min-width: 10%;
@@ -375,9 +423,13 @@ footer{
 
 /*  LOGIN Y RECUPERAR CONTRASEÑA */
 
-.container{
+.container {
   height: 100%;
   align-content: center;
+}
+
+.card {
+  height: 400px;
   }
   
   .card{
@@ -385,103 +437,99 @@ footer{
   margin-top: auto;
   margin-bottom: auto;
   width: 400px;
-  background-color: rgba(0,0,0,0.5) !important;
+  background-color: rgba(0, 0, 0, 0.8) !important;
   text-align: center;
-  padding-top: 25px;
-  }
   
-  .social_icon span{
+  padding-top: 25px;
+}
+
+.social_icon span {
   font-size: 60px;
   margin-left: 10px;
-  color: #FFC312;
-  }
-  
-  .social_icon span:hover{
+  color: #ffc312;
+}
+
+.social_icon span:hover {
   color: white;
   cursor: pointer;
-  }
-  
-  
-  .infinity_icon span{
+}
+
+.infinity_icon span {
   font-size: 30px;
   margin-left: 10px;
-  color: #FFC312;
-  }
-      
-  .infinity_icon span:hover{
+  color: #ffc312;
+}
+
+.infinity_icon span:hover {
   color: white;
   cursor: pointer;
-  }
+}
 
   .card-header h3{
   color: white;
   margin-top: 20px;
   text-align: center;
-  }
-  
-  .social_icon{
+}
+
+.social_icon {
   position: absolute;
   right: 20px;
   top: -45px;
-  }
-  
-  .input-group-prepend span{
-    width: 50px;
-    background-color: #FFC312;
-    color: black;
-    border:0 !important;
-    }
-  
-  input:focus{
-  outline: 0 0 0 0  !important;
+}
+
+.input-group-prepend span {
+  width: 50px;
+  background-color: #ffc312;
+  color: black;
+  border: 0 !important;
+}
+
+input:focus {
+  outline: 0 0 0 0 !important;
   box-shadow: 0 0 0 0 !important;
-  
-  }
-  
-  .remember{
+}
+
+.remember {
   color: white;
-  }
-  
-  .remember input
-  {
+}
+
+.remember input {
   width: 20px;
   height: 20px;
   margin-left: 15px;
   margin-right: 5px;
-  }
-  
-  .login_btn{
+}
+
+.login_btn {
   color: black;
-  background-color: #FFC312;
+  background-color: #ffc312;
   width: 100px;
-  }
-  
-  .login_btn:hover{
+}
+
+.login_btn:hover {
   color: black;
   background-color: white;
-  }
-  
-  .links{
-  color: white;
-  }
-  
-  .links a{
-  margin-left: 4px;
-  }
+}
 
+.links {
+  color: white;
+}
+
+.links a {
+  margin-left: 4px;
+}
 
 /*MEDIA QUERY*/
-@media screen and (max-width:1020px) {
-  .menu-izquierdo{
+@media screen and (max-width: 1020px) {
+  .menu-izquierdo {
     display: none;
   }
 
-  .posibles-amigos{
+  .posibles-amigos {
     top: 30%;
     width: auto;
     height: auto;
     right: 25%;
-    background-color: rgb(170, 177, 213);
     display: grid;
     text-align: center;
     grid-template-columns: repeat(2, 1fr);
@@ -491,7 +539,7 @@ footer{
     align-items: center;
   }
 
-  .posibles-amigos .amigo img{
+  .posibles-amigos .amigo img {
     width: 40%;
     height: 40%;
   }
@@ -505,25 +553,24 @@ footer{
     display: flex;
     justify-content: space-between;
     padding: 10px;
-    background-color: white;
     border: 1px solid black;
     border-radius: 10px;
   }
 
-  .cuadro-logo{
+  .cuadro-logo {
     display: flex;
     margin: 0 5%;
     width: 50%;
     height: auto;
   }
 
-  .buscar-amigos{
+  .buscar-amigos {
     position: relative;
     width: auto;
     display: flex;
   }
 
-  .buscar-amigos i{
+  .buscar-amigos i {
     color: rgb(44, 58, 129);
     position: absolute;
     width: auto;
@@ -538,7 +585,7 @@ footer{
     display: none;
   }
 }
-@media screen and (max-width:650px) {
+@media screen and (max-width: 650px) {
   .buscar {
     position: absolute;
     top: 15%;
@@ -550,12 +597,11 @@ footer{
     display: inline-block;
     justify-content: space-between;
     padding: 10px;
-    background-color: white;
     border: 1px solid black;
     border-radius: 10px;
   }
 
-  .cuadro-logo{
+  .cuadro-logo {
     display: flex;
     margin: 0 5%;
     width: 90%;
@@ -563,29 +609,29 @@ footer{
     justify-content: center;
   }
 
-  .filtros a{
+  .filtros a {
     display: none;
-    }
+  }
 
-    .posibles-amigos{
-      position: absolute;
-      top: 35%;
-      width: auto;
-      height: auto;
-      right: 30%;
-      background-color: rgb(170, 177, 213);
-      display: grid;
-      text-align: center;
-      grid-template-columns: 1fr;
-      grid-template-rows: repeat(8, 1fr);
-      row-gap: 5%;
-      column-gap: 5%;
-      justify-content: center;
-      align-items: center;
-    }
+  .posibles-amigos {
+    position: absolute;
+    top: 35%;
+    width: auto;
+    height: auto;
+    right: 30%;
+    background-color: rgb(170, 177, 213);
+    display: grid;
+    text-align: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(8, 1fr);
+    row-gap: 5%;
+    column-gap: 5%;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .posibles-amigos .amigo img{
-      width: 20%;
-      height: 20%;
-    }
+  .posibles-amigos .amigo img {
+    width: 20%;
+    height: 20%;
+  }
 }

@@ -5,76 +5,108 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Perfil</title>
-     <!-- BOOTSTRAP CSS -->
-     <link
-     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-     rel="stylesheet"
-     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-     crossorigin="anonymous"
-   />
+    <!-- BOOTSTRAP CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
 
-   <!-- FONT AWESOME -->
-   <script
-     src="https://kit.fontawesome.com/43124feaf5.js"
-     crossorigin="anonymous"
-   ></script>
-   <!-- CSS STYLESHEETS (después de Bootstrap!)-->
-   <link rel="stylesheet" href="estilosPrincipal.css" />
+    <!-- FONT AWESOME -->
+    <script
+      src="https://kit.fontawesome.com/43124feaf5.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- CSS STYLESHEETS (después de Bootstrap!)-->
+    <link rel="stylesheet" href="estilosPrincipal.css" />
   </head>
   <body>
     <nav>
-        <!--BARRA DE NAVEGACIÓN-->
-        <div class="menu-principal">
-          <div class="logo" id="logo">
-            <img src="./img/logo2.png" alt="Logo" />
-          </div>
-          <div class="menu-bar" id="menuBar">
-            <div class="enlaces">
-              <div class="busqueda">
-                <div class="icono-input">
-                  <i class="fas fa-search" title="Configuración"></i>
-                  <input type="search" class="input" placeholder="Búsqueda..." />
-                </div>
+      <!--BARRA DE NAVEGACIÓN-->
+      <div class="menu-principal">
+        <div class="logo" id="logo">
+          <img src="./img/logo2.png" alt="Logo" />
+        </div>
+        <div class="menu-bar" id="menuBar">
+          <div class="enlaces">
+            <div class="busqueda">
+              <div class="icono-input">
+                <i class="fas fa-search" title="Configuración"></i>
+                <input type="search" class="input" placeholder="Búsqueda..." />
               </div>
             </div>
-            <div class="opciones">
-              <a href="" title="Mensajes"
-                ><span class="fa fa-comment-dots icon"></span
-              ></a>
-              <a href="" title="Notificaciones"
-                ><span class="fas fa-bell icon"></span
-              ></a>
-              <a href="" title="Mi perfil"><span class="fa fa-user icon"></span></a>
-              <a href="" title="Configuración"><span class="fa fa-cog icon"></span></a>
-            </div>
+          </div>
+          <div class="opciones">
+            <a href="" title="Mensajes"
+              ><span class="fa fa-comment-dots icon"></span
+            ></a>
+            <a href="" title="Notificaciones"
+              ><span class="fas fa-bell icon"></span
+            ></a>
+            <a href="" title="Mi perfil"
+              ><span class="fa fa-user icon"></span
+            ></a>
+            <a href="" title="Configuración"
+              ><span class="fa fa-cog icon"></span
+            ></a>
           </div>
         </div>
-      </nav>
-      <main>
+      </div>
+    </nav>
+    <main>
       <!--Menu lateral izquierda-->
       <div class="menu-izquierdo">
-        <div class="menu idiomas">
-          <h4>IDIOMAS<i class="fa-solid fa-language icon" title="Idiomas"></i></h4>
-
+        <div class="menu grupos">
+          <h4>
+            <i class="fa-solid fa-user-graduate icon" title="Formacion"></i>
+            FORMACION
+          </h4>
           <ul>
-            <li>
-              Español
-              <p>Nativo</p>
-            </li>
+            <a>
+              Tecla Coding Academy
+              <p>Full Stack</p>
+            </a>
 
-            <li>
-              Inglés
-              <p>Intermedio</p>
-            </li>
+            <a>
+              Google Summer Camp
+              <p>Front Deveplopment</p>
+            </a>
 
-            <li>
-              Italiano
-              <p>Básico</p>
-            </li>
+            <a>
+              Udemy
+              <p>Graphic Design</p>
+            </a>
           </ul>
         </div>
-        <div class="menu herramientas">
-          <h4>HERRAMIENTAS <i class="fa-solid fa-computer icon" title="Herramientas"></i></h4>
+        <div class="menu idiomas">
+          <h4>
+            <i class="fa-solid fa-language icon" title="Idiomas"></i>
+            IDIOMAS
+          </h4>
+
+          <ul>
+            <a>
+              Español
+              <p>Nativo</p>
+            </a>
+
+            <a>
+              Inglés
+              <p>Intermedio</p>
+            </a>
+
+            <a>
+              Italiano
+              <p>Básico</p>
+            </a>
+          </ul>
+        </div>
+        <div class="menu tecnicas">
+          <h4>
+            <i class="fa-solid fa-computer icon" title="Técnicas"></i>
+            TÉCNICAS
+          </h4>
           <ul>
             <li>HTML & CSS</li>
             <li>Javascript</li>
@@ -86,9 +118,17 @@
       <!--Contenido-->
       <div class="centro">
         <div class="menu">
-          <div class="perfil-usuario"></div>
-          <h2>Pepito Perez <button class="btn btn-warning btn-sm">Añadir +</button></h2>
-          <div class="autor">
+          <div class="personal-details"><div>
+          <h2>
+            Pepito Perez
+            <button class="btn btn-warning btn-sm">Añadir +</button>
+          </h2></div>
+          <div>
+            <h5>Pamplona, España</h5>
+            <h5>05/10/1995</h5>
+          </div>
+        </div>
+          <div class="perfil-usuario">
             <img
               src="img/avatares/pepito.png"
               alt="avatar"
@@ -103,36 +143,37 @@
           </div>
         </div>
 
-        <div class="publicacion-muro">
+        <div class="hoja-vida">
           <h4>HOJA DE VIDA</h4>
+          <p>Lugar de trabajo | Fecha</p>
           <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta,
             velit, suscipit ratione dolore, quibusdam praesentium at amet
             adipisci nihil similique tempore aspernatur? Nulla officiis veniam
             possimus repudiandae enim! Est, cumque.
           </p>
-
+          <p>Lugar de trabajo | Fecha</p>
           <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta,
             velit, suscipit ratione dolore, quibusdam praesentium at amet
             adipisci nihil similique tempore aspernatur? Nulla officiis veniam
             possimus repudiandae enim! Est, cumque.
           </p>
-
+          <p>Lugar de trabajo | Fecha</p>
           <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta,
             velit, suscipit ratione dolore, quibusdam praesentium at amet
             adipisci nihil similique tempore aspernatur? Nulla officiis veniam
             possimus repudiandae enim! Est, cumque.
           </p>
-
+          <p>Lugar de trabajo | Fecha</p>
           <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta,
             velit, suscipit ratione dolore, quibusdam praesentium at amet
             adipisci nihil similique tempore aspernatur? Nulla officiis veniam
             possimus repudiandae enim! Est, cumque.
           </p>
-
+          <p>Lugar de trabajo | Fecha</p>
           <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta,
             velit, suscipit ratione dolore, quibusdam praesentium at amet
@@ -144,28 +185,23 @@
 
       <!--Menu lateral derecha-->
       <div class="menu-derecho">
-        <div class="menu grupos">
-          <h4>FORMACION <i class="fa-solid fa-user-graduate icon" title="Formacion"></i></h4>
+        <div class="menu contacto">
+          <h4>
+            <i class="fa-solid fa-phone icon" title="Contacto"></i>
+            CONTACTO
+          </h4>
+
           <ul>
-            <li>
-              Tecla Coding Academy
-              <p>Full Stack</p>
-            </li>
-
-            <li>
-              Google Summer Camp
-              <p>Front Deveplopment</p>
-            </li>
-
-            <li>
-              Udemy
-              <p>Graphic Design</p>
-            </li>
+            <li>pepito27@gmail.com</li>
+            <li>612345678</li>
+            <a href="https://www.facebook.com/" class="fa-brands fa-facebook icon" title="Facebook"></a>
+            <a href="https://www.linkedin.com/feed/" class="fa-brands fa-linkedin icon" title="Linkedin"></a>
+            <a href="https://github.com/" class="fa-brands fa-github icon" title="GitHub"></a>
           </ul>
         </div>
 
         <div class="menu solicitudes">
-          <h4>INTERESES <i class="fa-solid fa-person-walking icon"></i></h4>
+          <h4><i class="fa-solid fa-person-walking icon"></i>INTERESES</h4>
           <ul>
             <li>Deporte</li>
             <li>Camping</li>
