@@ -101,7 +101,7 @@ body {
 }
 
 /*Menu lateral izquierda*/
-.menu-left {
+.menu-izquierdo {
   position: absolute;
   width: 20%;
   height: 60%;
@@ -110,7 +110,7 @@ body {
 }
 
 /*Menu lateral derecha*/
-.menu-right {
+.menu-derecho {
   position: absolute;
   width: 20%;
   height: 60%;
@@ -118,7 +118,7 @@ body {
   right: 2%;
 }
 
-.profile {
+.perfil {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -130,11 +130,11 @@ body {
   justify-content: space-between;
 }
 
-.profile .avatar-profile {
+.perfil .avatar-perfil {
   width: 100%;
 }
-/* inglés revisado hasta aquí */
-.profile-usuario {
+
+.perfil-usuario {
   display: inline-flex;
   align-items: center;
 }
@@ -152,7 +152,7 @@ li img {
   margin-right: 15px;
 }
 
-/* Menus profiles */
+/* Menus perfils */
 .menu a {
   font-weight: 700;
 }
@@ -327,7 +327,7 @@ margin-bottom: 5%;
   cursor: pointer;
 }
 
-.avatar-profile {
+.avatar-perfil {
   box-sizing: content-box;
   width: 30%;
 }
@@ -434,9 +434,8 @@ margin-bottom: 5%;
 #profilePicture::after{
     display: none;
 }
-
-/* footer */
-footer {
+ /* footer */
+footer{
   background-color: rgba(0, 0, 0, 0.8);
   color: #f1f1f1;
   /*   position: fixed;
@@ -486,6 +485,7 @@ footer {
   width: 400px;
   background-color: rgba(0, 0, 0, 0.8) !important;
   text-align: center;
+  
   padding-top: 25px;
 }
 
@@ -511,7 +511,7 @@ footer {
   cursor: pointer;
 }
 
-.card-header h4 {
+  .card-header h3{
   color: white;
   margin-top: 20px;
   text-align: center;
