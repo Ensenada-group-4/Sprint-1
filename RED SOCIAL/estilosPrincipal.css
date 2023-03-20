@@ -100,22 +100,9 @@ body {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-/*Menu lateral izquierda*/
-.menu-izquierdo {
-  position: absolute;
-  width: 20%;
-  height: 60%;
-  top: 15%;
-  left: 2%;
-}
-
-/*Menu lateral derecha*/
-.menu-derecho {
-  position: absolute;
-  width: 20%;
-  height: 60%;
-  top: 15%;
-  right: 2%;
+.container-fluid{
+  margin-top: 10%;
+  margin-bottom: 10%;  
 }
 
 .perfil {
@@ -660,8 +647,7 @@ input:focus {
     top: 35%;
     width: auto;
     height: auto;
-    right: 30%;
-    background-color: rgb(170, 177, 213);
+    right: 30%;   
     display: grid;
     text-align: center;
     grid-template-columns: 1fr;
