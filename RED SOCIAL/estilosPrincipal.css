@@ -214,6 +214,10 @@ a p {
   font-size: 30px;
 }
 
+.busqueda input[type="search"] {
+  width: 400px; 
+}
+
 /*Menu amigos*/
 
 /*antiguo, pero aun popdría ser util
