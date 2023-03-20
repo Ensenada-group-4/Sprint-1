@@ -19,7 +19,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 12%;
+  height: 14%;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 1;
 }
@@ -44,8 +44,7 @@ body {
 }
 
 .busqueda {
-  display: inline-block;
-  padding: 0 20%;
+  display: flex;
   margin-top: 3%;
 }
 
@@ -320,10 +319,10 @@ a p {
 
 .logo-principal {
   width: 60px;
-  border-radius: 50%;
+  border-radius: 30%;
   position: fixed;
   right: 91%;
-  top: 3%;
+  top: 4%;
   transform: translate(-50%, -50%);
 }
 .logo {
