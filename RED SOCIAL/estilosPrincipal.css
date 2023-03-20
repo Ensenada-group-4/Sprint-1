@@ -28,10 +28,10 @@ body {
   width: 100px;
   padding: 0 20%;
 }
-.icons-nav{
+.icons-nav {
   position: fixed;
-  top: 4%; 
-  left: 90%; 
+  top: 4%;
+  left: 90%;
   transform: translate(-50%, -50%);
 }
 
@@ -165,8 +165,8 @@ a p {
   position: fixed;
   top: 15%;
   width: 70%;
-  height: auto; 
-  left: 15%; 
+  height: auto;
+  left: 15%;
   text-align: center;
   display: flex;
   justify-content: space-between;
@@ -185,14 +185,15 @@ a p {
   position: relative;
   width: 271px;
   display: flex;
+  right: 3%;
 }
 
 .buscar-amigos i {
-  color: #b17aa2;
-  position: fixed;
-  width: 20px;
-  height: 20px;
-  right: 30px;
+  color: #b17aa2; 
+  position: absolute;
+  width: auto;
+  height: auto;
+  right: 2%;
   top: 50%;
   transform: translateY(-40%);
   transition: all 0.5s;
@@ -215,7 +216,7 @@ a p {
 }
 
 .busqueda input[type="search"] {
-  width: 400px; 
+  width: 400px;
 }
 
 /*Menu amigos*/
@@ -228,7 +229,7 @@ a p {
   transform: translateX(
     -50%
   ); /* propiedad transform para reescalar elementos + función translateX para mover el elemento horizontalmente hacia la izquierda en un 50% de su propio ancho */
- /* width: 80%;
+/* width: 80%;
   display: grid;
   text-align: center;
   grid-template-columns: repeat(4, 1fr);
@@ -239,25 +240,22 @@ a p {
   justify-content: center;
 } */
 
-.friends-cont{
-margin-top: 15%;
-margin-bottom: 5%;
-}
-.friends-row{
+.friends-cont {
+  margin-top: 15%;
   margin-bottom: 5%;
 }
-.friend-images {
-  width: 50%;
-  height: 50%;
-}
-.friend-box {
-  border: 2px solid black;
-  border-radius: 45px;
-  background-color: rgba(0, 0, 0, 0.8);
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
+.friends-row {
+  margin-bottom: 5%;
 }
 
+.friend-images {
+  width: 80%;
+}
+.friend-box {
+  background-color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  border: 2px solid #ffc312;
+}
 
 /* NUEVA PUBLICACION */
 
@@ -278,7 +276,6 @@ margin-bottom: 5%;
   margin: 1% 10%;
 }
 
-
 /* PUBLICACIONES */
 
 .centro {
@@ -291,7 +288,8 @@ margin-bottom: 5%;
   text-align: justify;
 }
 
-.publicacion-muro, .hoja-vida{
+.publicacion-muro,
+.hoja-vida {
   padding: 3%;
   border: 1px solid black;
   border-radius: 10px;
@@ -336,7 +334,7 @@ margin-bottom: 5%;
   width: 60px;
   border-radius: 50%;
   position: fixed;
-  right: 91%; 
+  right: 91%;
   top: 3%;
   transform: translate(-50%, -50%);
 }
@@ -410,14 +408,12 @@ margin-bottom: 5%;
 .registro-nuevo-usuario {
   text-align: center;
   margin-top: 30px;
-  font-family: Arial, Helvetica, sans-serif;
   color: white;
 }
 .form-group {
   color: #ccc;
 }
 #form-register {
-  font-family: Arial, Helvetica, sans-serif;
   background-color: rgba(0, 0, 0, 0.8);
   text-align: center;
   align-items: center;
@@ -431,11 +427,11 @@ margin-bottom: 5%;
 #register-send {
   margin-right: 5%;
 }
-#profilePicture::after{
-    display: none;
+#profilePicture::after {
+  display: none;
 }
- /* footer */
-footer{
+/* footer */
+footer {
   background-color: rgba(0, 0, 0, 0.8);
   color: #f1f1f1;
   /*   position: fixed;
@@ -455,16 +451,16 @@ footer{
 
 .card {
   height: 400px;
-  }
-  
-  .card{
+}
+
+.card {
   height: 420px;
   margin-top: auto;
   margin-bottom: auto;
   width: 400px;
   background-color: rgba(0, 0, 0, 0.8) !important;
   text-align: center;
-  
+
   padding-top: 25px;
 }
 
@@ -490,7 +486,7 @@ footer{
   cursor: pointer;
 }
 
-  .card-header h3{
+.card-header h3 {
   color: white;
   margin-top: 20px;
   text-align: center;
