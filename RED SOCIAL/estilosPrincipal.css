@@ -19,7 +19,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 14%;
+  height: 12%;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 1;
 }
@@ -27,12 +27,11 @@ body {
 .logo img {
   width: 100px;
   padding: 0 20%;
-  margin-top: 10%;
 }
-.icons-nav {
+.icons-nav{
   position: fixed;
-  top: 4%;
-  left: 90%;
+  top: 4%; 
+  left: 90%; 
   transform: translate(-50%, -50%);
 }
 
@@ -44,7 +43,8 @@ body {
 }
 
 .busqueda {
-  display: flex;
+  display: inline-block;
+  padding: 0 20%;
   margin-top: 3%;
 }
 
@@ -100,7 +100,7 @@ body {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-.container-fluid{
+.container-fluid.main-structure{
   margin-top: 10%;
   margin-bottom: 10%;  
 }
