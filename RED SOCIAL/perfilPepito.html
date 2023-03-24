@@ -22,41 +22,92 @@
     <link rel="stylesheet" href="estilosPrincipal.css" />
   </head>
   <body>
-    <nav>
-      <!--BARRA DE NAVEGACIÓN-->
-      <div class="menu-principal">
-        <div class="logo" id="logo">
-          <img src="./img/logo2.png" alt="Logo" />
+   <!--BARRA DE NAVEGACIÓN-->
+   <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <div class="row menu-principal">
+        <div class="col-1">
+          <!-- Logo -->
+          <a class="navbar-brand" href="#">
+            <img src="./img/logo2.png" alt="Logo" class="logo-principal" />
+          </a>
         </div>
-        <div class="menu-bar" id="menuBar">
-          <div class="enlaces">
-            <div class="busqueda">
-              <div class="icono-input">
-                <i class="fas fa-search" title="Configuración"></i>
-                <input type="search" class="input" placeholder="Búsqueda..." />
-              </div>
-            </div>
-          </div>
-          <div class="opciones">
-            <a href="" title="Mensajes"
-              ><span class="fa fa-comment-dots icon"></span
-            ></a>
-            <a href="" title="Notificaciones"
-              ><span class="fas fa-bell icon"></span
-            ></a>
-            <a href="" title="Mi perfil"
-              ><span class="fa fa-user icon"></span
-            ></a>
-            <a href="" title="Configuración"
-              ><span class="fa fa-cog icon"></span
-            ></a>
+        <div class="col-7 busqueda">
+          <!-- Menú de búsqueda -->
+          <form class="d-flex">
+            <input
+              class="form-control me-2 input"
+              type="search"
+              placeholder="Búsqueda..."
+              aria-label="Buscar"
+              size="50"
+            />
+          </form>
+        </div>
+
+        <div class="col-3">
+          <!-- hamburguesa -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 icons-nav">
+              <!-- Mensajes -->
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">
+                  <span
+                    class="fa fa-comment-dots icon"
+                    title="Mensajes"
+                  ></span>
+                </a>
+              </li>
+              <!-- Notificaciones -->
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">
+                  <span
+                    class="fas fa-bell icon"
+                    title="Notificaciones"
+                  ></span>
+                </a>
+              </li>
+              <!-- Perfil -->
+              <li>
+                <a class="nav-link active" aria-current="page" href="#">
+                  <span class="fa fa-user icon" title="Mi Perfil"></span
+                ></a>
+              </li>
+              <!-- Configuración -->
+              <li>
+                <a class="dropdown-item" href="#">
+                  <span class="fa fa-cog icon" title="Configuración"></span
+                ></a>
+              </li>
+              <!-- Logout -->
+              <li>
+                <a class="dropdown-item" href="/logout">
+                  <span
+                    class="fas fa-sign-out-alt icon"
+                    title="Desconectarse"
+                  ></span>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-    </nav>
+    </div>
+  </nav>
     <main>
       <!--Menu lateral izquierda-->
-      <div class="container-fluid">
+      <div class="container-fluid main-structure">
         <div class="row">
           <div class="col-sm-5 col-md-4 col-lg-3">
             <div class="menu grupos">
