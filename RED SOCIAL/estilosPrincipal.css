@@ -19,7 +19,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 14%;
+  height: 20%;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 1;
 }
@@ -27,12 +27,11 @@ body {
 .logo img {
   width: 100px;
   padding: 0 20%;
-  margin-top: 10%;
 }
-.icons-nav {
+.icons-nav{
   position: fixed;
-  top: 4%;
-  left: 90%;
+  top: 4%; 
+  left: 90%; 
   transform: translate(-50%, -50%);
 }
 
@@ -44,7 +43,8 @@ body {
 }
 
 .busqueda {
-  display: flex;
+  display: inline-block;
+  padding: 0 20%;
   margin-top: 3%;
 }
 
@@ -100,8 +100,8 @@ body {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-.container-fluid{
-  margin-top: 10%;
+.container-fluid.main-structure{
+  margin-top: 7%;
   margin-bottom: 10%;  
 }
 
@@ -168,19 +168,17 @@ a p {
   margin: 0 5%;
 }
 
-.buscar-amigos {
-  position: relative;
-  width: 271px;
-  display: flex;
-  right: 3%;
+.buscar-input {  
+  width: 25%;
+  
 }
 
-.buscar-amigos i {
+.buscar-input i {
   color: #b17aa2; 
-  position: absolute;
+  position:absolute;
   width: auto;
   height: auto;
-  right: 2%;
+  left: 2%;
   top: 50%;
   transform: translateY(-40%);
   transition: all 0.5s;
@@ -591,13 +589,13 @@ input:focus {
     height: auto;
   }
 
-  .buscar-amigos {
+  .buscar-input {
     position: relative;
     width: auto;
     display: flex;
   }
 
-  .buscar-amigos i {
+  .buscar-input i {
     color: rgb(44, 58, 129);
     position: absolute;
     width: auto;
