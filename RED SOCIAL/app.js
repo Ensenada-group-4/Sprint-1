@@ -32,3 +32,14 @@ const botonCerrarRespuesta = document.getElementById("close-button");
   });
 
 };
+
+//boton de me gusta
+var buttonLike = document.getElementById("buttonLike");
+		var countLike = document.getElementById("countLike");
+
+		var count = 0;
+		buttonLike.addEventListener("click", 
+        function() {
+			count++;
+			countLike.innerHTML = count + " Me gusta";
+		});
