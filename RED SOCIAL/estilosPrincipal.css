@@ -435,10 +435,6 @@ footer {
   text-align: center;
   margin-top: 5%;
 }
-.container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
 
 #slogan-container h2 {
   font-size: 34px;
@@ -452,9 +448,11 @@ footer {
 #slogan-container h2:hover {
   transform: scale(1.1);
 }
-.container {
+.login-container{
   height: 100%;
   align-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .card {
