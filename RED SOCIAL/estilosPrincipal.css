@@ -304,7 +304,7 @@ a p {
 /* IMAGENES */
 
 .avatar {
-  width: 60px;
+  width: 80px;
   height: auto;
   align-items: center;
   cursor: pointer;
@@ -327,6 +327,7 @@ a p {
   width: 60px;
   margin: 10px 0;
   margin-right: 15px;
+  border-radius: 50%;
 }
 
 
@@ -435,10 +436,6 @@ footer {
   text-align: center;
   margin-top: 5%;
 }
-.container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
 
 #slogan-container h2 {
   font-size: 34px;
@@ -452,9 +449,11 @@ footer {
 #slogan-container h2:hover {
   transform: scale(1.1);
 }
-.container {
+.login-container{
   height: 100%;
   align-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .card {
