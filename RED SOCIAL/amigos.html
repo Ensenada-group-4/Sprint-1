@@ -22,21 +22,22 @@
     <link rel="stylesheet" href="estilosPrincipal.css" />
   </head>
   <body>
-     <!--BARRA DE NAVEGACIÓN-->
-     <nav class="navbar navbar-expand-lg">
+    <!--BARRA DE NAVEGACIÓN-->
+    <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
-        <div class="row menu-principal">
-          <div class="col-1">
-            <!-- Logo -->
+        <div class="row nav-body">
+          <!-- Logo -->
+          <div class="col">
             <a class="navbar-brand" href="#">
-              <img src="./img/logo2.png" alt="Logo" class="logo-principal" />
+              <img src="./img/logo2.png" alt="Logo" class="keybook-logo" />
             </a>
           </div>
-          <div class="col-7 busqueda">
-            <!-- Menú de búsqueda -->
+
+          <!-- Search bar -->
+          <div class="col-8 search-bar">
             <form class="d-flex">
               <input
-                class="form-control me-2 input"
+                class="form-control me-2 search-input"
                 type="search"
                 placeholder="Búsqueda..."
                 aria-label="Buscar"
@@ -45,8 +46,8 @@
             </form>
           </div>
 
-          <div class="col-3">
-            <!-- hamburguesa -->
+          <!-- Hamburger dropdown -->
+          <div class="col">
             <button
               class="navbar-toggler"
               type="button"
@@ -59,7 +60,7 @@
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0 icons-nav">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-icons">
                 <!-- Mensajes -->
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="#">
@@ -107,24 +108,20 @@
     </nav>
     <main>
       <!--Menu  búsqueda amigos-->
-      <div class="container">
+      <div class="container main-structure">
         <div class="row">
           <div class="col-sm-12 col-md-6 col-lg-6">
             <div class="contenedor-amigos">
-              <div class="buscar">
-                <div class="etiqueta">
-                  <label for=""><h4>AMIGOS</h4></label>
-                </div>
-                <div class="cuadro-logo">
-                  <div class="buscar-amigos">
-                    <!-- <i class="fas fa-search icon" title="Lupa"></i> -->
-                    <input
-                      type="search"
-                      class="input"
-                      placeholder="Busca aquí"
-                    />
-                  </div>
-                  <div class="filtros">
+              <div class="search-friends default-card">
+                <label for=""><h4>AMIGOS</h4></label>
+                <div class="search-friends-input">
+                  <!-- <i class="fas fa-search icon" title="Lupa"></i> -->
+                  <input
+                    type="search"
+                    class="search-input"
+                    placeholder="Busca aquí"
+                  />
+                  <div class="filter-icon">
                     <a href="" title="Filtros"
                       ><span class="fa fa-filter icon"></span
                     ></a>
@@ -136,43 +133,43 @@
         </div>
       </div>
       <!--Menu amigos-->
-      <div class="container friends-cont">
+      <div class="container main-structure">
         <div class="row friends-row">
-          <div class="col-sm-3 friend-box menu">
+          <div class="col-sm-3 friend-box default-card">
             <img
               src="./img/avatares/antonio.png"
               alt="Antonio"
-              class="friend-images"
+              class="friend-avatar"
             />
             <p>Antonio</p>
             <button class="btn btn-outline-warning btn-sm">Añadir</button>
             <a href="@antonio676">@antonio676</a>
           </div>
-          <div class="col-sm-3 friend-box menu">
+          <div class="col-sm-3 friend-box default-card">
             <img
               src="./img/avatares/adrian.png"
               alt="Adrian"
-              class="friend-images"
+              class="friend-avatar"
             />
             <p>Adrian</p>
             <button class="btn btn-outline-warning btn-sm">Añadir</button>
             <a href="@adrian">@adrian</a>
           </div>
-          <div class="col-sm-3 friend-box menu">
+          <div class="col-sm-3 friend-box default-card">
             <img
               src="./img/avatares/alicia.png"
               alt="Antonio"
-              class="friend-images"
+              class="friend-avatar"
             />
             <p>Alicia</p>
             <button class="btn btn-outline-warning btn-sm">Añadir</button>
             <a href="@antonio676">@antonio676</a>
           </div>
-          <div class="col-sm-3 friend-box menu">
+          <div class="col-sm-3 friend-box default-card">
             <img
               src="./img/avatares/cristina.png"
               alt="Antonio"
-              class="friend-images"
+              class="friend-avatar"
             />
             <p>Cristina</p>
             <button class="btn btn-outline-warning btn-sm">Añadir</button>
@@ -180,41 +177,41 @@
           </div>
         </div>
         <div class="row friends-row">
-          <div class="col-sm-3 friend-box menu">
+          <div class="col-sm-3 friend-box default-card">
             <img
               src="./img/avatares/jorge.png"
               alt="Antonio"
-              class="friend-images"
+              class="friend-avatar"
             />
             <p>Jorge</p>
             <button class="btn btn-outline-warning btn-sm">Añadir</button>
             <a href="@antonio676">@antonio676</a>
           </div>
-          <div class="col-sm-3 friend-box menu">
+          <div class="col-sm-3 friend-box default-card">
             <img
               src="./img/avatares/lucia.png"
               alt="Antonio"
-              class="friend-images"
+              class="friend-avatar"
             />
             <p>Lucia</p>
             <button class="btn btn-outline-warning btn-sm">Añadir</button>
             <a href="@antonio676">@antonio676</a>
           </div>
-          <div class="col-sm-3 friend-box menu">
+          <div class="col-sm-3 friend-box default-card">
             <img
               src="./img/avatares/lupita.png"
               alt="Antonio"
-              class="friend-images"
+              class="friend-avatar"
             />
             <p>Lupita</p>
             <button class="btn btn-outline-warning btn-sm">Añadir</button>
             <a href="@antonio676">@antonio676</a>
           </div>
-          <div class="col-sm-3 friend-box menu">
+          <div class="col-sm-3 friend-box default-card">
             <img
               src="./img/avatares/rafael.png"
               alt="Antonio"
-              class="friend-images"
+              class="friend-avatar"
             />
             <p>Rafael</p>
             <button class="btn btn-outline-warning btn-sm">Añadir</button>

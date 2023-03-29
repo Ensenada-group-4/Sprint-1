@@ -26,18 +26,19 @@
     <!--BARRA DE NAVEGACIÓN-->
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
-        <div class="row menu-principal">
-          <div class="col-1">
-            <!-- Logo -->
+        <div class="row nav-body">
+          <!-- Logo -->
+          <div class="col">
             <a class="navbar-brand" href="#">
-              <img src="./img/logo2.png" alt="Logo" class="logo-principal" />
+              <img src="./img/logo2.png" alt="Logo" class="keybook-logo" />
             </a>
           </div>
-          <div class="col-7 busqueda">
-            <!-- Menú de búsqueda -->
+
+          <!-- Search bar -->
+          <div class="col-8 search-bar">
             <form class="d-flex">
               <input
-                class="form-control me-2 input"
+                class="form-control me-2 search-input"
                 type="search"
                 placeholder="Búsqueda..."
                 aria-label="Buscar"
@@ -46,8 +47,8 @@
             </form>
           </div>
 
-          <div class="col-3">
-            <!-- hamburguesa -->
+          <!-- Hamburger dropdown -->
+          <div class="col">
             <button
               class="navbar-toggler"
               type="button"
@@ -60,7 +61,7 @@
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0 icons-nav">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-icons">
                 <!-- Mensajes -->
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="#">
@@ -109,183 +110,188 @@
     <main>
       <!-- PERSONAL PROFILE -->
       <div id="cuenta">
-      <div class="container-fluid main-structure">
-        <div class="row">
-          <div class="col-sm-5 col-md-4 col-lg-3">
-            <div class="menu grupos">
-              <h4>
-                <i class="fa-solid fa-user-graduate icon" title="Formacion"></i>
-                FORMACION
-              </h4>
-              <ul>
-                <a>
-                  Tecla Coding Academy
-                  <p>Full Stack</p>
-                </a>
+        <div class="container-fluid main-structure">
+          <div class="row">
+            <div class="col-sm-5 col-md-4 col-lg-3">
+              <div class="default-card">
+                <h4>
+                  <i
+                    class="fa-solid fa-user-graduate icon"
+                    title="Formacion"
+                  ></i>
+                  FORMACION
+                </h4>
+                <ul>
+                  <a>
+                    Tecla Coding Academy
+                    <p>Full Stack</p>
+                  </a>
 
-                <a>
-                  Google Summer Camp
-                  <p>Front Deveplopment</p>
-                </a>
+                  <a>
+                    Google Summer Camp
+                    <p>Front Deveplopment</p>
+                  </a>
 
-                <a>
-                  Udemy
-                  <p>Graphic Design</p>
-                </a>
-              </ul>
-              <button class="btn btn-outline-warning btn-sm">Editar</button>
+                  <a>
+                    Udemy
+                    <p>Graphic Design</p>
+                  </a>
+                </ul>
+                <button class="btn btn-outline-warning btn-sm">Editar</button>
+              </div>
+              <div class="default-card idiomas">
+                <h4>
+                  <i class="fa-solid fa-language icon" title="Idiomas"></i>
+                  IDIOMAS
+                </h4>
+
+                <ul>
+                  <a>
+                    Español
+                    <p>Nativo</p>
+                  </a>
+
+                  <a>
+                    Inglés
+                    <p>Intermedio</p>
+                  </a>
+
+                  <a>
+                    Italiano
+                    <p>Básico</p>
+                  </a>
+                </ul>
+                <button class="btn btn-outline-warning btn-sm">Editar</button>
+              </div>
+              <div class="default-card tecnicas">
+                <h4>
+                  <i class="fa-solid fa-computer icon" title="Técnicas"></i>
+                  HABILIDADES
+                </h4>
+                <ul>
+                  <li>HTML & CSS</li>
+                  <li>Javascript</li>
+                  <li>Node.js</li>
+                </ul>
+                <button class="btn btn-outline-warning btn-sm">Editar</button>
+              </div>
             </div>
-            <div class="menu idiomas">
-              <h4>
-                <i class="fa-solid fa-language icon" title="Idiomas"></i>
-                IDIOMAS
-              </h4>
-
-              <ul>
-                <a>
-                  Español
-                  <p>Nativo</p>
-                </a>
-
-                <a>
-                  Inglés
-                  <p>Intermedio</p>
-                </a>
-
-                <a>
-                  Italiano
-                  <p>Básico</p>
-                </a>
-              </ul>
-              <button class="btn btn-outline-warning btn-sm">Editar</button>
-            </div>
-            <div class="menu tecnicas">
-              <h4>
-                <i class="fa-solid fa-computer icon" title="Técnicas"></i>
-                HABILIDADES
-              </h4>
-              <ul>
-                <li>HTML & CSS</li>
-                <li>Javascript</li>
-                <li>Node.js</li>
-              </ul>
-              <button class="btn btn-outline-warning btn-sm">Editar</button>
-            </div>
-          </div>
-          <div class="col-sm-7 col-md-7 col-lg-6">
-            <div class="menu">
-              <div class="personal-details">
-                <div>
-                  <h2>
-                    Alicia Gimenez
-                    <button class="btn btn-outline-warning">Editar</button>
-                  </h2>
+            <div class="col-sm-7 col-md-7 col-lg-6">
+              <div class="default-card">
+                <div class="profile-details">
+                  <div>
+                    <h2>
+                      Alicia Gimenez
+                      <button class="btn btn-outline-warning">Editar</button>
+                    </h2>
+                  </div>
+                  <div>
+                    <h5>Gijón, España</h5>
+                    <h5>18/04/1996</h5>
+                  </div>
                 </div>
-                <div>
-                  <h5>Gijón, España</h5>
-                  <h5>18/04/1996</h5>
+                <div class="user-bio">
+                  <img
+                    src="img/avatares/alicia.png"
+                    alt="avatar"
+                    class="avatar avatar-perfil"
+                  />
+                  <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Veritatis eaque repudiandae qui natus vero aspernatur labore
+                    ullam itaque ipsa architecto numquam quae quod debitis sit,
+                    culpa reprehenderit obcaecati! Recusandae, ea?
+                  </p>
                 </div>
               </div>
-              <div class="perfil-usuario">
-                <img
-                  src="img/avatares/alicia.png"
-                  alt="avatar"
-                  class="avatar avatar-perfil"
-                />
+              <div class="default-card">
+                <h4>
+                  EXPERIENCIA LABORAL
+                  <button class="btn btn-outline-warning btn-sm">Editar</button>
+                </h4>
+                <p>Lugar de trabajo | Fecha</p>
                 <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Veritatis eaque repudiandae qui natus vero aspernatur labore
-                  ullam itaque ipsa architecto numquam quae quod debitis sit,
-                  culpa reprehenderit obcaecati! Recusandae, ea?
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Dicta, velit, suscipit ratione dolore, quibusdam praesentium
+                  at amet adipisci nihil similique tempore aspernatur? Nulla
+                  officiis veniam possimus repudiandae enim! Est, cumque.
+                </p>
+                <p>Lugar de trabajo | Fecha</p>
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Dicta, velit, suscipit ratione dolore, quibusdam praesentium
+                  at amet adipisci nihil similique tempore aspernatur? Nulla
+                  officiis veniam possimus repudiandae enim! Est, cumque.
+                </p>
+                <p>Lugar de trabajo | Fecha</p>
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Dicta, velit, suscipit ratione dolore, quibusdam praesentium
+                  at amet adipisci nihil similique tempore aspernatur? Nulla
+                  officiis veniam possimus repudiandae enim! Est, cumque.
+                </p>
+                <p>Lugar de trabajo | Fecha</p>
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Dicta, velit, suscipit ratione dolore, quibusdam praesentium
+                  at amet adipisci nihil similique tempore aspernatur? Nulla
+                  officiis veniam possimus repudiandae enim! Est, cumque.
+                </p>
+                <p>Lugar de trabajo | Fecha</p>
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Dicta, velit, suscipit ratione dolore, quibusdam praesentium
+                  at amet adipisci nihil similique tempore aspernatur? Nulla
+                  officiis veniam possimus repudiandae enim! Est, cumque.
                 </p>
               </div>
             </div>
-            <div class="hoja-vida">
-              <h4>
-                EXPERIENCIA LABORAL
+            <div class="col-sm-5 col-md-4 col-lg-3">
+              <div class="default-card contacto">
+                <h4>
+                  <i class="fa-solid fa-phone icon" title="Contacto"></i>
+                  CONTACTO
+                </h4>
+                <ul>
+                  <li>alicia88@gmail.com</li>
+                  <li>654789123</li>
+                  <a
+                    href="https://www.facebook.com/"
+                    class="fa-brands fa-facebook icon"
+                    title="Facebook"
+                    target="”_blank”"
+                  ></a>
+                  <a
+                    href="https://www.linkedin.com/feed/"
+                    class="fa-brands fa-linkedin icon"
+                    title="Linkedin"
+                    target="”_blank”"
+                  ></a>
+                  <a
+                    href="https://github.com/"
+                    class="fa-brands fa-github icon"
+                    title="GitHub"
+                    target="”_blank”"
+                  ></a>
+                </ul>
                 <button class="btn btn-outline-warning btn-sm">Editar</button>
-              </h4>
-              <p>Lugar de trabajo | Fecha</p>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta,
-                velit, suscipit ratione dolore, quibusdam praesentium at amet
-                adipisci nihil similique tempore aspernatur? Nulla officiis
-                veniam possimus repudiandae enim! Est, cumque.
-              </p>
-              <p>Lugar de trabajo | Fecha</p>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta,
-                velit, suscipit ratione dolore, quibusdam praesentium at amet
-                adipisci nihil similique tempore aspernatur? Nulla officiis
-                veniam possimus repudiandae enim! Est, cumque.
-              </p>
-              <p>Lugar de trabajo | Fecha</p>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta,
-                velit, suscipit ratione dolore, quibusdam praesentium at amet
-                adipisci nihil similique tempore aspernatur? Nulla officiis
-                veniam possimus repudiandae enim! Est, cumque.
-              </p>
-              <p>Lugar de trabajo | Fecha</p>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta,
-                velit, suscipit ratione dolore, quibusdam praesentium at amet
-                adipisci nihil similique tempore aspernatur? Nulla officiis
-                veniam possimus repudiandae enim! Est, cumque.
-              </p>
-              <p>Lugar de trabajo | Fecha</p>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta,
-                velit, suscipit ratione dolore, quibusdam praesentium at amet
-                adipisci nihil similique tempore aspernatur? Nulla officiis
-                veniam possimus repudiandae enim! Est, cumque.
-              </p>
-            </div>
-          </div>
-          <div class="col-sm-5 col-md-4 col-lg-3">
-            <div class="menu contacto">
-              <h4>
-                <i class="fa-solid fa-phone icon" title="Contacto"></i>
-                CONTACTO
-              </h4>
-              <ul>
-                <li>alicia88@gmail.com</li>
-                <li>654789123</li>
-                <a
-                  href="https://www.facebook.com/"
-                  class="fa-brands fa-facebook icon"
-                  title="Facebook"
-                  target="”_blank”"
-                ></a>
-                <a
-                  href="https://www.linkedin.com/feed/"
-                  class="fa-brands fa-linkedin icon"
-                  title="Linkedin"
-                  target="”_blank”"
-                ></a>
-                <a
-                  href="https://github.com/"
-                  class="fa-brands fa-github icon"
-                  title="GitHub"
-                  target="”_blank”"
-                ></a>
-              </ul>
-              <button class="btn btn-outline-warning btn-sm">Editar</button>
-            </div>
+              </div>
 
-            <div class="menu solicitudes">
-              <h4><i class="fa-solid fa-person-walking icon"></i>INTERESES</h4>
-              <ul>
-                <li>Deporte</li>
-                <li>Tecnología</li>
-                <li>Economía</li>
-              </ul>
-              <button class="btn btn-outline-warning btn-sm">Editar</button>
+              <div class="default-card">
+                <h4>
+                  <i class="fa-solid fa-person-walking icon"></i>INTERESES
+                </h4>
+                <ul>
+                  <li>Deporte</li>
+                  <li>Tecnología</li>
+                  <li>Economía</li>
+                </ul>
+                <button class="btn btn-outline-warning btn-sm">Editar</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
       <button id="eliminar-cuenta">Eliminar cuenta</button>
       <script src="deleteAccount.js"></script>
     </main>

@@ -22,95 +22,96 @@
     <link rel="stylesheet" href="estilosPrincipal.css" />
   </head>
   <body>
-   <!--BARRA DE NAVEGACIÓN-->
-   <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-      <div class="row menu-principal">
-        <div class="col-1">
+    <!--BARRA DE NAVEGACIÓN-->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <div class="row nav-body">
           <!-- Logo -->
-          <a class="navbar-brand" href="#">
-            <img src="./img/logo2.png" alt="Logo" class="logo-principal" />
-          </a>
-        </div>
-        <div class="col-7 busqueda">
-          <!-- Menú de búsqueda -->
-          <form class="d-flex">
-            <input
-              class="form-control me-2 input"
-              type="search"
-              placeholder="Búsqueda..."
-              aria-label="Buscar"
-              size="50"
-            />
-          </form>
-        </div>
+          <div class="col">
+            <a class="navbar-brand" href="#">
+              <img src="./img/logo2.png" alt="Logo" class="keybook-logo" />
+            </a>
+          </div>
 
-        <div class="col-3">
-          <!-- hamburguesa -->
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 icons-nav">
-              <!-- Mensajes -->
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">
-                  <span
-                    class="fa fa-comment-dots icon"
-                    title="Mensajes"
-                  ></span>
-                </a>
-              </li>
-              <!-- Notificaciones -->
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">
-                  <span
-                    class="fas fa-bell icon"
-                    title="Notificaciones"
-                  ></span>
-                </a>
-              </li>
-              <!-- Perfil -->
-              <li>
-                <a class="nav-link active" aria-current="page" href="#">
-                  <span class="fa fa-user icon" title="Mi Perfil"></span
-                ></a>
-              </li>
-              <!-- Configuración -->
-              <li>
-                <a class="dropdown-item" href="#">
-                  <span class="fa fa-cog icon" title="Configuración"></span
-                ></a>
-              </li>
-              <!-- Logout -->
-              <li>
-                <a class="dropdown-item" href="/logout">
-                  <span
-                    class="fas fa-sign-out-alt icon"
-                    title="Desconectarse"
-                  ></span>
-                </a>
-              </li>
-            </ul>
+          <!-- Search bar -->
+          <div class="col-8 search-bar">
+            <form class="d-flex">
+              <input
+                class="form-control me-2 search-input"
+                type="search"
+                placeholder="Búsqueda..."
+                aria-label="Buscar"
+                size="50"
+              />
+            </form>
+          </div>
+
+          <!-- Hamburger dropdown -->
+          <div class="col">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-icons">
+                <!-- Mensajes -->
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">
+                    <span
+                      class="fa fa-comment-dots icon"
+                      title="Mensajes"
+                    ></span>
+                  </a>
+                </li>
+                <!-- Notificaciones -->
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">
+                    <span
+                      class="fas fa-bell icon"
+                      title="Notificaciones"
+                    ></span>
+                  </a>
+                </li>
+                <!-- Perfil -->
+                <li>
+                  <a class="nav-link active" aria-current="page" href="#">
+                    <span class="fa fa-user icon" title="Mi Perfil"></span
+                  ></a>
+                </li>
+                <!-- Configuración -->
+                <li>
+                  <a class="dropdown-item" href="#">
+                    <span class="fa fa-cog icon" title="Configuración"></span
+                  ></a>
+                </li>
+                <!-- Logout -->
+                <li>
+                  <a class="dropdown-item" href="/logout">
+                    <span
+                      class="fas fa-sign-out-alt icon"
+                      title="Desconectarse"
+                    ></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </nav>
+    </nav>
     <main>
       <!--Menu lateral izquierda-->
       <div class="container-fluid main-structure">
         <div class="row">
           <div class="col-sm-5 col-md-4 col-lg-3">
-            <div class="menu grupos">
+            <div class="default-card ">
               <h4>
                 <i class="fa-solid fa-user-graduate icon" title="Formacion"></i>
                 FORMACION
@@ -132,7 +133,7 @@
                 </a>
               </ul>
             </div>
-            <div class="menu idiomas">
+            <div class="default-card idiomas">
               <h4>
                 <i class="fa-solid fa-language icon" title="Idiomas"></i>
                 IDIOMAS
@@ -155,7 +156,7 @@
                 </a>
               </ul>
             </div>
-            <div class="menu tecnicas">
+            <div class="default-card tecnicas">
               <h4>
                 <i class="fa-solid fa-computer icon" title="Técnicas"></i>
                 HABILIDADES
@@ -170,8 +171,8 @@
 
           <!--Contenido-->
           <div class="col-sm-7 col-md-7 col-lg-6">
-            <div class="menu">
-              <div class="personal-details">
+            <div class="default-card">
+              <div class="profile-details">
                 <div>
                   <h2>
                     Pepito Perez
@@ -183,7 +184,7 @@
                   <h5>05/10/1995</h5>
                 </div>
               </div>
-              <div class="perfil-usuario">
+              <div class="user-bio">
                 <img
                   src="img/avatares/pepito.png"
                   alt="avatar"
@@ -198,7 +199,7 @@
               </div>
             </div>
 
-            <div class="hoja-vida">
+            <div class="default-card">
               <h4>EXPERIENCIA LABORAL</h4>
               <p>Lugar de trabajo | Fecha</p>
               <p>
@@ -239,7 +240,7 @@
           </div>
 
           <div class="col-sm-5 col-md-4 col-lg-3">
-            <div class="menu contacto">
+            <div class="default-card contacto">
               <h4>
                 <i class="fa-solid fa-phone icon" title="Contacto"></i>
                 CONTACTO
@@ -269,7 +270,7 @@
               </ul>
             </div>
 
-            <div class="menu solicitudes">
+            <div class="default-card solicitudes">
               <h4><i class="fa-solid fa-person-walking icon"></i>INTERESES</h4>
               <ul>
                 <li>Deporte</li>
