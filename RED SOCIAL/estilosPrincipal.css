@@ -3,7 +3,6 @@ body {
   overflow-y: auto;
   color: rgb(44, 58, 129);
   background-image: url("https://images.unsplash.com/photo-1468276311594-df7cb65d8df6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");
-  background-attachment: fixed;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -12,58 +11,44 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+input {
+  background-color: aliceblue;
+}
+
 /* BARRA DE NAVEGACION */
-.menu-principal {
+.nav-body {
   position: fixed;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
   height: 20%;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 1;
 }
 
-.logo img {
-  width: 100px;
-  padding: 0 20%;
-}
-.icons-nav{
+.keybook-logo {
+  width: 60px;
+  border-radius: 30%;
   position: fixed;
-  top: 4%; 
-  left: 90%; 
+  right: 91%;
+  top: 4%;
   transform: translate(-50%, -50%);
 }
 
-.menu-bar {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  padding: 0 5%;
-}
-
-.busqueda {
-  display: inline-block;
+.search-bar {
   padding: 0 20%;
   margin-top: 3%;
 }
 
-.icono-input {
-  position: relative;
-  width: 271px;
-}
-
-.input {
-  box-sizing: border-box;
+.search-input {
   padding: 10px 10px 10px 35px;
-  width: 100%;
   border-radius: 10px;
   border: 2px solid #b17aa2;
   cursor: pointer;
   background-color: aliceblue;
 }
 
-.icono-input i {
+/* TODO: SI AÑADIMOS LA LUPA MÁS ADELANTE */
+/* .search-icon i {
   color: #b17aa2;
   position: absolute;
   width: 20px;
@@ -74,14 +59,20 @@ body {
   transition: all 0.5s;
 }
 
-.icono-input i:hover {
+.search-icon i:hover {
   color: lightskyblue;
+} */
+
+.nav-icons {
+  position: fixed;
+  top: 4%;
+  left: 90%;
+  transform: translate(-50%, -50%);
 }
 
 .icon {
   font-size: 25px;
   padding: 0 10px;
-  text-decoration: none;
   color: #ffc312;
   transition: all 0.5s;
 }
@@ -90,38 +81,32 @@ body {
   color: lightskyblue;
 }
 
-/* CAJAS MENUS */
+/* DEFAULT CARDS */
 
-.menu {
-  color: aliceblue;
+.default-card {
   padding: 5%;
   border-radius: 10px;
   margin: 0 0 10px;
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-.container-fluid.main-structure{
+/* MAIN PAGE */
+.main-structure {
   margin-top: 7%;
-  margin-bottom: 10%;  
+  margin-bottom: 10%;
 }
 
-.perfil {
+.profile-index {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 5%;
 }
 
-.personal-details {
+.profile-details {
   display: flex;
   justify-content: space-between;
 }
 
-.perfil .avatar-perfil {
-  width: 100%;
-}
-
-.perfil-usuario {
+.user-bio {
   display: inline-flex;
   align-items: center;
 }
@@ -129,184 +114,15 @@ body {
 li {
   list-style-type: none;
   font-weight: bold;
-  color: aliceblue;
   margin: 15px 0;
   display: flex;
   align-items: center;
 }
 
-li img {
-  margin-right: 15px;
-}
-
-/* Menus perfils */
-.menu a {
-  font-weight: 700;
-}
-a p {
-  font-weight: 400;
-}
-
-/*Menu busqueda amigos*/
-.buscar {
-  position: fixed;
-  top: 15%;
-  width: 70%;
-  height: auto;
-  left: 15%;
-  text-align: center;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  background-color: rgba(0, 0, 0, 0.8);
-  border-radius: 10px;
-  color: aliceblue;
-}
-
-.cuadro-logo {
-  display: flex;
-  margin: 0 5%;
-}
-
-.buscar-input {  
-  width: 25%;
-  
-}
-
-.buscar-input i {
-  color: #b17aa2; 
-  position:absolute;
-  width: auto;
-  height: auto;
-  left: 2%;
-  top: 50%;
-  transform: translateY(-40%);
-  transition: all 0.5s;
-}
-
-.filtros a {
-  color: #ffc312;
-  position: absolute;
-  width: auto;
-  height: auto;
-  right: 2%;
-  top: 50%;
-  transform: translateY(-40%);
-  transition: all 0.5s;
-}
-
-.buscar .etiqueta {
-  font-weight: 700;
-  font-size: 30px;
-}
-
-.busqueda input[type="search"] {
-  width: 400px;
-}
-
-/*Menu amigos*/
-
-/*antiguo, pero aun popdría ser util
-.posibles-amigos {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translateX(
-    -50%
-  ); /* propiedad transform para reescalar elementos + función translateX para mover el elemento horizontalmente hacia la izquierda en un 50% de su propio ancho */
-/* width: 80%;
-  display: grid;
-  text-align: center;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  row-gap: 5%;
-  column-gap: 5%;
-  align-items: auto;
-  justify-content: center;
-} */
-
-.friends-cont {
-  margin-top: 15%;
-  margin-bottom: 5%;
-}
-.friends-row {
-  margin-bottom: 5%;
-}
-
-.friend-images {
-  width: 80%;
-}
-.friend-box {
-  background-color: rgba(0, 0, 0, 0.8);
-  text-align: center;
-  border: 2px solid #ffc312;
-}
-
-/* NUEVA PUBLICACION */
-
-.nueva-publicacion {
-  border: 1px solid black;
-  height: auto;
-  background-color: rgba(0, 0, 0, 0.8);
-  overflow-y: auto;
-  border-radius: 10px;
-  text-align: center;
-  color: aliceblue;
-  padding: 2%;
-}
-
-.insertar {
-  display: flex;
-  justify-content: space-around;
-  margin: 1% 10%;
-}
-
-/* PUBLICACIONES */
-
-.centro {
-  position: absolute;
-  top: 15%;
-  width: 50%;
-  height: auto;
-  right: 25%;
-  overflow-y: auto;
-  text-align: justify;
-}
-
-.publicacion-muro,
-.hoja-vida {
-  padding: 3%;
-  border: 1px solid black;
-  border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.8);
-  margin: 10px 0 10px;
-  color: aliceblue;
-}
-
-.autor {
-  display: flex;
-  align-items: center;
-}
-
-.autor img {
-  margin: 0 15px 0 0;
-}
-
-.new-post {
-  border-radius: 10px;
-  background-color: aliceblue;
-  border: 2px solid #b17aa2;
-  padding: 10px 10px 10px 35px;
-  box-sizing: border-box;
-  width: 80%;
-}
-
-/* IMAGENES */
+/* IMAGES */
 
 .avatar {
   width: 80px;
-  height: auto;
-  align-items: center;
   cursor: pointer;
 }
 
@@ -315,36 +131,115 @@ a p {
   width: 30%;
 }
 
-.logo-principal {
-  width: 60px;
-  border-radius: 30%;
-  position: fixed;
-  right: 91%;
-  top: 4%;
-  transform: translate(-50%, -50%);
-}
 .logo {
-  width: 60px;
+  width: 80px;
   margin: 10px 0;
   margin-right: 15px;
   border-radius: 50%;
 }
 
+.profile-index .avatar-perfil {
+  width: 100%;
+}
+
+/* NEW POST */
+
+.new-post-card {
+  text-align: center;
+  padding: 2%;
+}
+
+textarea {
+  border-radius: 10px;
+  background-color: aliceblue;
+  border: 2px solid #b17aa2;
+  padding: 10px 10px 10px 35px;
+  width: 80%;
+}
+
+.insert {
+  display: flex;
+  justify-content: space-around;
+  margin: 1% 10%;
+}
+
+/* NEWS FEED */
+.post-author {
+  display: flex;
+  align-items: center;
+}
+
+/* PROFILE LIST ITEMS */
+.default-card a {
+  font-weight: 700;
+}
+.default-card a p {
+  font-weight: 400;
+}
+
+/*FRIENDS PAGE*/
+.search-friends {
+  position: fixed;
+  top: 15%;
+  width: 70%;
+  left: 15%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.search-friends-input {
+  margin: 0 7%;
+}
+
+.filter-icon {
+  position: absolute;
+  right: 2%;
+  top: 50%;
+  transform: translateY(-40%);
+  transition: all 0.5s;
+}
+
+.friends-row {
+  margin-bottom: 5%;
+}
+
+.friend-avatar {
+  width: 80%;
+}
+
+.friend-box {
+  text-align: center;
+  border: 2px solid #ffc312;
+}
+
+/* CREATE ACCOUNT FORM */
+
+.new-user-registration {
+  text-align: center;
+  margin-top: 3%;
+}
+
+#form-register {
+  text-align: center;
+  width: 50%;
+  margin-left: 25%;
+}
+
+#register-form-buttons {
+  margin-top: 2%;
+}
+
+#register-send {
+  margin-right: 5%;
+}
+#profilePicture::after {
+  display: none;
+}
+
 
 /* CHAT */
 
-.mensajes {
-  position: fixed;
-  bottom: 1%;
-  right: 5%;
-  size: 10%;
-  min-width: 15%;
-  font-size: large;
-  padding: 10px;
-  background-color: rgb(44, 58, 129);
-  color: white;
-  cursor: pointer;
-}
 #chat-open {
   display: none;
 }
@@ -356,75 +251,30 @@ a p {
 #chat-open:checked ~ #openchatform {
   display: block;
 }
-.form-container {
-  border: 10px solid #ccc;
-  background-color: #f1f1f1;
-  color: black;
-  font-size: 20px;
-}
 
-.form-container textarea {
-  width: 100%;
-  height: 100px;
-}
-
-.btn-chat {
-  background-color: #4caf50;
-  color: white;
-}
-
-.btn-chat:hover {
-  background-color: #3e8e41;
-}
-
-.cancel {
-  background-color: #f44336;
-}
 #chat-open:checked ~ label[for="chat-open"] {
   display: none;
 }
 
-/* col-md-11r nuevo usuario */
-.registro-nuevo-usuario {
-  text-align: center;
-  margin-top: 30px;
-  color: white;
-}
-.form-group {
-  color: #ccc;
-}
-#form-register {
+.chat-form-container {
+  border: 3px solid #ffc312;
   background-color: rgba(0, 0, 0, 0.8);
-  text-align: center;
-  align-items: center;
-  box-sizing: border-box;
-  width: 50%;
-  margin-left: 25%;
+  font-size: 20px;
+  border-radius: 10px;
+  margin: 0 0 10px;
+  padding: 2%;  
 }
-#register-send-restore {
-  margin-top: 1%;
-}
-#register-send {
-  margin-right: 5%;
-}
-#profilePicture::after {
-  display: none;
-}
-/* footer */
+
+/* FOOTER */
 footer {
   background-color: rgba(0, 0, 0, 0.8);
-  color: #f1f1f1;
-  /*   position: fixed;
-  bottom: 1%;
-  size: 50%;
-  min-width: 10%;
-  font-size: large;
-  padding: 10px; */
 }
+
+/* TODO: CLEAN LOGIN AND RECOVER SECTIONS */
 
 /*  LOGIN Y RECUPERAR CONTRASEÑA */
 
-#main-logo{
+#main-logo {
   width: 40%;
   border-radius: 20%;
   position: relative;
@@ -442,14 +292,14 @@ footer {
   color: aliceblue;
   font-family: Arial, Helvetica, sans-serif;
   transition: all 0.3s ease-in-out;
-  background-image: linear-gradient(to right, red , blue);
+  background-image: linear-gradient(to right, red, blue);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 #slogan-container h2:hover {
   transform: scale(1.1);
 }
-.login-container{
+.login-container {
   height: 100%;
   align-content: center;
   display: grid;
@@ -543,118 +393,13 @@ input:focus {
   margin-left: 4px;
 }
 
-/*MEDIA QUERY*/
-@media screen and (max-width: 1020px) {
-  .menu-izquierdo {
-    display: none;
-  }
 
-  .posibles-amigos {
-    top: 30%;
-    width: auto;
-    height: auto;
-    right: 25%;
-    display: grid;
-    text-align: center;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(8, 1fr);
-    column-gap: 15%;
-    justify-content: center;
-    align-items: center;
-  }
 
-  .posibles-amigos .amigo img {
-    width: 40%;
-    height: 40%;
-  }
 
-  .buscar {
-    top: 15%;
-    width: 50%;
-    height: auto;
-    left: 25%;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    border: 1px solid black;
-    border-radius: 10px;
-  }
 
-  .cuadro-logo {
-    display: flex;
-    margin: 0 5%;
-    width: 50%;
-    height: auto;
-  }
 
-  .buscar-input {
-    position: relative;
-    width: auto;
-    display: flex;
-  }
 
-  .buscar-input i {
-    color: rgb(44, 58, 129);
-    position: absolute;
-    width: auto;
-    height: auto;
-    right: 10%;
-    top: 50%;
-    transform: translateY(-40%);
-    transition: all 0.5s;
-  }
 
-  .menu-bar .enlaces .busqueda {
-    display: none;
-  }
-}
-@media screen and (max-width: 650px) {
-  .buscar {
-    position: absolute;
-    top: 15%;
-    width: 45%;
-    height: auto;
-    left: 25%;
-    text-align: center;
-    /*display: flex;*/
-    display: inline-block;
-    justify-content: space-between;
-    padding: 10px;
-    border: 1px solid black;
-    border-radius: 10px;
-  }
 
-  .cuadro-logo {
-    display: flex;
-    margin: 0 5%;
-    width: 90%;
-    height: auto;
-    justify-content: center;
-  }
 
-  .filtros a {
-    display: none;
-  }
 
-  .posibles-amigos {
-    position: absolute;
-    top: 35%;
-    width: auto;
-    height: auto;
-    right: 30%;   
-    display: grid;
-    text-align: center;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(8, 1fr);
-    row-gap: 5%;
-    column-gap: 5%;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .posibles-amigos .amigo img {
-    width: 20%;
-    height: 20%;
-  }
-}
