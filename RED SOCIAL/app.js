@@ -34,12 +34,36 @@ const botonCerrarRespuesta = document.getElementById("close-button");
 };
 
 //boton de me gusta
-var buttonLike = document.getElementById("buttonLike");
-		var countLike = document.getElementById("countLike");
+//boton de me gusta
+const likeButtons = document.querySelectorAll('.buttonLike');
 
-		var count = 0;
-		buttonLike.addEventListener("click", 
-        function() {
-			count++;
-			countLike.innerHTML = count + " Me gusta";
-		});
+likeButtons.forEach((button) => {
+  let likeCount = 0;
+  let likedMessages = [];
+
+  button.addEventListener('click', () => {
+    const message = button.closest('.message');
+
+    new Promise((resolve, reject) => {
+      if (!likedMessages.includes(message)) {
+        likeCount++;
+        button.classList.add('clicked');
+        button.nextElementSibling.textContent = `${likeCount} Me gusta`;
+        likedMessages.push(message);
+        resolve({id: message.id, count: likeCount});
+      } else {
+        likeCount--;
+        button.classList.remove('clicked');
+        button.nextElementSibling.textContent = `${likeCount} Me gusta`;
+        likedMessages.splice(likedMessages.indexOf(message), 1);
+        reject();
+      }
+    })
+      .then((result) => {
+        setTimeout(() => {
+          console.log(`Mensaje con id ${result.id} tiene ${result.count} me gusta.`);
+        }, 1000);
+      })
+      
+  });
+});
