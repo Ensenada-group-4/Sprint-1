@@ -120,7 +120,7 @@
               /></a>
               <h4>Alicia Gimenez</h4>
             </div>
-            <div class="default-card ">
+            <div class="default-card">
               <h4>
                 <a
                   class="fa-regular fa-address-book icon"
@@ -155,7 +155,7 @@
                 </li>
               </ul>
             </div>
-            <div class="default-card ">
+            <div class="default-card">
               <h4>
                 <i class="fa-solid fa-person icon" title="Solicitudes"></i
                 >SOLICITUDES
@@ -230,8 +230,9 @@
                 ></i
                 >NUEVA PUBLICACIÓN
               </h3>
-              <form>
+              <form id="write-new-post" novalidate>
                 <textarea
+                  id="new-post-content"
                   class="new-post"
                   cols="70"
                   rows="2"
@@ -241,7 +242,11 @@
                   <i class="fa-solid fa-image icon"></i
                   ><i class="fa-solid fa-location-dot icon"></i
                   ><i class="fa-solid fa-file icon"></i
-                  ><button class="btn-post btn btn-warning btn-sm">
+                  ><button
+                    type="submit"
+                    id="send-new-post"
+                    class="btn-post btn btn-warning btn-sm"
+                  >
                     Enviar
                   </button>
                 </div>
@@ -249,6 +254,8 @@
             </div>
 
             <!-- Muro -->
+
+            <section id="post-list"></section>
 
             <div class="default-card">
               <div class="post-author">
@@ -269,8 +276,12 @@
               <button class="reply btn btn-warning">Responder</button>
               <div class="reply" style="display: none">
                 <textarea rows="2" cols="70"></textarea>
-                <button class="send-reply btn btn-warning">Enviar respuesta</button>
-                <button class="close-reply btn btn-warning" id="close-button">Cerrar</button>
+                <button class="send-reply btn btn-warning">
+                  Enviar respuesta
+                </button>
+                <button class="close-reply btn btn-warning" id="close-button">
+                  Cerrar
+                </button>
               </div>
               <button class="buttonLike">Me gusta</button>
               <span class="count">0 Me gusta</span>
@@ -317,7 +328,7 @@
 
           <!--Menu lateral derecha-->
           <div class="col-sm-5 col-md-4 col-lg-3">
-            <div class="default-card ">
+            <div class="default-card">
               <h4>
                 <i
                   class="fa-solid fa-group-arrows-rotate icon"
@@ -352,7 +363,7 @@
               </ul>
             </div>
 
-            <div class="default-card ">
+            <div class="default-card">
               <h4>
                 <i class="fa-solid fa-book icon" title="Paginas"></i>PAGINAS
               </h4>
@@ -397,18 +408,24 @@
           <!-- CHAT -->
           <div class="chat position-fixed bottom-0 end-0">
             <input type="checkbox" id="chat-open" />
-            <label for="chat-open" class="btn btn-warning btn-sm">Abrir chat</label>
+            <label for="chat-open" class="btn btn-warning btn-sm"
+              >Abrir chat</label
+            >
             <div class="chat-popup" id="openchatform">
               <!-- base para el envio de mensajes -->
               <form action="/action_page.php" class="chat-form-container">
-                <h1>Chat</h1>                
+                <h1>Chat</h1>
                 <textarea
                   placeholder="Escribe el mensaje.."
                   name="msg"
                   required
                 ></textarea>
-                <button type="submit" class="btn btn-success btn-sm">Enviar</button>
-                <label for="chat-open" class="btn btn-danger btn-sm">Cerrar</label>
+                <button type="submit" class="btn btn-success btn-sm">
+                  Enviar
+                </button>
+                <label for="chat-open" class="btn btn-danger btn-sm"
+                  >Cerrar</label
+                >
               </form>
             </div>
           </div>
@@ -422,6 +439,7 @@
       </div>
     </footer>
     <script src="app.js"></script>
+    <script src="postFeed.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
