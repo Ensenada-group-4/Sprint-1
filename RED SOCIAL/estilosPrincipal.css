@@ -397,6 +397,22 @@ input:focus {
   height: 100%;
   align-content: center;
   display: grid;}
+  
+/* Like button */
+.buttonLike {
+  background-color: white;
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.buttonLike:hover {
+  background-color: gray;
+}
+
+.buttonLike.clicked {
+  background-color: blue;
+  color: white;
+}
 
   
 
