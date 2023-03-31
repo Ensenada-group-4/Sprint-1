@@ -1,39 +1,39 @@
-
 const createPostFormElement = document.querySelector("#write-new-post");
 const postListElement = document.querySelector("#post-list");
 
-// createPostFormElement.addEventListener("submit", async (event) => {
-//     event.preventDefault();
-//     const textAreaElement = document.querySelector("#new-post-content");
+createPostFormElement.addEventListener("submit", async (event) => {
+    event.preventDefault();
 
-//     let post = {
-//         // image: "img/avatares/alicia.png",
-//         // author: "Alicia Gimenez",
-//         message: textAreaElement.value
-//     };
+    const textAreaElement = document.querySelector("#new-post-content");
 
-//     console.log(post.message)
+    let post = {
+        author: "Alicia Gimenez",
+        message: textAreaElement.value,
+        image: "dummy" // Este elemento "image" es un dummy necesario para que la API acepte la publicación
+    };
 
-//     const response = await fetch("https://kc-fake-tweets-api.onrender.com/posts", {
-//         method: "POST",
-//         body: JSON.stringify(post),
-//         headers: {
-//             "Content-Type": "application/json"
-//         }
-//     })
+    console.log(post.message)
 
-//     const createdPost = await response.json()
+    const response = await fetch("https://kc-fake-tweets-api.onrender.com/posts", {
+        method: "POST",
+        body: JSON.stringify(post),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
 
-//     textAreaElement.value = "";
+    const createdPost = await response.json()
 
-//     drawPost(createdPost)
-// });
+    textAreaElement.value = "";
+
+    drawPost(createdPost)
+});
 
 function drawPost(post) {
     // creamos etiqueta article
     const postElement = document.createElement("article");
 
-    // postElement.setAttribute("id", post.id);
+    postElement.setAttribute("id", post.id);
 
     let postContent = `
     <div class="default-card">
