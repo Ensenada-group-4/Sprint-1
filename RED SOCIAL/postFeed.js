@@ -47,30 +47,9 @@ function drawPost(post) {
     </div>
     <p>
     ${post.message}
-    </p>
-
-    <button class="reply btn btn-warning">Responder</button>
-              <div class="reply" style="display: none">
-                <textarea rows="2" cols="70"></textarea>
-                <button class="send-reply btn btn-warning">
-                  Enviar respuesta
-                </button>
-                <button class="close-reply btn btn-warning" id="close-button">
-                  Cerrar
-                </button>
-              </div>
+    </p>    
     <button class="buttonLike fa-solid fa-heart btn btn-lg "></button>
-    <span class="count">${post.likes.length} Me gusta</span>
-    <div class="reply" style="display: none">
-      <textarea rows="2" cols="70"></textarea>
-      <button class="send-reply btn btn-warning">
-        Enviar respuesta
-      </button>
-      <button class="close-reply btn btn-warning" id="close-button">
-        Cerrar
-      </button>
-    </div>              
-  </div> 
+    <span class="count">${post.likes.length} Me gusta</span>   
 `;
 
   postElement.innerHTML = postContent;
