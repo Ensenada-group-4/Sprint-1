@@ -43,6 +43,9 @@
       src="https://kit.fontawesome.com/43124feaf5.js"
       crossorigin="anonymous"
     ></script>
+
+    <!--JavaScript-->
+    <script src="indexLogin.js"></script>
     <!-- CSS STYLESHEETS (después de Bootstrap!)-->
     <link rel="stylesheet" href="estilosPrincipal.css" />
   </head>
@@ -57,6 +60,7 @@
       </div>
     </div>
     <!-- Formulario -->
+    <form id="login-form">
       <div class="d-flex justify-content-center h-100 login-container">
         <div class="card">
           <div class="card-header">
@@ -81,6 +85,7 @@
                       type="text"
                       class="form-control"
                       placeholder="Usuario o Email"
+                      id="username"
                     />
                   </div>
                 </div>
@@ -97,6 +102,7 @@
                       type="password"
                       class="form-control"
                       placeholder="Contraseña"
+                      id="password"
                     />
                   </div>
                 </div>
@@ -111,6 +117,8 @@
                       type="submit"
                       value="Login"
                       class="btn float-right login_btn"
+                      onclick="indexLogin()"
+                      id="submit"
                     />
                   </div>
                 </div>
@@ -137,6 +145,7 @@
         </div>
       </div>
     </div>
+  </form>
     <!-- footer -->
     <footer class="footer">
       <div class="text-center p-3">
@@ -145,4 +154,6 @@
       </div>
     </footer>
   </body>
+
+  
 </html>
