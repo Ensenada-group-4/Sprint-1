@@ -392,11 +392,20 @@ input:focus {
 .links a {
   margin-left: 4px;
 }
-
+/* reset */
 .recover-container{  
   height: 100%;
   align-content: center;
   display: grid;}
+
+  
+
+
+
+
+
+
+
 
 
 
