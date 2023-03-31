@@ -1,0 +1,53 @@
+.carousel-indicators [data-bs-target] {
+    position: relative;
+    width: 60px;
+    height: 6px;
+    border: none;
+    border-radius: 24px;
+  }
+  
+  .carousel-indicators [data-bs-target] span {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #7952b3;
+    border-radius: inherit;
+  }
+  
+  /* NEW POST */
+
+.new-post-card {
+  text-align: center;
+  padding: 2%;
+}
+
+textarea {
+  border-radius: 10px;
+  background-color: aliceblue;
+  border: 2px solid #b17aa2;
+  padding: 10px 10px 10px 35px;
+  width: 80%;
+}
+
+.insert {
+  display: flex;
+  justify-content: space-around;
+  margin: 1% 10%;
+}
+
+/* NEWS FEED */
+.post-author {
+  display: flex;
+  align-items: center;
+}
+
+/* PROFILE LIST ITEMS */
+.default-card a {
+  font-weight: 700;
+}
+.default-card a p {
+  font-weight: 400;
+}
