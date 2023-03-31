@@ -2,32 +2,32 @@
 const createPostFormElement = document.querySelector("#write-new-post");
 const postListElement = document.querySelector("#post-list");
 
-createPostFormElement.addEventListener("submit", async (event) => {
-    event.preventDefault();
-    const textAreaElement = document.querySelector("#new-post-content");
+// createPostFormElement.addEventListener("submit", async (event) => {
+//     event.preventDefault();
+//     const textAreaElement = document.querySelector("#new-post-content");
 
-    let post = {
-        // image: "img/avatares/alicia.png",
-        // author: "Alicia Gimenez",
-        message: textAreaElement.value
-    };
+//     let post = {
+//         // image: "img/avatares/alicia.png",
+//         // author: "Alicia Gimenez",
+//         message: textAreaElement.value
+//     };
 
-    console.log(post.message)
+//     console.log(post.message)
 
-    const response = await fetch("https://kc-fake-tweets-api.onrender.com/posts", {
-        method: "POST",
-        body: JSON.stringify(post),
-        headers: {
-            "Content-Type": "application/json"
-        }
-    })
+//     const response = await fetch("https://kc-fake-tweets-api.onrender.com/posts", {
+//         method: "POST",
+//         body: JSON.stringify(post),
+//         headers: {
+//             "Content-Type": "application/json"
+//         }
+//     })
 
-    const createdPost = await response.json()
+//     const createdPost = await response.json()
 
-    textAreaElement.value = "";
+//     textAreaElement.value = "";
 
-    drawPost(createdPost)
-});
+//     drawPost(createdPost)
+// });
 
 function drawPost(post) {
     // creamos etiqueta article
