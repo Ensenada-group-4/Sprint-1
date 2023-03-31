@@ -5,18 +5,18 @@ Se realizo:
 
 Limpieza y refactorización del archivo CSS.
 
-Agregado de menú hamburguesay barra de navegador con logo.
+Agregado de menú hamburguesa y barra de navegador con logo.
 
 Agregado de Logo y eslogan en pagina de Login.
 
 Colocación de footer en todas las paginas.
 
-Se añadio la funionalidad de poder borrar la cuenta.
+Se añadio la funcionalidad de poder borrar la cuenta.
 
-Los botones me gusta son funionales, permiten agregar un solo like,
+Los botones me gusta son funcionales, permiten agregar un solo like,
 y en caso de clickar nuevamente lo quita, viendose reflejado en el contador de likes.
 
-Se vinculo pagina de login con un usuario con claves (usuario: Alicia contraseña:1234), que redireciona
+Se vinculo pagina de login con un usuario con claves (usuario: Alicia contraseña:1234), que redirecciona
 a la pagina de inicio de Alicia, en caso de usuario erroneo alerta "Usuario y/o contraseña incorrectas".
 
 Formulario de recuperación de contraseña funcional con correo ficticio lulu@lala.com, al ingresar correctamente
