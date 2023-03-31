@@ -393,13 +393,10 @@ input:focus {
   margin-left: 4px;
 }
 
-
-
-
-
-
-
-
+.recover-container{  
+  height: 100%;
+  align-content: center;
+  display: grid;}
 
 
 
