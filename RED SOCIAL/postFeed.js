@@ -4,13 +4,15 @@ const postListElement = document.querySelector("#post-list");
 
 createPostFormElement.addEventListener("submit", async (event) => {
     event.preventDefault();
-
     const textAreaElement = document.querySelector("#new-post-content");
 
     let post = {
+        // image: "img/avatares/alicia.png",
         // author: "Alicia Gimenez",
-        message: textAreaElement.value,
+        message: textAreaElement.value
     };
+
+    console.log(post.message)
 
     const response = await fetch("https://kc-fake-tweets-api.onrender.com/posts", {
         method: "POST",
@@ -31,17 +33,16 @@ function drawPost(post) {
     // creamos etiqueta article
     const postElement = document.createElement("article");
 
-    postElement.setAttribute("id", post.id);
+    // postElement.setAttribute("id", post.id);
 
     let postContent = `
     <div class="default-card">
-    <div class="post-author">
-      <a href="perfilPepito.html"
-        ><img
-          src="img/avatares/pepito.png"
+    <div class="post-author">      
+        <img
+          src="img/avatares/jorge.png"
           alt="avatar"
           class="avatar"
-      /></a>
+      />
       <h4>${post.author}</h4>
     </div>
     <p>
