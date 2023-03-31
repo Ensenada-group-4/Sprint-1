@@ -237,7 +237,6 @@ textarea {
   display: none;
 }
 
-
 /* CHAT */
 
 #chat-open {
@@ -262,7 +261,7 @@ textarea {
   font-size: 20px;
   border-radius: 10px;
   margin: 0 0 10px;
-  padding: 2%;  
+  padding: 2%;
 }
 
 /* FOOTER */
@@ -393,35 +392,33 @@ input:focus {
   margin-left: 4px;
 }
 /* reset */
-.recover-container{  
+.recover-container {
   height: 100%;
   align-content: center;
-  display: grid;}
-  
+  display: grid;
+}
+
 /* Like button */
 .buttonLike {
-  background-color: white;
-  border: 1px solid black;
-  padding: 5px;
+  /* background-color: white; */
+  /* border: 1px solid black;
+  padding: 5px; */
+  border: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #ffc312;
 }
 
 .buttonLike:hover {
-  background-color: gray;
+  color: #f0d78f;
 }
 
 .buttonLike.clicked {
-  background-color: blue;
-  color: white;
+  color: red;
 }
 
-  
+/* LIKE BUTTON */
 
-
-
-
-
-
-
-
-
-
+.like-button {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #ffc312;
+}

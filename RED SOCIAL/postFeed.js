@@ -2,40 +2,42 @@ const createPostFormElement = document.querySelector("#write-new-post");
 const postListElement = document.querySelector("#post-list");
 
 createPostFormElement.addEventListener("submit", async (event) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    const textAreaElement = document.querySelector("#new-post-content");
+  const textAreaElement = document.querySelector("#new-post-content");
 
-    let post = {
-        author: "Alicia Gimenez",
-        message: textAreaElement.value,
-        image: "dummy" // Este elemento "image" es un dummy necesario para que la API acepte la publicación
-    };
+  let post = {
+    author: "Alicia Gimenez",
+    message: textAreaElement.value,
+    image: "dummy" // Este elemento "image" es un dummy necesario para que la API acepte la publicación
+  };
 
-    console.log(post.message)
+  console.log(post.message)
 
-    const response = await fetch("https://kc-fake-tweets-api.onrender.com/posts", {
-        method: "POST",
-        body: JSON.stringify(post),
-        headers: {
-            "Content-Type": "application/json"
-        }
-    })
+  const response = await fetch("https://kc-fake-tweets-api.onrender.com/posts", {
+    method: "POST",
+    body: JSON.stringify(post),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  })
 
-    const createdPost = await response.json()
+  const createdPost = await response.json()
 
-    textAreaElement.value = "";
+  textAreaElement.value = "";
 
-    drawPost(createdPost)
+  drawPost(createdPost)
 });
 
 function drawPost(post) {
   // creamos etiqueta article
   const postElement = document.createElement("article");
+
   postElement.setAttribute("id", post.id);
+
   let postContent = `
     <div class="default-card">
-    <div class="post-author">
+    <div class="post-author">      
         <img
           src="img/avatares/jorge.png"
           alt="avatar"
@@ -46,9 +48,19 @@ function drawPost(post) {
     <p>
     ${post.message}
     </p>
+
     <button class="reply btn btn-warning">Responder</button>
-    <button class="buttonLike">Me gusta</button>
-    <span class="count">${post.likes.length} Me gusta</span><p></p>
+              <div class="reply" style="display: none">
+                <textarea rows="2" cols="70"></textarea>
+                <button class="send-reply btn btn-warning">
+                  Enviar respuesta
+                </button>
+                <button class="close-reply btn btn-warning" id="close-button">
+                  Cerrar
+                </button>
+              </div>
+    <button class="buttonLike fa-solid fa-heart btn btn-lg "></button>
+    <span class="count">${post.likes.length} Me gusta</span>
     <div class="reply" style="display: none">
       <textarea rows="2" cols="70"></textarea>
       <button class="send-reply btn btn-warning">
@@ -57,17 +69,24 @@ function drawPost(post) {
       <button class="close-reply btn btn-warning" id="close-button">
         Cerrar
       </button>
-    </div>
-  </div>
+    </div>              
+  </div> 
 `;
+
   postElement.innerHTML = postContent;
+
   // añadimos el post a la lista por el principio
   postListElement.appendChild(postElement)
   postListElement.prepend(postElement)
+
+  //funcionalidad del botón "me gusta"
   const likeButton = postElement.querySelector(".buttonLike");
   const likeCount = postElement.querySelector(".count");
+
   let likeCountNumber = parseInt(likeCount.textContent);
+
   let liked = false;
+
   likeButton.addEventListener("click", () => {
     if (!liked) {
       likeCountNumber++;
@@ -81,16 +100,17 @@ function drawPost(post) {
       likeButton.classList.remove("clicked");
     }
   });
+
 }
 
 async function drawPosts() {
-    const response = await fetch("https://kc-fake-tweets-api.onrender.com/posts");
-    const posts = await response.json();
-    postListElement.innerHTML = "";
+  const response = await fetch("https://kc-fake-tweets-api.onrender.com/posts");
+  const posts = await response.json();
+  postListElement.innerHTML = "";
 
-    posts.forEach((post) => {
-        drawPost(post)
-    });
+  posts.forEach((post) => {
+    drawPost(post)
+  });
 }
 
 drawPosts()
