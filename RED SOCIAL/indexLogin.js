@@ -5,7 +5,7 @@ contactForm.addEventListener('submit', (event) => {
     const pass = event.target.elements['password'].value.trim();
     if (user == "Alicia" && pass == "1234")
     {
-        window.location.href = "index.html";
+        window.location.href = "./index.html";
     }
     else {
         alert("Usuario y/o contraseña incorrectas");
