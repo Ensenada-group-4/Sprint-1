@@ -20,11 +20,9 @@ Con FETCH traemos posts de usuarios, con sus propios likes
 Al escribir una nueva publicación, la enviamos con POST a la API y la recibimos en nuestro muro, ordenadas de más nuevas a más antiguas
 
 
-Cada publicación que se imprime en nuestro muro incluye el nombre del autor, contenido del post, así como:
+Cada publicación que se imprime en nuestro muro incluye el nombre del autor y contenido del post, así como:
 
 - Boton de "me gusta" funcional, que permite agregar un solo like,y en caso de clickar nuevamente lo quita, viendose reflejado en el contador de likes.
-
-- Botón y formulario para responder al post funcional. Por ahora sólo en local, pero más adelante lo trabajaremos con la API
 
 - Avatar de usuario que por ahora es siempre el mismo (para mantener formato), más adelante se cambiará para que vaya ligada a un ID de usuario
 
@@ -46,4 +44,5 @@ Cada publicación que se imprime en nuestro muro incluye el nombre del autor, co
 
 - Seguir añadiendo funcionaliades
 - Introducir más elementos ligados a la API
+- Botón y formulario para responder al post de la API. Por ahora sólo disponible como demo en los posts default del HTML
 - Reajustar ciertos elementos de diseño
