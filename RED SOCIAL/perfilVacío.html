@@ -165,14 +165,19 @@
               <div class="default-card">
                 <div class="profile-details">
                   <div>
-                    <h2>
-                      Nombre completo
-                      <button class="btn btn-outline-warning">Editar</button>
-                    </h2>
+                    <div>
+                      <h2 id="profile-fullName">Nombre completo</h2>
+                      <input
+                        type="button"
+                        class="btn btn-outline-warning btn-sm"
+                        value="Editar"
+                        onclick="personalDetails()"
+                      />
+                    </div>
                   </div>
                   <div>
-                    <h5>Ciudad, País</h5>
-                    <h5>Fecha nacimiento</h5>
+                    <h5 id="profile-location">Ciudad, País</h5>
+                    <h5 id="profile-birthDate">Fecha nacimiento</h5>
                   </div>
                 </div>
                 <div class="user-bio profile-data">
@@ -202,8 +207,8 @@
                   CONTACTO
                 </h4>
                 <ul class="profile-data">
-                  <li>Correo</li>
-                  <li>Teléfono</li>
+                  <li id="profile-email">Correo</li>
+                  <li id="profile-phone">Teléfono</li>
                   <a
                     href="https://www.facebook.com/"
                     class="fa-brands fa-facebook icon"
@@ -223,7 +228,12 @@
                     target="”_blank”"
                   ></a>
                 </ul>
-                <button class="btn btn-outline-warning btn-sm">Editar</button>
+                <input
+                  type="button"
+                  class="btn btn-outline-warning btn-sm"
+                  value="Editar"
+                  onclick="contactInformation()"
+                />
               </div>
 
               <div class="default-card interests">
@@ -232,7 +242,6 @@
                 </h4>
                 <ul class="profile-data">
                   <li>Listado de intereses</li>
-                  
                 </ul>
                 <button class="btn btn-outline-warning btn-sm">Editar</button>
               </div>
