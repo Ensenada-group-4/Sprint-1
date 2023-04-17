@@ -1,6 +1,9 @@
 const div = document.createElement('div');
 document.body.appendChild(div);
-const url = 'https://randomuser.me/api/';
+//para crear varios usuarios random a la vez
+/*const randomUser = 6;
+ const url = 'https://randomuser.me/api/?results=' + randomUser; */
+const url = 'https://randomuser.me/api';
 function getUsuariosRandom() {
     fetch(url)
         .then(response => response.json())
@@ -34,4 +37,9 @@ function getUsuariosRandom() {
             console.log('Ocurrió un error al solicitar los datos', error)
         })
 }
+
 getUsuariosRandom()
+//para crear varios a la vez
+/* for (let i = 0; i < randomUser; i++) {
+    getUsuariosRandom();
+} */
