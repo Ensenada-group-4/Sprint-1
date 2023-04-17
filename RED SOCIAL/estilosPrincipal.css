@@ -206,10 +206,13 @@ textarea {
 
 .friend-avatar {
   width: 80%;
+  margin: auto;
 }
 
 .friend-box {
   text-align: center;
+  display: flex;
+  flex-direction: column;
   border: 2px solid #ffc312;
 }
 
