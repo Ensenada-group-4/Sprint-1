@@ -39,29 +39,27 @@ input {
   margin-top: 3%;
 }
 
-.search-input {
-  padding: 10px 10px 10px 35px;
+#basic-addon1 {  
   border-radius: 10px;
   border: 2px solid #b17aa2;
-  cursor: pointer;
   background-color: aliceblue;
 }
 
-/* TODO: SI AÑADIMOS LA LUPA MÁS ADELANTE */
-/* .search-icon i {
-  color: #b17aa2;
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  left: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: all 0.5s;
+.search-content-input{
+  border: none;  
+  background-color: aliceblue;
 }
 
-.search-icon i:hover {
+
+/* TODO: SI AÑADIMOS LA LUPA MÁS ADELANTE */
+.search-icon {
+  color: #b17aa2;
+ font-size: 20px;
+}
+
+.search-icon:hover {
   color: lightskyblue;
-} */
+}
 
 .nav-icons {
   position: fixed;
@@ -187,6 +185,15 @@ textarea {
   justify-content: space-between;
   padding: 10px;
 }
+
+.search-input {
+  padding: 10px 10px 10px 35px;
+  border-radius: 10px;
+  border: 2px solid #b17aa2;
+  cursor: pointer;
+  background-color: aliceblue;
+}
+
 
 .search-friends-input {
   margin: 0 7%;
