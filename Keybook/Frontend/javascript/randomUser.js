@@ -32,7 +32,7 @@ async function getUsuariosRandom() {
         container.appendChild(link);
         const button = document.createElement('button');
         button.classList.add('btn', 'btn-outline-warning', 'btn-sm');
-        button.textContent = 'Añadir';
+        button.textContent = 'Enviar solicitud';
         container.appendChild(button);
 
     }

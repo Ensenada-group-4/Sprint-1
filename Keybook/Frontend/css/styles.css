@@ -39,25 +39,18 @@ input {
   margin-top: 3%;
 }
 
-#basic-addon1 {  
+#basic-addon1 {
   border-radius: 10px;
   border: 2px solid #b17aa2;
   background-color: aliceblue;
 }
 
-.search-content-input{
-  border: none;  
+.search-content-input {
+  border: none;
   background-color: aliceblue;
 }
 
-
-/* TODO: SI AÑADIMOS LA LUPA MÁS ADELANTE */
-.search-icon {
-  color: #b17aa2;
- font-size: 20px;
-}
-
-.search-icon:hover {
+.icon:hover {
   color: lightskyblue;
 }
 
@@ -72,7 +65,10 @@ input {
   font-size: 25px;
   padding: 0 10px;
   color: #ffc312;
-  transition: all 0.5s;
+}
+
+.search-icon {
+  color: #b17aa2;
 }
 
 .icon:hover {
@@ -193,7 +189,6 @@ textarea {
   cursor: pointer;
   background-color: aliceblue;
 }
-
 
 .search-friends-input {
   margin: 0 7%;
