@@ -293,9 +293,7 @@ footer {
 
 #slogan-container h2 {
   font-size: 34px;
-  color: aliceblue;
-  font-family: Arial, Helvetica, sans-serif;
-  transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
   background-image: linear-gradient(to right, red, blue);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -317,7 +315,6 @@ footer {
   width: 400px;
   background-color: rgba(0, 0, 0, 0.8) !important;
   text-align: center;
-
   padding-top: 25px;
 }
 
@@ -328,7 +325,7 @@ footer {
 }
 
 .social_icon span:hover {
-  color: white;
+  color: aliceblue;
   cursor: pointer;
 }
 
@@ -339,12 +336,12 @@ footer {
 }
 
 .infinity_icon span:hover {
-  color: white;
+  color: aliceblue;
   cursor: pointer;
 }
 
 .card-header h3 {
-  color: white;
+  color: aliceblue;
   margin-top: 20px;
   text-align: center;
 }
@@ -368,7 +365,7 @@ input:focus {
 }
 
 .remember {
-  color: white;
+  color: aliceblue;
 }
 
 .remember input {
@@ -386,11 +383,11 @@ input:focus {
 
 .login_btn:hover {
   color: black;
-  background-color: white;
+  background-color: aliceblue;
 }
 
 .links {
-  color: white;
+  color: aliceblue;
 }
 
 .links a {
@@ -405,7 +402,7 @@ input:focus {
 
 /* Like button */
 .buttonLike {
-  /* background-color: white; */
+  /* background-color: aliceblue; */
   /* border: 1px solid black;
   padding: 5px; */
   border: none;
