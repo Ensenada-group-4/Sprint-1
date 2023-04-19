@@ -50,8 +50,9 @@ input {
   background-color: aliceblue;
 }
 
-.icon:hover {
-  color: lightskyblue;
+.hamburger{
+  position: absolute;
+  background-color: #ffc312;  
 }
 
 .nav-icons {
@@ -444,3 +445,5 @@ input:focus {
   background: #52b352;
   border-radius: inherit;
 }
+
+
