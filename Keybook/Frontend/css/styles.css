@@ -1,0 +1,454 @@
+html,
+body {
+  overflow-y: auto;
+  color: rgb(44, 58, 129);
+  background-image: url("https://images.unsplash.com/photo-1468276311594-df7cb65d8df6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  color: aliceblue;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input {
+  background-color: aliceblue;
+}
+
+/* BARRA DE NAVEGACION */
+.nav-body {
+  position: fixed;
+  width: 100%;
+  align-items: center;
+  height: 20%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+}
+
+.keybook-logo {
+  width: 60px;
+  border-radius: 30%;
+  position: fixed;
+  right: 91%;
+  top: 4%;
+  transform: translate(-50%, -50%);
+}
+
+.search-bar {
+  padding: 0 20%;
+  margin-top: 3%;
+}
+
+#basic-addon1 {  
+  border-radius: 10px;
+  border: 2px solid #b17aa2;
+  background-color: aliceblue;
+}
+
+.search-content-input{
+  border: none;  
+  background-color: aliceblue;
+}
+
+
+/* TODO: SI AÑADIMOS LA LUPA MÁS ADELANTE */
+.search-icon {
+  color: #b17aa2;
+ font-size: 20px;
+}
+
+.search-icon:hover {
+  color: lightskyblue;
+}
+
+.nav-icons {
+  position: fixed;
+  top: 4%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+}
+
+.icon {
+  font-size: 25px;
+  padding: 0 10px;
+  color: #ffc312;
+  transition: all 0.5s;
+}
+
+.icon:hover {
+  color: lightskyblue;
+}
+
+/* DEFAULT CARDS */
+
+.default-card {
+  padding: 5%;
+  border-radius: 10px;
+  margin: 0 0 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* MAIN PAGE */
+.main-structure {
+  margin-top: 7%;
+  margin-bottom: 10%;
+}
+
+.profile-index {
+  display: flex;
+  align-items: center;
+}
+
+.profile-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-bio {
+  display: inline-flex;
+  align-items: center;
+}
+
+li {
+  list-style-type: none;
+  font-weight: bold;
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+}
+
+/* IMAGES */
+
+.avatar {
+  width: 80px;
+  cursor: pointer;
+}
+
+.avatar-perfil {
+  box-sizing: content-box;
+  width: 30%;
+}
+
+.logo {
+  width: 80px;
+  margin: 10px 0;
+  margin-right: 15px;
+  border-radius: 50%;
+}
+
+.profile-index .avatar-perfil {
+  width: 100%;
+}
+
+/* NEW POST */
+
+.new-post-card {
+  text-align: center;
+  padding: 2%;
+}
+
+textarea {
+  border-radius: 10px;
+  background-color: aliceblue;
+  border: 2px solid #b17aa2;
+  padding: 10px 10px 10px 35px;
+  width: 80%;
+}
+
+.insert {
+  display: flex;
+  justify-content: space-around;
+  margin: 1% 10%;
+}
+
+/* NEWS FEED */
+.post-author {
+  display: flex;
+  align-items: center;
+}
+
+/* PROFILE LIST ITEMS */
+.default-card a {
+  font-weight: 700;
+}
+.default-card a p {
+  font-weight: 400;
+}
+
+/*FRIENDS PAGE*/
+.search-friends {
+  position: fixed;
+  top: 15%;
+  width: 70%;
+  left: 15%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.search-input {
+  padding: 10px 10px 10px 35px;
+  border-radius: 10px;
+  border: 2px solid #b17aa2;
+  cursor: pointer;
+  background-color: aliceblue;
+}
+
+
+.search-friends-input {
+  margin: 0 7%;
+}
+
+.filter-icon {
+  position: absolute;
+  right: 2%;
+  top: 50%;
+  transform: translateY(-40%);
+  transition: all 0.5s;
+}
+
+.friends-row {
+  margin-bottom: 5%;
+}
+
+.friend-avatar {
+  width: 80%;
+  margin: auto;
+}
+
+.friend-box {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #ffc312;
+}
+
+/* CREATE ACCOUNT FORM */
+
+.new-user-registration {
+  text-align: center;
+  margin-top: 3%;
+}
+
+#form-register {
+  text-align: center;
+  width: 50%;
+  margin-left: 25%;
+}
+
+#register-form-buttons {
+  margin-top: 2%;
+}
+
+#register-send {
+  margin-right: 5%;
+}
+#profilePicture::after {
+  display: none;
+}
+
+/* CHAT */
+
+#chat-open {
+  display: none;
+}
+
+#openchatform {
+  display: none;
+}
+
+#chat-open:checked ~ #openchatform {
+  display: block;
+}
+
+#chat-open:checked ~ label[for="chat-open"] {
+  display: none;
+}
+
+.chat-form-container {
+  border: 3px solid #ffc312;
+  background-color: rgba(0, 0, 0, 0.8);
+  font-size: 20px;
+  border-radius: 10px;
+  margin: 0 0 10px;
+  padding: 2%;
+}
+
+/* FOOTER */
+footer {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* TODO: CLEAN LOGIN AND RECOVER SECTIONS */
+
+/*  LOGIN Y RECUPERAR CONTRASEÑA */
+
+#main-logo {
+  width: 40%;
+  border-radius: 20%;
+  position: relative;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#slogan-container {
+  text-align: center;
+  margin-top: 5%;
+}
+
+#slogan-container h2 {
+  font-size: 34px;
+  color: aliceblue;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: all 0.3s ease-in-out;
+  background-image: linear-gradient(to right, red, blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#slogan-container h2:hover {
+  transform: scale(1.1);
+}
+.login-container {
+  height: 100%;
+  align-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.card {
+  height: 400px;
+  margin-top: 5%;
+  margin-bottom: auto;
+  width: 400px;
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  text-align: center;
+
+  padding-top: 25px;
+}
+
+.social_icon span {
+  font-size: 60px;
+  margin-left: 10px;
+  color: #ffc312;
+}
+
+.social_icon span:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.infinity_icon span {
+  font-size: 30px;
+  margin-left: 10px;
+  color: #ffc312;
+}
+
+.infinity_icon span:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.card-header h3 {
+  color: white;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.social_icon {
+  position: absolute;
+  right: 20px;
+  top: -45px;
+}
+
+.input-group-prepend span {
+  width: 50px;
+  background-color: #ffc312;
+  color: black;
+  border: 0 !important;
+}
+
+input:focus {
+  outline: 0 0 0 0 !important;
+  box-shadow: 0 0 0 0 !important;
+}
+
+.remember {
+  color: white;
+}
+
+.remember input {
+  width: 20px;
+  height: 20px;
+  margin-left: 15px;
+  margin-right: 5px;
+}
+
+.login_btn {
+  color: black;
+  background-color: #ffc312;
+  width: 100px;
+}
+
+.login_btn:hover {
+  color: black;
+  background-color: white;
+}
+
+.links {
+  color: white;
+}
+
+.links a {
+  margin-left: 4px;
+}
+/* reset */
+.recover-container {
+  height: 100%;
+  align-content: center;
+  display: grid;
+}
+
+/* Like button */
+.buttonLike {
+  /* background-color: white; */
+  /* border: 1px solid black;
+  padding: 5px; */
+  border: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #ffc312;
+}
+
+.buttonLike:hover {
+  color: #f0d78f;
+}
+
+.buttonLike.clicked {
+  color: red;
+}
+
+/* LIKE BUTTON */
+
+.like-button {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #ffc312;
+}
+/*CARROUSEL*/
+
+.carousel-indicators [data-bs-target] {
+  position: relative;
+  width: 60px;
+  height: 6px;
+  border: none;
+  border-radius: 24px;
+}
+
+.carousel-indicators [data-bs-target] span {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #52b352;
+  border-radius: inherit;
+}
