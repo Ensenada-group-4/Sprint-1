@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "express": "^4.18.2",
-    "node": "^19.8.1"
+    "node": "^19.8.1",
+    "path.join": "^1.0.0"
   },
   "name": "keybook_backend",
   "version": "1.0.0",
