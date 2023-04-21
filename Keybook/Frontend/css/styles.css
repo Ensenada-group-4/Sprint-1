@@ -50,9 +50,9 @@ input {
   background-color: aliceblue;
 }
 
-.hamburger{
+.hamburger {
   position: absolute;
-  background-color: #ffc312;  
+  background-color: #ffc312;
 }
 
 .nav-icons {
@@ -219,6 +219,22 @@ textarea {
   border: 2px solid #ffc312;
 }
 
+.page-link {
+  color: #ffc312;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-color: #ffc312;
+}
+
+.page-link:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: lightskyblue;
+}
+
+.page-link:visited {
+  background-color: rgba(0, 0, 0, 0.8); 
+  text-decoration: none;
+}
+
 /* CREATE ACCOUNT FORM */
 
 .new-user-registration {
@@ -294,7 +310,7 @@ footer {
 
 #slogan-container h2 {
   font-size: 34px;
-    transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   background-image: linear-gradient(to right, red, blue);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -445,5 +461,3 @@ input:focus {
   background: #52b352;
   border-radius: inherit;
 }
-
-
