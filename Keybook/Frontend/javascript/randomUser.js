@@ -4,25 +4,28 @@ const url = 'https://randomuser.me/api/?results=' + randomUser;
 
 for (let i = 0; i < randomUser; i++) {
     getUsuariosRandom();
-} 
+}
 
 async function getUsuariosRandom() {
     const response = await fetch(url);
     const data = await response.json();
     try {
         const user = data.results[0]
-        const name = user.name.first + ' ' + user.name.last        
+        const name = user.name.first + ' ' + user.name.last
         const picture = user.picture.large
         const container = document.createElement('div');
         container.classList.add("col-sm-3", "default-card", "friend-box")
         const position = document.querySelector(".friends-row")
         position.appendChild(container)
+        const anchor = document.createElement('a');
+        anchor.href = "randomProfile.html"
         const img = document.createElement('img');
         img.src = picture;
         img.alt = name;
         img.classList.add('friend-avatar');
         img.style.borderRadius = '50%';
-        container.appendChild(img);
+        anchor.appendChild(img);
+        container.appendChild(anchor);
         const nameElement = document.createElement('p');
         nameElement.textContent = name;
         container.appendChild(nameElement);
