@@ -37,9 +37,14 @@ async function getUsuariosRandom() {
         cellField.textContent = cell
 
         const photoField = document.getElementById('profile-avatar');
-        photoField.src = photo
-        photoField.style.width = '190px';
-        photoField.style.borderRadius = '50%';
+        const img = document.createElement('img');
+        img.src = photo;
+        img.alt = name;
+        img.style.width = "120%";
+        img.style.borderRadius = '50%';
+
+        
+        photoField.appendChild(img)
     }
     catch (error) {
         console.log('Ocurrió un error al solicitar los datos', error)
