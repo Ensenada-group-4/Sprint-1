@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>keyBook</title>
+    <!-- BOOTSTRAP CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <!--NO BORRARE ESTOS LINKS SON PARTE DEL FORMATO-->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+      crossorigin="anonymous"
+    />
+    <link
+      href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+    <link rel="stylesheet" href="/Keybook/Frontend/css/intentobyn.css"/>
+
+    <!--NO BORRAR ESTOS LINKS SON PARTE DEL FORMATO DE BOOTSTRASP-->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+      crossorigin="anonymous"
+    />
+    <link
+      href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+<link rel ="stylesheet" href="Keybook\Frontend\css\intentobyn.css"/>
+    <!-- FONT AWESOME -->
+    <script
+      src="https://kit.fontawesome.com/43124feaf5.js"
+      crossorigin="anonymous"
+    ></script>
+
+    
+    <!-- CSS STYLESHEETS (después de Bootstrap!)-->
+    <link rel="stylesheet" href="/Keybook/Frontend/css/styles.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <head>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+      <link rel="stylesheet" href="estilos.css">
+    </head>
+    
+  </head>
+<body id="cambiar-color">
+    <!-- logo -->
+    <!-- slogan -->
+    <div class="container login-container">
+    <div class="card">
+      <img src="/Keybook/Frontend/img/logo2.png" alt="Logo Keybook" id="main-logo" />
+      <div id="slogan-container">
+        <h2>Keybook: donde los programadores comparten sus claves</h2>
+      </div>
+    </div>
+    <!-- Formulario -->
+    <form id="login-form">
+      <div class="d-flex justify-content-center h-100 login-container">
+        <div class="card">
+          <div class="card-header">
+            <h3>Incio de Sesión</h3>
+            <div class="d-flex justify-content-end social_icon">
+              <span><i class="fab fa-facebook-square"></i></span>
+              <span><i class="fab fa-google-plus-square"onclick="click" id ="google-btn"></i></span>
+              <span><i class="fab fa-twitter-square"></i></span>
+            </div>
+          </div>
+          <div class="card-body">
+            <form>
+              <div class="row">
+                <div class="col-12">
+                  <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"
+                        ><i class="fas fa-user"></i
+                      ></span>
+                    </div>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Usuario o Email"
+                      id="username"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"
+                        ><i class="fas fa-key"></i
+                      ></span>
+                    </div>
+                    <input
+                      type="password"
+                      class="form-control"
+                      placeholder="Contraseña"
+                      id="password"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <div class="row align-items-center remember">
+                    <input type="checkbox" />Recuerdame
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="submit"
+                      value="Login"
+                      class="btn float-right login_btn"
+                      id="submit"
+                    
+                    />
+                  </div>
+                </div>
+              </div>
+            </form>
+            <div class="row">
+              <div class="col-12">
+                <div class="card-footer">
+                  <div class="d-flex justify-content-center links">
+                    Si no tienes cuenta<a href="./formCreateNew.html"
+                      >Registrate</a
+                    >
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <a href="./formResetPassword.html">¿Olvidaste tu contraseña?</a>
+                  </div>
+                  <form id="myForm">
+                    <div class="d-flex justify-content-center infinity_icon">
+                      <div class="infinity-button" onclick="toggleGrayScale()">
+                        <i class="fa fa-infinity fa-stack-1x icon"></i>
+                      </div>         
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+    <!-- footer -->
+    <footer class="footer">
+      <div class="text-center p-3">
+        2023 Keybook ©
+        <a class="footer-url" href="#">Keybook.com</a>
+      </div>
+      <!--JavaScript-->
+    <script src="/Keybook/Frontend/javascript/formLogin.js"></script>
+    
+   <script>
+   function toggleGrayScale() {
+  var currFilter = document.body.style.filter;
+  if (currFilter === "grayscale(100%)") {
+    document.body.style.filter = "none";
+  } else {
+    document.body.style.filter = "grayscale(100%)";
+  }
+}
+
+</script>
+<!-- Firebase App (el SDK principal de Firebase) 
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+
+<!-- Firebase Authentication (la librería de autenticación) 
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>-->
+
+<!--<script src="/Keybook/Frontend/javascript/firebaseGoogle.js"></script>-->
+
+    </footer>
+    
+  </body>
+
+  
+</html>
+
+  
+   
