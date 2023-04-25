@@ -135,26 +135,50 @@
                     <a href="./formResetPassword.html">¿Olvidaste tu contraseña?</a>
                   </div>
                   <div class="d-flex justify-content-center infinity_icon">
-                    <span><i class="fa fa-infinity"></i></span>
+                    <div class="infinity-button" onclick="toggleGrayScale()">
+                      <i class="fa fa-infinity fa-stack-1x icon"></i>
+                    </div>         
                   </div>
-                </div>
+                </form>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </form>
-    <!-- footer -->
-    <footer class="footer">
-      <div class="text-center p-3">
-        2023 Keybook ©
-        <a class="footer-url" href="#">Keybook.com</a>
-      </div>
-      <!--JavaScript-->
-    <script src="/Keybook/Frontend/javascript/formLogin.js"></script>
-    </footer>
-  </body>
-
+  </div>
+</form>
+  <!-- footer -->
+  <footer class="footer">
+    <div class="text-center p-3">
+      2023 Keybook ©
+      <a class="footer-url" href="#">Keybook.com</a>
+    </div>
+    <!--JavaScript-->
+  <script src="/Keybook/Frontend/javascript/formLogin.js"></script>
   
+ <script>
+ function toggleGrayScale() {
+var currFilter = document.body.style.filter;
+if (currFilter === "grayscale(100%)") {
+  document.body.style.filter = "none";
+} else {
+  document.body.style.filter = "grayscale(100%)";
+}
+}
+
+</script>
+<!-- Firebase App (el SDK principal de Firebase) 
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+
+<!-- Firebase Authentication (la librería de autenticación) 
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+
+<!--<script src="/Keybook/Frontend/javascript/firebaseGoogle.js"></script>-->
+
+  </footer>
+  
+</body>
+
+
 </html>
