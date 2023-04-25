@@ -34,7 +34,7 @@ input {
   transform: translate(-50%, -50%);
 }
 
-@media (max-width: 550px) {
+@media (max-width: 480px) {
   .keybook-logo {
     width: 50%;
     display: block;
