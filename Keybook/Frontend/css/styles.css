@@ -34,6 +34,17 @@ input {
   transform: translate(-50%, -50%);
 }
 
+@media (max-width: 550px) {
+  .keybook-logo {
+    width: 50%;
+    display: block;
+    margin: auto;
+    max-width: 12%;
+    right: 91%;
+    top: 2%;
+    transform: none;
+  }
+}
 .search-bar {
   padding: 0 20%;
   margin-top: 3%;
