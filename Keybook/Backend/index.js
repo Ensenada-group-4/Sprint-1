@@ -30,6 +30,20 @@ app.get('/user', async function (req, res) {
     }
 });
 
+// el usuario alicia
+app.get('/user/id_5', async function (req, res) {
+    console.log("instance")
+    try {
+        const alicia = await sequelize.query("SELECT * FROM `user` WHERE USER.id = 5 ", { type: sequelize.QueryTypes.SELECT });
+        console.log(alicia);
+        res.send(alicia);
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error interno del servidor');
+    }
+});
+
 app.listen(3000, function () {
     console.log("Sistema funcionando en el puerto 3000");
 });
