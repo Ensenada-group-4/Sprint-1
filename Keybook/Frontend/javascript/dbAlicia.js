@@ -1,22 +1,26 @@
+
 async function getUsers(done) {
     fetch('http://localhost:3000/user/id_5')
 
         .then(response => response.json())
         .then(data => {
-            // const nameField = document.getElementById('profile-fullName');
-            // nameField.textContent = data.user.name
+            console.log(data[0].name)
+            console.log(data.name)
 
-            // const birthField = document.getElementById('profile-birthDate');
-            // birthField.textContent = data.date_of_birth
+            const nameField = document.getElementById('profile-fullName');
+            nameField.innerHTML = data[0].name + ' ' + data[0].last_name;
 
-            // const cityField = document.getElementById('profile-city');
-            // cityField.textContent = data.city
+            const birthField = document.getElementById('profile-birthDate');
+            birthField.innerHTML = data[0].date_of_birth
 
-            // const countryField = document.getElementById('profile-country');
-            // countryField.textContent = data.country
+            const cityField = document.getElementById('profile-location');
+            cityField.textContent = data[0].city
 
-            // const emailField = document.getElementById('profile-email');
-            // emailField.textContent = data.email
+            const countryField = document.getElementById('profile-loc-country');
+            countryField.textContent = data[0].country
+
+            const emailField = document.getElementById('profile-email');
+            emailField.textContent = data[0].email
             console.log(response);
             done();
         })
