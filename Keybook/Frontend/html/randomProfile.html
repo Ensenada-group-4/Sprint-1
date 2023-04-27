@@ -1,207 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfil Usuario</title>
+    <!-- BOOTSTRAP CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+    <!-- FONT AWESOME -->
+    <script
+      src="https://kit.fontawesome.com/43124feaf5.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- CSS STYLESHEETS (después de Bootstrap!)-->
+    <link rel="stylesheet" href="/Keybook/Frontend/css/styles.css" />
+  </head>
+  ​
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Perfil Usuario</title>
-  <!-- BOOTSTRAP CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" />
-  <!-- FONT AWESOME -->
-  <script src="https://kit.fontawesome.com/43124feaf5.js" crossorigin="anonymous"></script>
-  <!-- CSS STYLESHEETS (después de Bootstrap!)-->
-  <link rel="stylesheet" href="/Keybook/Frontend/css/styles.css" />
-</head>
-​
+  <body>
+    <!--BARRA DE NAVEGACIÓN-->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <div class="row nav-body">
+          <!-- Logo -->
+          <div class="col">
+            <a class="navbar-brand" href="#">
+              <img
+                src="/Keybook/Frontend/img/logo2.png"
+                alt="Logo"
+                class="keybook-logo d-block"
+              />
+            </a>
+          </div>
 
-<body>
-  <!--BARRA DE NAVEGACIÓN-->
-  <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-      <div class="row nav-body">
-        <!-- Logo -->
-        <div class="col">
-          <a class="navbar-brand" href="#">
-            <img src="/Keybook/Frontend/img/logo2.png" alt="Logo" class="keybook-logo" />
-          </a>
-        </div>
-        ​
-        <!-- Search bar -->
-        <div class="col-8 search-bar">
-          <form class="d-flex">
-            <div class="input-group">
-              <span class="input-group-text" id="basic-addon1">
-                <input class="form-control me-2 search-content-input" type="search" placeholder="Búsqueda..."
-                  aria-label="Buscar" size="50" />
-                <i class="fa-solid fa-magnifying-glass icon search-icon"></i>
-              </span>
-            </div>
-          </form>
-        </div>
+          <!-- Search bar -->
+          <div class="col-8 search-bar">
+            <form class="d-flex">
+              <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">
+                  <input
+                    class="form-control me-2 search-content-input"
+                    type="search"
+                    placeholder="Búsqueda..."
+                    aria-label="Buscar"
+                    size="50"
+                  />
+                  <i class="fa-solid fa-magnifying-glass icon search-icon"></i>
+                </span>
+              </div>
+            </form>
+          </div>
 
-        ​
-        <!-- Hamburger dropdown -->
-        <div class="col">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="col-sm-1"></div>
+
+          <div class="col-3 col-sm-1">
+            <!-- Hamburger dropdown -->
+            <button class="navbar-toggler" type="button">
+              <span class="br-1"></span>
+              <span class="br-2"></span>
+              <span class="br-3"></span>
+            </button>
+          </div>
+
+          <div class="col-1"></div>
+
+          <div
+            class="collapse navbar-collapse col-sm-7 col-lg-6"
+            id="navbarNav"
+          >
+            <!-- Updated code -->
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-icons">
               <!-- Mensajes -->
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">
+                <a class="dropdown-item active" aria-current="page" href="#">
                   <span class="fa fa-comment-dots icon" title="Mensajes"></span>
                 </a>
               </li>
               <!-- Notificaciones -->
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">
+                <a class="dropdown-item active" aria-current="page" href="#">
                   <span class="fas fa-bell icon" title="Notificaciones"></span>
                 </a>
               </li>
               <!-- Perfil -->
-              <li>
-                <a class="nav-link active" aria-current="page" href="#">
-                  <span class="fa fa-user icon" title="Mi Perfil"></span></a>
+              <li class="nav-item">
+                <a class="dropdown-item active" aria-current="page" href="#">
+                  <span class="fa fa-user icon" title="Mi Perfil"></span>
+                </a>
               </li>
               <!-- Configuración -->
-              <li>
-                <a class="dropdown-item" href="#">
-                  <span class="fa fa-cog icon" title="Configuración"></span></a>
+              <li class="nav-item">
+                <a class="dropdown-item active" href="#">
+                  <span class="fa fa-cog icon" title="Configuración"></span>
+                </a>
+              </li>
+              <!-- Funcionalidad blanco y negro -->
+              <li class="nav-item">
+                <form id="myForm">
+                  <a class="dropdown-item active" href="#">
+                    <div class="infinity-button\" onclick="toggleGrayScale()">
+                      <i class="fa fa-infinity icon" title="Blanco y Negro"></i>
+                    </div>
+                  </a>
+                </form>
               </li>
               <!-- Logout -->
-              <li>
-                <a class="dropdown-item" href="/logout">
-                  <span class="fas fa-sign-out-alt icon" title="Desconectarse"></span>
+              <li class="nav-item">
+                <a class="dropdown-item active" href="/logout">
+                  <span
+                    class="fas fa-sign-out-alt icon"
+                    title="Desconectarse"
+                  ></span>
                 </a>
               </li>
             </ul>
           </div>
         </div>
       </div>
-    </div>
-  </nav>
-  <main>
-    <!-- PERSONAL PROFILE -->
-    <div id="cuenta">
-      <div class="container-fluid main-structure">
-        <div class="row">
-          <div class="col-sm-5 col-md-4 col-lg-3">
-            <div class="default-card education">
-              <h4>
-                <i class="fa-solid fa-user-graduate icon" title="Formacion"></i>
-                FORMACION
-              </h4>
-              <ul class="profile-data">
-                <a>
-                  Escuela
-                  <p>Títulación</p>
-                </a>
-              </ul>
-              
+    </nav>
+    <main>
+      <!-- PERSONAL PROFILE -->
+      <div id="cuenta">
+        <div class="container-fluid main-structure">
+          <div class="row">
+            <div class="col-sm-5 col-md-4 col-lg-3">
+              <div class="default-card education">
+                <h4>
+                  <i
+                    class="fa-solid fa-user-graduate icon"
+                    title="Formacion"
+                  ></i>
+                  FORMACION
+                </h4>
+                <ul class="profile-data">
+                  <a>
+                    Escuela
+                    <p>Títulación</p>
+                  </a>
+                </ul>
+              </div>
+              <div class="default-card languages">
+                <h4>
+                  <i class="fa-solid fa-language icon" title="Idiomas"></i>
+                  IDIOMAS
+                </h4>
+                ​
+                <ul class="profile-data">
+                  <a>
+                    Idioma
+                    <p>Nivel</p>
+                  </a>
+                </ul>
+              </div>
+              <div class="default-card habilidades">
+                <h4>
+                  <i class="fa-solid fa-computer icon" title="Técnicas"></i>
+                  HABILIDADES
+                </h4>
+                <ul class="profile-data">
+                  <li>Listado de habilidades</li>
+                </ul>
+              </div>
             </div>
-            <div class="default-card languages">
-              <h4>
-                <i class="fa-solid fa-language icon" title="Idiomas"></i>
-                IDIOMAS
-              </h4>
-              ​
-              <ul class="profile-data">
-                <a>
-                  Idioma
-                  <p>Nivel</p>
-                </a>
-              </ul>
-                  </div>
-            <div class="default-card habilidades">
-              <h4>
-                <i class="fa-solid fa-computer icon" title="Técnicas"></i>
-                HABILIDADES
-              </h4>
-              <ul class="profile-data">
-                <li>Listado de habilidades</li>
-              </ul>
-        
-            </div>
-          </div>
-          <div class="col-sm-7 col-md-7 col-lg-6">
-            <div class="default-card">
-              <div class="profile-details">
-                <div>
+            <div class="col-sm-7 col-md-7 col-lg-6">
+              <div class="default-card">
+                <div class="profile-details">
                   <div>
-                    <h2 id="profile-fullName"></h2>
-                    <button class="btn btn-warning btn-sm">Añadir +</button>
-                 
+                    <div>
+                      <h2 id="profile-fullName"></h2>
+                      <button class="btn btn-warning btn-sm">Añadir +</button>
+                    </div>
+                  </div>
+                  <div>
+                    <h5 id="profile-city"></h5>
+                    <h5 id="profile-country"></h5>
+                    <h5 id="profile-birthDate"></h5>
                   </div>
                 </div>
-                <div>
-                  <h5 id="profile-city"></h5>
-                  <h5 id="profile-country"></h5>
-                  <h5 id="profile-birthDate"></h5>
+                <div class="user-bio profile-data">
+                  <div id="profile-avatar"></div>
                 </div>
               </div>
-              <div class="user-bio profile-data">
-                <div id="profile-avatar"></div>                
+              <div class="default-card">
+                <h4>EXPERIENCIA LABORAL</h4>
+                <div class="profile-data">
+                  <p>Lugar de trabajo | Fecha</p>
+                  <p>Descripción del puesto</p>
+                </div>
               </div>
             </div>
-            <div class="default-card">
-              <h4>
-                EXPERIENCIA LABORAL
-              
-              </h4>
-              <div class="profile-data">
-                <p>Lugar de trabajo | Fecha</p>
-                <p>Descripción del puesto</p>
+            <div class="col-sm-5 col-md-4 col-lg-3">
+              <div class="default-card contact">
+                <h4>
+                  <i class="fa-solid fa-phone icon" title="Contacto"></i>
+                  CONTACTO
+                </h4>
+                <ul class="profile-data">
+                  <li id="profile-email">Correo</li>
+                  <li id="profile-phone">Teléfono</li>
+                  <a
+                    href="https://www.facebook.com/"
+                    class="fa-brands fa-facebook icon"
+                    title="Facebook"
+                    target="”_blank”"
+                  ></a>
+                  <a
+                    href="https://www.linkedin.com/feed/"
+                    class="fa-brands fa-linkedin icon"
+                    title="Linkedin"
+                    target="”_blank”"
+                  ></a>
+                  <a
+                    href="https://github.com/"
+                    class="fa-brands fa-github icon"
+                    title="GitHub"
+                    target="”_blank”"
+                  ></a>
+                </ul>
               </div>
-            </div>
-          </div>
-          <div class="col-sm-5 col-md-4 col-lg-3">
-            <div class="default-card contact">
-              <h4>
-                <i class="fa-solid fa-phone icon" title="Contacto"></i>
-                CONTACTO
-              </h4>
-              <ul class="profile-data">
-                <li id="profile-email">Correo</li>
-                <li id="profile-phone">Teléfono</li>
-                <a href="https://www.facebook.com/" class="fa-brands fa-facebook icon" title="Facebook"
-                  target="”_blank”"></a>
-                <a href="https://www.linkedin.com/feed/" class="fa-brands fa-linkedin icon" title="Linkedin"
-                  target="”_blank”"></a>
-                <a href="https://github.com/" class="fa-brands fa-github icon" title="GitHub" target="”_blank”"></a>
-              </ul>
-             
-            </div>
-            ​
-            <div class="default-card interests">
-              <h4>
-                <i class="fa-solid fa-person-walking icon"></i>INTERESES
-              </h4>
-              <ul class="profile-data">
-                <li>Listado de intereses</li>
-              </ul>
-           
+              ​
+              <div class="default-card interests">
+                <h4>
+                  <i class="fa-solid fa-person-walking icon"></i>INTERESES
+                </h4>
+                <ul class="profile-data">
+                  <li>Listado de intereses</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <button id="eliminar-cuenta" class="btn btn-danger">
-      Eliminar cuenta
-    </button>
-    <script src="deleteAccount.js"></script>
-  </main>
-  <footer class="footer">
-    <div class="text-center p-3">
-      2023 Keybook ©
-      <a class="footer-url" href="#">Keybook.com</a>
-    </div>
-  </footer>
-  <script src="/Keybook/Frontend/javascript/randomProfile.js"></script>
-</body>
-
+      <button id="eliminar-cuenta" class="btn btn-danger">
+        Eliminar cuenta
+      </button>
+      <script src="deleteAccount.js"></script>
+    </main>
+    <footer class="footer">
+      <div class="text-center p-3">
+        2023 Keybook ©
+        <a class="footer-url" href="#">Keybook.com</a>
+      </div>
+    </footer>
+    <script src="/Keybook/Frontend/javascript/randomProfile.js"></script>
+    <script>
+      function toggleGrayScale() {
+        var currFilter = document.body.style.filter;
+        if (currFilter === "grayscale(100%)") {
+          document.body.style.filter = "none";
+        } else {
+          document.body.style.filter = "grayscale(100%)";
+        }
+      }
+    </script>
+    <script src="..\javascript\main.js"></script>
+  </body>
 </html>
