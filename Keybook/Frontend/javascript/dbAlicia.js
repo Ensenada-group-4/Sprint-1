@@ -4,8 +4,6 @@ async function getUser(done) {
     const data = await response.json()
 
     try {
-        console.log(data[0].name)
-        console.log(data.name)
 
         const nameField = document.getElementById('profile-fullName');
         nameField.innerHTML = data[0].name + ' ' + data[0].last_name;
@@ -25,7 +23,11 @@ async function getUser(done) {
         const phoneField = document.getElementById('profile-phone');
         phoneField.textContent = data[0].phone
 
-        console.log(response);
+        const photoField = document.getElementById('profile-avatar-alicia');
+        photoField.src = data[0].profile_picture;
+        photoField.alt = data[0].name;
+        photoField.style.borderRadius = '50%';
+        photoField.classList("avatar-perfil")
         done();
     }
     catch (error) {
