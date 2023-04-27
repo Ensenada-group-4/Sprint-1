@@ -1,22 +1,23 @@
 async function getUsers(done) {
-    fetch('http://localhost:3000/user')
+    fetch('http://localhost:3000/user/id_5')
 
         .then(response => response.json())
         .then(data => {
-            console.log(data)
-            data.forEach(user => {
-                const follow = document.createRange().createContextualFragment(`
-                <div class="col-sm-3 default-card friend-box">
-    <img class="friend-avatar" src="../img/avatares/blankAvatar.png" ></img>
-    <img class="friend-avatar" src=${user.profile_picture}></img>
-            <a>${user.name}</a>
-            <p>${user.email}</p>
-        <button class="btn btn-outline-warning btn-sm">Enviar solicitud</button>
-        </div>`);
-                console.log(user.profile_picture)
-                const main = document.querySelector("article");
-                main.append(follow);
-            });
+            // const nameField = document.getElementById('profile-fullName');
+            // nameField.textContent = data.user.name
+
+            // const birthField = document.getElementById('profile-birthDate');
+            // birthField.textContent = data.date_of_birth
+
+            // const cityField = document.getElementById('profile-city');
+            // cityField.textContent = data.city
+
+            // const countryField = document.getElementById('profile-country');
+            // countryField.textContent = data.country
+
+            // const emailField = document.getElementById('profile-email');
+            // emailField.textContent = data.email
+            console.log(response);
             done();
         })
         .catch((err) => console.log(err));
