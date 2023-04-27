@@ -2,20 +2,34 @@
 // npm init, le damos a todo que sí
 // npm i express
 const express = require('express');
-const path = require("path")
-const user = require('./routers/users.js');
 const app = express();
-const port = 3001;
+const sequelize = require('./db/connection.js');
+var cors = require('cors')
+app.use(cors());
 
-app.use(express.json())
-// app.use(express.static(path.join(__dirname, "..", "Frontend", "css")));
-// app.use(express.static("Keybook"));
-// app.use(express.static("public"));
-// app.use('/static', express.static("Keybook"))
+async function findAllRows() {
+    return await sequelize.query("Select * from user", { type: sequelize.QueryTypes.SELECT })
+        .then(function (personas) {
+            // console.log(personas);
 
-app.get("/", (req, res) => {
-    // console.log((path.join(__dirname, "..", "Frontend", "css")))
-    res.sendFile(path.join(__dirname, "..", "Frontend", "html", "formLogin.html"))
-})
-app.use('/', user)
-app.listen(port, () => { console.log(`Server listening on port ${port}`) });
+        });
+}
+
+// findAllRows();
+
+app.get('/user', async function (req, res) {
+    console.log("instance")
+    try {
+        const personas = await sequelize.query("SELECT * FROM user", { type: sequelize.QueryTypes.SELECT });
+        console.log(personas);
+        res.send(personas);
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error interno del servidor');
+    }
+});
+
+app.listen(3000, function () {
+    console.log("Sistema funcionando en el puerto 3000");
+});
