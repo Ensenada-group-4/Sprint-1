@@ -131,18 +131,27 @@
         </div>
         <div class="row justify-content-center" id="register-form-buttons">
           <div class="col-md-11">
-            <a href="./profileEmpty.html" title="Perfil nuevo usuario">Prueba</a>
-              <button
-                type="submit"
-                class="btn btn-warning btn-block"
-                id="register-send"
-              >
-                Enviar
-              </button>
-           
+            <a href="./profileEmpty.html" title="Perfil nuevo usuario"
+              >Prueba</a
+            >
+            <button
+              type="submit"
+              class="btn btn-warning btn-block"
+              id="register-send"
+            >
+              Enviar
+            </button>
+
             <button type="reset" class="btn btn-outline-warning btn-block">
               Restablecer
             </button>
+            <form id="myForm">
+              <a class="dropdown-item active" href="#">
+                <div class="infinity-button\" onclick="toggleGrayScale()">
+                  <i class="fa fa-infinity icon" title="Blanco y Negro"></i>
+                </div>
+              </a>
+            </form>
           </div>
         </div>
       </form>
@@ -154,5 +163,15 @@
         <a class="footer-url" href="#">Keybook.com</a>
       </div>
     </footer>
+    <script>
+      function toggleGrayScale() {
+        var currFilter = document.body.style.filter;
+        if (currFilter === "grayscale(100%)") {
+          document.body.style.filter = "none";
+        } else {
+          document.body.style.filter = "grayscale(100%)";
+        }
+      }
+    </script>
   </body>
 </html>

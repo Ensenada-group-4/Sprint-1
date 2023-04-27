@@ -33,85 +33,95 @@
           <!-- Logo -->
           <div class="col">
             <a class="navbar-brand" href="#">
-              <img src="/Keybook/Frontend/img/logo2.png" alt="Logo" class="keybook-logo" />
+              <img
+                src="/Keybook/Frontend/img/logo2.png"
+                alt="Logo"
+                class="keybook-logo d-block"
+              />
             </a>
           </div>
 
-            <!-- Search bar -->
-            <div class="col-8 search-bar">
-              <form class="d-flex">
-                <div class="input-group">
-                  <span class="input-group-text" id="basic-addon1">
-                    <input
-                      class="form-control me-2 search-content-input"
-                      type="search"
-                      placeholder="Búsqueda..."
-                      aria-label="Buscar"
-                      size="50"
-                    />
-                    <i class="fa-solid fa-magnifying-glass icon search-icon"></i>
-                  </span>
-                </div>
-              </form>
-            </div>
-  
+          <!-- Search bar -->
+          <div class="col-8 search-bar">
+            <form class="d-flex">
+              <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">
+                  <input
+                    class="form-control me-2 search-content-input"
+                    type="search"
+                    placeholder="Búsqueda..."
+                    aria-label="Buscar"
+                    size="50"
+                  />
+                  <i class="fa-solid fa-magnifying-glass icon search-icon"></i>
+                </span>
+              </div>
+            </form>
+          </div>
 
-          <!-- Hamburger dropdown -->
-          <div class="col">
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
+          <div class="col-sm-1"></div>
+
+          <div class="col-3 col-sm-1">
+            <!-- Hamburger dropdown -->
+            <button class="navbar-toggler" type="button">
+              <span class="br-1"></span>
+              <span class="br-2"></span>
+              <span class="br-3"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-icons">
-                <!-- Mensajes -->
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">
-                    <span
-                      class="fa fa-comment-dots icon"
-                      title="Mensajes"
-                    ></span>
+          </div>
+
+          <div class="col-1"></div>
+
+          <div
+            class="collapse navbar-collapse col-sm-7 col-lg-6"
+            id="navbarNav"
+          >
+            <!-- Updated code -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-icons">
+              <!-- Mensajes -->
+              <li class="nav-item">
+                <a class="dropdown-item active" aria-current="page" href="#">
+                  <span class="fa fa-comment-dots icon" title="Mensajes"></span>
+                </a>
+              </li>
+              <!-- Notificaciones -->
+              <li class="nav-item">
+                <a class="dropdown-item active" aria-current="page" href="#">
+                  <span class="fas fa-bell icon" title="Notificaciones"></span>
+                </a>
+              </li>
+              <!-- Perfil -->
+              <li class="nav-item">
+                <a class="dropdown-item active" aria-current="page" href="#">
+                  <span class="fa fa-user icon" title="Mi Perfil"></span>
+                </a>
+              </li>
+              <!-- Configuración -->
+              <li class="nav-item">
+                <a class="dropdown-item active" href="#">
+                  <span class="fa fa-cog icon" title="Configuración"></span>
+                </a>
+              </li>
+              <!-- Funcionalidad blanco y negro -->
+              <li class="nav-item">
+                <form id="myForm">
+                  <a class="dropdown-item active" href="#">
+                    <div class="infinity-button\" onclick="toggleGrayScale()">
+                      <i class="fa fa-infinity icon" title="Blanco y Negro"></i>
+                    </div>
                   </a>
-                </li>
-                <!-- Notificaciones -->
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">
-                    <span
-                      class="fas fa-bell icon"
-                      title="Notificaciones"
-                    ></span>
-                  </a>
-                </li>
-                <!-- Perfil -->
-                <li>
-                  <a class="nav-link active" aria-current="page" href="#">
-                    <span class="fa fa-user icon" title="Mi Perfil"></span
-                  ></a>
-                </li>
-                <!-- Configuración -->
-                <li>
-                  <a class="dropdown-item" href="#">
-                    <span class="fa fa-cog icon" title="Configuración"></span
-                  ></a>
-                </li>
-                <!-- Logout -->
-                <li>
-                  <a class="dropdown-item" href="/logout">
-                    <span
-                      class="fas fa-sign-out-alt icon"
-                      title="Desconectarse"
-                    ></span>
-                  </a>
-                </li>
-              </ul>
-            </div>
+                </form>
+              </li>
+              <!-- Logout -->
+              <li class="nav-item">
+                <a class="dropdown-item active" href="/logout">
+                  <span
+                    class="fas fa-sign-out-alt icon"
+                    title="Desconectarse"
+                  ></span>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -262,6 +272,17 @@
         <a class="footer-url" href="#">Keybook.com</a>
       </div>
     </footer>
-    <script src="/Keybook/Frontend/javascript/profileDetails.js"></script>
+
+    <script>
+      function toggleGrayScale() {
+        var currFilter = document.body.style.filter;
+        if (currFilter === "grayscale(100%)") {
+          document.body.style.filter = "none";
+        } else {
+          document.body.style.filter = "grayscale(100%)";
+        }
+      }
+    </script>
+    <script src="..\javascript\animationToggler.js"></script>
   </body>
 </html>

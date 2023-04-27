@@ -1,267 +1,333 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Perfil</title>
+    <!-- BOOTSTRAP CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mi Perfil</title>
-  <!-- BOOTSTRAP CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- FONT AWESOME -->
+    <script
+      src="https://kit.fontawesome.com/43124feaf5.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- CSS STYLESHEETS (después de Bootstrap!)-->
+    <link rel="stylesheet" href="/Keybook/Frontend/css/styles.css" />
+  </head>
 
-  <!-- FONT AWESOME -->
-  <script src="https://kit.fontawesome.com/43124feaf5.js" crossorigin="anonymous"></script>
-  <!-- CSS STYLESHEETS (después de Bootstrap!)-->
-  <link rel="stylesheet" href="/Keybook/Frontend/css/styles.css" />
-</head>
-
-<body>
-  <!--BARRA DE NAVEGACIÓN-->
-  <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-      <div class="row nav-body">
-        <!-- Logo -->
-        <div class="col">
-          <a class="navbar-brand" href="#">
-            <img src="/Keybook/Frontend/img/logo2.png" alt="Logo" class="keybook-logo" />
-          </a>
-        </div>
-
-       <!-- Search bar -->
-       <div class="col-8 search-bar">
-        <form class="d-flex">
-          <div class="input-group">
-            <span class="input-group-text" id="basic-addon1">
-              <input
-                class="form-control me-2 search-content-input"
-                type="search"
-                placeholder="Búsqueda..."
-                aria-label="Buscar"
-                size="50"
+  <body>
+    <!--BARRA DE NAVEGACIÓN-->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <div class="row nav-body">
+          <!-- Logo -->
+          <div class="col">
+            <a class="navbar-brand" href="#">
+              <img
+                src="/Keybook/Frontend/img/logo2.png"
+                alt="Logo"
+                class="keybook-logo d-block"
               />
-              <i class="fa-solid fa-magnifying-glass icon search-icon"></i>
-            </span>
+            </a>
           </div>
-        </form>
-      </div>
 
+          <!-- Search bar -->
+          <div class="col-8 search-bar">
+            <form class="d-flex">
+              <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">
+                  <input
+                    class="form-control me-2 search-content-input"
+                    type="search"
+                    placeholder="Búsqueda..."
+                    aria-label="Buscar"
+                    size="50"
+                  />
+                  <i class="fa-solid fa-magnifying-glass icon search-icon"></i>
+                </span>
+              </div>
+            </form>
+          </div>
 
-        <!-- Hamburger dropdown -->
-        <div class="col">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="col-sm-1"></div>
+
+          <div class="col-3 col-sm-1">
+            <!-- Hamburger dropdown -->
+            <button class="navbar-toggler" type="button">
+              <span class="br-1"></span>
+              <span class="br-2"></span>
+              <span class="br-3"></span>
+            </button>
+          </div>
+
+          <div class="col-1"></div>
+
+          <div
+            class="collapse navbar-collapse col-sm-7 col-lg-6"
+            id="navbarNav"
+          >
+            <!-- Updated code -->
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-icons">
               <!-- Mensajes -->
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">
+                <a class="dropdown-item active" aria-current="page" href="#">
                   <span class="fa fa-comment-dots icon" title="Mensajes"></span>
                 </a>
               </li>
               <!-- Notificaciones -->
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">
+                <a class="dropdown-item active" aria-current="page" href="#">
                   <span class="fas fa-bell icon" title="Notificaciones"></span>
                 </a>
               </li>
               <!-- Perfil -->
-              <li>
-                <a class="nav-link active" aria-current="page" href="#">
-                  <span class="fa fa-user icon" title="Mi Perfil"></span></a>
+              <li class="nav-item">
+                <a class="dropdown-item active" aria-current="page" href="#">
+                  <span class="fa fa-user icon" title="Mi Perfil"></span>
+                </a>
               </li>
               <!-- Configuración -->
-              <li>
-                <a class="dropdown-item" href="#">
-                  <span class="fa fa-cog icon" title="Configuración"></span></a>
+              <li class="nav-item">
+                <a class="dropdown-item active" href="#">
+                  <span class="fa fa-cog icon" title="Configuración"></span>
+                </a>
+              </li>
+              <!-- Funcionalidad blanco y negro -->
+              <li class="nav-item">
+                <form id="myForm">
+                  <a class="dropdown-item active" href="#">
+                    <div class="infinity-button\" onclick="toggleGrayScale()">
+                      <i class="fa fa-infinity icon" title="Blanco y Negro"></i>
+                    </div>
+                  </a>
+                </form>
               </li>
               <!-- Logout -->
-              <li>
-                <a class="dropdown-item" href="/logout">
-                  <span class="fas fa-sign-out-alt icon" title="Desconectarse"></span>
+              <li class="nav-item">
+                <a class="dropdown-item active" href="/logout">
+                  <span
+                    class="fas fa-sign-out-alt icon"
+                    title="Desconectarse"
+                  ></span>
                 </a>
               </li>
             </ul>
           </div>
         </div>
       </div>
-    </div>
-  </nav>
-  <main>
-    <!-- PERSONAL PROFILE -->
-    <div id="cuenta">
-      <div class="container-fluid main-structure">
-        <div class="row">
-          <div class="col-sm-5 col-md-4 col-lg-3">
-            <div class="default-card education">
-              <h4>
-                <i class="fa-solid fa-user-graduate icon" title="Formacion"></i>
-                FORMACION
-              </h4>
-              <ul class="profile-data">
-                <a>
-                  Tecla Coding Academy
-                  <p>Full Stack</p>
-                </a>
+    </nav>
+    <main>
+      <!-- PERSONAL PROFILE -->
+      <div id="cuenta">
+        <div class="container-fluid main-structure">
+          <div class="row">
+            <div class="col-sm-5 col-md-4 col-lg-3">
+              <div class="default-card education">
+                <h4>
+                  <i
+                    class="fa-solid fa-user-graduate icon"
+                    title="Formacion"
+                  ></i>
+                  FORMACION
+                </h4>
+                <ul class="profile-data">
+                  <a>
+                    Tecla Coding Academy
+                    <p>Full Stack</p>
+                  </a>
 
-                <a>
-                  ATC Academy
-                  <p>Front Deveplopment</p>
-                </a>
-
-              </ul>
-              <button class="btn btn-outline-warning btn-sm">Editar</button>
-            </div>
-            <div class="default-card languages">
-              <h4>
-                <i class="fa-solid fa-language icon" title="Idiomas"></i>
-                IDIOMAS
-              </h4>
-
-              <ul class="profile-data">
-                <a>
-                  Español
-                  <p>Nativo</p>
-                </a>
-
-                <a>
-                  Inglés
-                  <p>Intermedio</p>
-                </a>
-
-              </ul>
-              <button class="btn btn-outline-warning btn-sm">Editar</button>
-            </div>
-            <div class="default-card habilidades">
-              <h4>
-                <i class="fa-solid fa-computer icon" title="Técnicas"></i>
-                HABILIDADES
-              </h4>
-              <ul class="profile-data">
-                <li>HTML & CSS</li>
-                <li>Javascript</li>
-                <li>PHP</li>
-                <li>MySQL</li>
-              </ul>
-              <button class="btn btn-outline-warning btn-sm">Editar</button>
-            </div>
-          </div>
-          <div class="col-sm-7 col-md-7 col-lg-6">
-            <div class="default-card">
-              <div class="profile-details">
-                <div>
-                  <h2>
-                    Adrián Page Fernández
-                    <button class="btn btn-outline-warning">Editar</button>
-                  </h2>
-                </div>
-                <div>
-                  <h5>Gijón, España</h5>
-                  <h5>19/01/1992</h5>
-                </div>
-              </div>
-              <div class="user-bio profile-data">
-                <img src="/Keybook/Frontend/img/avatares/adrian.png" alt="avatar" class="avatar avatar-perfil" />
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Veritatis eaque repudiandae qui natus vero aspernatur labore
-                  ullam itaque ipsa architecto numquam quae quod debitis sit,
-                  culpa reprehenderit obcaecati! Recusandae, ea?
-                </p>
-              </div>
-            </div>
-            <div class="default-card">
-              <h4>
-                EXPERIENCIA LABORAL
+                  <a>
+                    ATC Academy
+                    <p>Front Deveplopment</p>
+                  </a>
+                </ul>
                 <button class="btn btn-outline-warning btn-sm">Editar</button>
-              </h4>
-              <div class="profile-data">
-                <p>Lugar de trabajo | Fecha</p>
-                <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Dicta, velit, suscipit ratione dolore, quibusdam praesentium
-                  at amet adipisci nihil similique tempore aspernatur? Nulla
-                  officiis veniam possimus repudiandae enim! Est, cumque.
-                </p>
-                <p>Lugar de trabajo | Fecha</p>
-                <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Dicta, velit, suscipit ratione dolore, quibusdam praesentium
-                  at amet adipisci nihil similique tempore aspernatur? Nulla
-                  officiis veniam possimus repudiandae enim! Est, cumque.
-                </p>
-                <p>Lugar de trabajo | Fecha</p>
-                <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Dicta, velit, suscipit ratione dolore, quibusdam praesentium
-                  at amet adipisci nihil similique tempore aspernatur? Nulla
-                  officiis veniam possimus repudiandae enim! Est, cumque.
-                </p>
-                <p>Lugar de trabajo | Fecha</p>
-                <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Dicta, velit, suscipit ratione dolore, quibusdam praesentium
-                  at amet adipisci nihil similique tempore aspernatur? Nulla
-                  officiis veniam possimus repudiandae enim! Est, cumque.
-                </p>
-                <p>Lugar de trabajo | Fecha</p>
-                <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Dicta, velit, suscipit ratione dolore, quibusdam praesentium
-                  at amet adipisci nihil similique tempore aspernatur? Nulla
-                  officiis veniam possimus repudiandae enim! Est, cumque.
-                </p>
+              </div>
+              <div class="default-card languages">
+                <h4>
+                  <i class="fa-solid fa-language icon" title="Idiomas"></i>
+                  IDIOMAS
+                </h4>
+
+                <ul class="profile-data">
+                  <a>
+                    Español
+                    <p>Nativo</p>
+                  </a>
+
+                  <a>
+                    Inglés
+                    <p>Intermedio</p>
+                  </a>
+                </ul>
+                <button class="btn btn-outline-warning btn-sm">Editar</button>
+              </div>
+              <div class="default-card habilidades">
+                <h4>
+                  <i class="fa-solid fa-computer icon" title="Técnicas"></i>
+                  HABILIDADES
+                </h4>
+                <ul class="profile-data">
+                  <li>HTML & CSS</li>
+                  <li>Javascript</li>
+                  <li>PHP</li>
+                  <li>MySQL</li>
+                </ul>
+                <button class="btn btn-outline-warning btn-sm">Editar</button>
               </div>
             </div>
-          </div>
-          <div class="col-sm-5 col-md-4 col-lg-3">
-            <div class="default-card contact">
-              <h4>
-                <i class="fa-solid fa-phone icon" title="Contacto"></i>
-                CONTACTO
-              </h4>
-              <ul class="profile-data">
-                <li>Pagemaster92@gmail.com</li>
-                <li>654789123</li>
-                <a href="https://www.facebook.com/" class="fa-brands fa-facebook icon" title="Facebook"
-                  target="”_blank”"></a>
-                <a href="https://www.linkedin.com/feed/" class="fa-brands fa-linkedin icon" title="Linkedin"
-                  target="”_blank”"></a>
-                <a href="https://github.com/" class="fa-brands fa-github icon" title="GitHub" target="”_blank”"></a>
-              </ul>
-              <button class="btn btn-outline-warning btn-sm">Editar</button>
+            <div class="col-sm-7 col-md-7 col-lg-6">
+              <div class="default-card">
+                <div class="profile-details">
+                  <div>
+                    <h2>
+                      Adrián Page Fernández
+                      <button class="btn btn-outline-warning">Editar</button>
+                    </h2>
+                  </div>
+                  <div>
+                    <h5>Gijón, España</h5>
+                    <h5>19/01/1992</h5>
+                  </div>
+                </div>
+                <div class="user-bio profile-data">
+                  <img
+                    src="/Keybook/Frontend/img/avatares/adrian.png"
+                    alt="avatar"
+                    class="avatar avatar-perfil"
+                  />
+                  <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Veritatis eaque repudiandae qui natus vero aspernatur labore
+                    ullam itaque ipsa architecto numquam quae quod debitis sit,
+                    culpa reprehenderit obcaecati! Recusandae, ea?
+                  </p>
+                </div>
+              </div>
+              <div class="default-card">
+                <h4>
+                  EXPERIENCIA LABORAL
+                  <button class="btn btn-outline-warning btn-sm">Editar</button>
+                </h4>
+                <div class="profile-data">
+                  <p>Lugar de trabajo | Fecha</p>
+                  <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Dicta, velit, suscipit ratione dolore, quibusdam praesentium
+                    at amet adipisci nihil similique tempore aspernatur? Nulla
+                    officiis veniam possimus repudiandae enim! Est, cumque.
+                  </p>
+                  <p>Lugar de trabajo | Fecha</p>
+                  <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Dicta, velit, suscipit ratione dolore, quibusdam praesentium
+                    at amet adipisci nihil similique tempore aspernatur? Nulla
+                    officiis veniam possimus repudiandae enim! Est, cumque.
+                  </p>
+                  <p>Lugar de trabajo | Fecha</p>
+                  <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Dicta, velit, suscipit ratione dolore, quibusdam praesentium
+                    at amet adipisci nihil similique tempore aspernatur? Nulla
+                    officiis veniam possimus repudiandae enim! Est, cumque.
+                  </p>
+                  <p>Lugar de trabajo | Fecha</p>
+                  <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Dicta, velit, suscipit ratione dolore, quibusdam praesentium
+                    at amet adipisci nihil similique tempore aspernatur? Nulla
+                    officiis veniam possimus repudiandae enim! Est, cumque.
+                  </p>
+                  <p>Lugar de trabajo | Fecha</p>
+                  <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Dicta, velit, suscipit ratione dolore, quibusdam praesentium
+                    at amet adipisci nihil similique tempore aspernatur? Nulla
+                    officiis veniam possimus repudiandae enim! Est, cumque.
+                  </p>
+                </div>
+              </div>
             </div>
+            <div class="col-sm-5 col-md-4 col-lg-3">
+              <div class="default-card contact">
+                <h4>
+                  <i class="fa-solid fa-phone icon" title="Contacto"></i>
+                  CONTACTO
+                </h4>
+                <ul class="profile-data">
+                  <li>Pagemaster92@gmail.com</li>
+                  <li>654789123</li>
+                  <a
+                    href="https://www.facebook.com/"
+                    class="fa-brands fa-facebook icon"
+                    title="Facebook"
+                    target="”_blank”"
+                  ></a>
+                  <a
+                    href="https://www.linkedin.com/feed/"
+                    class="fa-brands fa-linkedin icon"
+                    title="Linkedin"
+                    target="”_blank”"
+                  ></a>
+                  <a
+                    href="https://github.com/"
+                    class="fa-brands fa-github icon"
+                    title="GitHub"
+                    target="”_blank”"
+                  ></a>
+                </ul>
+                <button class="btn btn-outline-warning btn-sm">Editar</button>
+              </div>
 
-            <div class="default-card interests">
-              <h4>
-                <i class="fa-solid fa-person-walking icon"></i>INTERESES
-              </h4>
-              <ul class="profile-data">
-                <li>Deporte</li>
-                <li>Tecnología</li>
-                <li>Cine</li>
-                <li>Economía</li>
-              </ul>
-              <button class="btn btn-outline-warning btn-sm">Editar</button>
+              <div class="default-card interests">
+                <h4>
+                  <i class="fa-solid fa-person-walking icon"></i>INTERESES
+                </h4>
+                <ul class="profile-data">
+                  <li>Deporte</li>
+                  <li>Tecnología</li>
+                  <li>Cine</li>
+                  <li>Economía</li>
+                </ul>
+                <button class="btn btn-outline-warning btn-sm">Editar</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <button id="eliminar-cuenta" class="btn btn-danger">
-      Eliminar cuenta
-    </button>
-    <script src="deleteAccount.js"></script>
-  </main>
-  <footer class="footer">
-    <div class="text-center p-3">
-      2023 Keybook ©
-      <a class="footer-url" href="#">Keybook.com</a>
-    </div>
-  </footer>
-</body>
+      <button id="eliminar-cuenta" class="btn btn-danger">
+        Eliminar cuenta
+      </button>
+      <script src="deleteAccount.js"></script>
+    </main>
+    <footer class="footer">
+      <div class="text-center p-3">
+        2023 Keybook ©
+        <a class="footer-url" href="#">Keybook.com</a>
+      </div>
+    </footer>
 
+    <script>
+      function toggleGrayScale() {
+        var currFilter = document.body.style.filter;
+        if (currFilter === "grayscale(100%)") {
+          document.body.style.filter = "none";
+        } else {
+          document.body.style.filter = "grayscale(100%)";
+        }
+      }
+    </script>
+    <script src="..\javascript\animationToggler.js"></script>
+  </body>
 </html>
