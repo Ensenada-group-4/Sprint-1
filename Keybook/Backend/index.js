@@ -44,6 +44,20 @@ app.get('/user/id_5', async function (req, res) {
     }
 });
 
+//sacar estudios
+app.get('/studies/studies_id_3', async function (req, res) {
+    console.log("instance")
+    try {
+        const alicia_studios = await sequelize.query("SELECT * FROM `studies` WHERE STUDIES.studies_id = 3 ", { type: sequelize.QueryTypes.SELECT });
+        console.log(alicia_studios);
+        res.send(alicia_studios);
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error interno del servidor');
+    }
+});
+
 app.listen(3000, function () {
     console.log("Sistema funcionando en el puerto 3000");
 });

@@ -1,7 +1,9 @@
 
 async function getUser(done) {
     const response = await fetch("http://localhost:3000/user/id_5");
+    const response_studies = await fetch("http://localhost:3000/studies/studies_id_3");
     const data = await response.json()
+    const data_studies = await response_studies.json()
 
     try {
 
@@ -22,6 +24,10 @@ async function getUser(done) {
 
         const phoneField = document.getElementById('profile-phone');
         phoneField.textContent = data[0].phone
+
+        //parte de studies
+        const studiesField = document.getElementById('formacion');
+        studiesField.textContent = data_studies[0].studies_course + '\n' + data_studies[0].studies_institution + '\n' + data_studies[0].studies_date + '\n' + data_studies[0].studies_level;
 
         const photoField = document.getElementById('profile-avatar-alicia');
         photoField.src = data[0].profile_picture;
