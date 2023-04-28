@@ -1,48 +1,48 @@
-## Sprint-1
+# Sprint-1: Keybook
+## Pasos para arrancar el proyecto
+Accedemos al directorio Backend
 
-## Tareas para la segunda entrega relacionadas con DOM y APIs:
+ ```
+cd Keybook\Backend
+```
+Instalamos las dependencias:
 
-- Formulario de recuperación de contraseña funcional con correo ficticio lulu@lala.com, al ingresar correctamente
-el email larga alerta "el Correo enviado, reinicio de contraseña exitoso", en caso de ingresar mal el email
-alerta indicando "Verifique si escribio correctamente su email".
+```
+npm i
+```
+Arrancamos el servidor con uno de estos dos comandos:
+```
+node index.js  
+nodemon
+```
+### Base de datos
+En phpMyAdmin, crear una base de datos llamada "keybook" e importar el archivo keybook.sql de este repositorio.
 
-- Se vinculo pagina de login con un usuario con claves (usuario: Alicia contraseña:1234), que redirecciona
-a la pagina de inicio de Alicia, en caso de usuario erroneo alerta "Usuario y/o contraseña incorrectas".
+Dicho archivo se encuentra en el directorio original, junto a este archivo README.md
 
-- En la vista de perfiPropio, en la esquina inferior izquierda está el botón de "Eliminar cuenta". Para simular esta acción, borramos los contenidos de cada tarjeta del perfil, y tras 5 segundos nos redirecciona al formulario de login
+## Tareas realizadas para esta entrega
+- Actualización completa de la arquitectura del proyecto: organizar archivos en carpetas por tipo, renombrar todos los archivos al inglés en formato camelCase y nombres más apropiados, así como actualizar rutas para garantizar el funcionamiento
+- Mejora de la navbar e incorporación del símbolo infinito, que cambia la vista correspondiente a blanco y negro. Hemos añadido esta mejora de accesibilidad para mejorar la experiencia de usuarios en el espectro autista (changeStyles.js, animationToggler.js)
+- Creación de servidor backend y comienzo de desarrollo de endpoints relevantes
+- Creación y aplicación de la base de datos keybook.sql para poder utilizar nuestra propia API
+-Actualización del grid de amigos y perfil de Alicia conectándolos con la base de datos, consiguiendo imprimir información en nuestras vistas (userGrid.html + dbUser.js) (profileDbAlicia.html + dbAlicia.js)
+- Mantenemos el muro de publicaciones a través de la API https://kc-fake-tweets-api.onrender.com/posts para poder crear nuevos posts así como imprimir otras ya existentes (home.html + postFeed.js )
 
+## Vistas de la red social
 
-
-## Utilizando la API  https://kc-fake-tweets-api.onrender.com/posts
-## FETCH y POST
-Con FETCH traemos posts de usuarios, con sus propios likes
-
-Al escribir una nueva publicación, la enviamos con POST a la API y la recibimos en nuestro muro, ordenadas de más nuevas a más antiguas
-
-
-Cada publicación que se imprime en nuestro muro incluye el nombre del autor y contenido del post, así como:
-
-- Boton de "me gusta" funcional, que permite agregar un solo like,y en caso de clickar nuevamente lo quita, viendose reflejado en el contador de likes.
-
-- Avatar de usuario que por ahora es siempre el mismo (para mantener formato), más adelante se cambiará para que vaya ligada a un ID de usuario
-
-
-## Tareas realizadas desde la primera entrega
-
-- Limpieza y refactorización del archivo CSS.
-
-- Arreglos a la barra de navegación: agregado de menú hamburguesa y  logo
-
-- Agregado de Logo y eslogan en pagina de Login.
-
-- Colocación de footer en todas las paginas.
-
-- Diversos arreglos que fuimos encontrando y adapatar estilos a las nuevas incorporaciones
+- Formularios de login, creación de usuario y recuperación de cuenta (no funcionales)
+- Página de inicio con diversos campos como muro de publicaciones y sección de amigos
+- Página de perfil propio de Alicia Gimenez, con opción de editar campos
+- Página de perfil de otros usuarios
 
 
-## Tareas pendientes para ir mejorando el proyecto
+## Funcionalidades pendientes de agregar al proyecto
 
-- Seguir añadiendo funcionaliades
-- Introducir más elementos ligados a la API
-- Botón y formulario para responder al post de la API. Por ahora sólo disponible como demo en los posts default del HTML
-- Reajustar ciertos elementos de diseño
+- Formulario de registro de nuevo usuario funcional con la base de datos 
+- Formulario de login funcional con la base de datos
+- Acceso al perfil propio del usuario "logueado"
+- Muro con publicaciones de la base de datos
+- Publicación de posts a través de la base de datos
+- Barra de búsqueda funcional
+
+
