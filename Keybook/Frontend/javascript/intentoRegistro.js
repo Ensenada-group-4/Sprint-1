@@ -1,8 +1,8 @@
 // Requerimos el módulo "mysql"
-const mysql = require("mysql");
+const mysql = require("sequalize");
 
 // Creamos la conexión con la base de datos
-const connection = mysql.createConnection({
+const connection = sequalize.createConnection({
   host: "localhost",
   user: "usuario",
   password: "contraseña",
