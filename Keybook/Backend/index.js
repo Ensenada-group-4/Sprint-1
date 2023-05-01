@@ -60,8 +60,8 @@ app.get('/studies/studies_id_3', async function (req, res) {
 
 // // el post para subir el usuario
 // app.post("/login", (req, res) => {
-//     const username = req.body.username;
-//     const password = req.body.password;
+//     const username = req.body.user.name;
+//     const password = req.body.user.password;
 //     if (username && password) {
 //         connection.query(
 //             `SELECT * FROM user WHERE (name = ? OR email = ?) AND password = ?`,
