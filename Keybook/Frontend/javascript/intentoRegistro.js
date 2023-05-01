@@ -1,13 +1,19 @@
-// Requerimos el módulo "mysql"
-const mysql = require("sequalize");
+//npm i sequelize
+//npm i cors
+const Sequelize = require("sequelize");
+const path = "mysql://root@localhost:3306/keybook";
+const sequelize = new Sequelize(path, { operatorAliases: false });
 
-// Creamos la conexión con la base de datos
-const connection = sequalize.createConnection({
-  host: "localhost",
-  user: "usuario",
-  password: "contraseña",
-  database: "dbname",
-});
+sequelize
+  .authenticate()
+  .then(() => {
+    console.log("Conectado: keybook base de datos");
+  })
+  .catch((err) => {
+    console.error("Error de conexión:", err);
+  });
+
+module.exports = sequelize;
 
 // Definimos una función para insertar los datos de newUser en la base de datos
 function insertarUsuario(user) {
