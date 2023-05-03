@@ -9,24 +9,18 @@ form.addEventListener('submit', async (event) => {
 
     console.log(name, lastName, email, password)
 
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-
-    var raw = JSON.stringify({
-        "name": name,
-        "last_name": lastName,
-        "email": email,
-        "password": password
-    });
-
-    var requestOptions = {
-        method: 'POST',
-        headers: myHeaders,
-        body: raw,
-        redirect: 'follow'
-    };
-
-    fetch("http://localhost:3000/register", requestOptions)
+    await fetch("http://localhost:3000/register", {
+        method: "POST",
+        headers: {
+            "content-type": "application/json",
+        },
+        body: JSON.stringify({
+            "name": name,
+            "last_name": lastName,
+            "email": email,
+            "password": password
+        }),
+    })
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));

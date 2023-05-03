@@ -1,6 +1,3 @@
-// npm install
-// npm init, le damos a todo que sí
-// npm i express
 const express = require('express');
 const app = express();
 const sequelize = require('./db/connection.js');
@@ -10,12 +7,17 @@ var cors = require('cors')
 app.use(cors());
 app.use(bodyParser.json())
 
-app.get('/user', async function (req, res) {
-    console.log("instance")
+// GET home page
+app.get('/', function(req, res, next) {
+    res.send("Keybook server");
+  });
+
+//GET users list
+app.get('/users', async function (req, res) {   
     try {
-        const personas = await sequelize.query("SELECT * FROM user", { type: sequelize.QueryTypes.SELECT });
-        console.log(personas);
-        res.send(personas);
+        const usersList = await sequelize.query("SELECT * FROM user", { type: sequelize.QueryTypes.SELECT });
+        console.log(usersList);
+        res.send(usersList);
 
     } catch (error) {
         console.error(error);
@@ -23,7 +25,7 @@ app.get('/user', async function (req, res) {
     }
 });
 
-// el usuario alicia
+// GET user Alicia
 app.get('/user/id_5', async function (req, res) {
     console.log("instance")
     try {
@@ -37,7 +39,7 @@ app.get('/user/id_5', async function (req, res) {
     }
 });
 
-//sacar estudios
+// GET user Alicia.studies
 app.get('/studies/studies_id_3', async function (req, res) {
     console.log("instance")
     try {
@@ -51,9 +53,22 @@ app.get('/studies/studies_id_3', async function (req, res) {
     }
 });
 
-app.post("/register", async function (req, res) {    
+//POST new user
+app.post("/register", async function (req, res) {
+
     try {
         const { name, last_name, email, password } = req.body;
+        // Encrypt the password
+        // const salt = await bcrypt.genSalt(10);
+        // const hashPassword = await bcrypt.hash(password, salt);
+
+        //Check if email already registered
+        // const emailExists = await sequelize.query("SELECT * FROM user WHERE email = ?", { type: sequelize.QueryTypes.SELECT, replacements: [email] })
+        // if (emailExists) {
+        //     return res
+        //         .status(400)
+        //         .json({ error: "El email ya está registrado })
+        // }
         const newUser = await sequelize.query(
             `INSERT INTO user (name, last_name, email, password) VALUES (?, ?, ?, ?)`,
             {
@@ -66,15 +81,16 @@ app.post("/register", async function (req, res) {
                 ],
             }
         );
-        res.status(200).send({
-            user_id: newUser[0],
-            name, 
-            last_name,
-            email, 
-            password
-        });
-        console.log("User created successfully")
-        console.log("New user data", req.body);
+        res.status(200)
+            .send({
+                user_id: newUser[0],
+                name,
+                last_name,
+                email,
+                password
+            })
+        console.log("Usuario creado con éxito")
+
     } catch (e) {
         console.log(e);
         res.status(400).send({ error: e.message });
@@ -86,20 +102,8 @@ app.post("/register", async function (req, res) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 // // el post para subir el usuario
-app.post("/register", (req, res) => {
+app.post("/login", (req, res) => {
     const username = req.body.user.name;
     const password = req.body.user.password;
     if (username && password) {
@@ -110,7 +114,7 @@ app.post("/register", (req, res) => {
                 if (results.length > 0) {
                     req.session.loggedin = true;
                     req.session.username = results[0].username;
-                    res.redirect("/home.html");
+                    res.redirect("/dashboard.html");
                 } else {
                     res.send("Usuario o contraseña incorrectos.");
                 }
