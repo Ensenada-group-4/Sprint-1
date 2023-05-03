@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-04-2023 a las 16:38:57
+-- Tiempo de generación: 03-05-2023 a las 12:32:03
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -75,19 +75,18 @@ INSERT INTO `hobbies` (`hobby_id`, `hobby_user_id`, `hobby_name`) VALUES
 CREATE TABLE `post` (
   `post_id` bigint(20) NOT NULL,
   `post_id_user` bigint(20) NOT NULL,
-  `post_title` varchar(100) NOT NULL,
-  `post_content` varchar(500) NOT NULL,
-  `post_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `post_image` mediumblob DEFAULT NULL
+  `post_content` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `post`
 --
 
-INSERT INTO `post` (`post_id`, `post_id_user`, `post_title`, `post_content`, `post_date`, `post_image`) VALUES
-(1, 2, 'Me encanta programar', 'No! odio esto! que alguien me salve, ayuda!', '2023-02-02 20:06:37', ''),
-(2, 1, 'Hola Mundo', 'Adios mundo, me caes mal', '2023-04-04 17:34:29', NULL);
+INSERT INTO `post` (`post_id`, `post_id_user`, `post_content`) VALUES
+(1, 2, 'No! odio esto! que alguien me salve, ayuda!'),
+(2, 1, 'Adios mundo, me caes mal'),
+(3, 8, 'Hoola hola'),
+(4, 8, 'Hoola amigos');
 
 -- --------------------------------------------------------
 
@@ -124,7 +123,7 @@ CREATE TABLE `user` (
   `name` varchar(200) NOT NULL,
   `last_name` varchar(200) NOT NULL,
   `email` varchar(200) NOT NULL,
-  `key` int(11) NOT NULL,
+  `password` int(11) NOT NULL,
   `date_of_birth` year(4) NOT NULL,
   `profile_picture` varchar(250) NOT NULL,
   `city` varchar(255) NOT NULL,
@@ -136,7 +135,7 @@ CREATE TABLE `user` (
 -- Volcado de datos para la tabla `user`
 --
 
-INSERT INTO `user` (`id`, `name`, `last_name`, `email`, `key`, `date_of_birth`, `profile_picture`, `city`, `country`, `phone`) VALUES
+INSERT INTO `user` (`id`, `name`, `last_name`, `email`, `password`, `date_of_birth`, `profile_picture`, `city`, `country`, `phone`) VALUES
 (1, 'Lucia', 'Saenz', 'lucia@gmail.com', 123, '1992', 'https://i.redd.it/lgshxkmdoeez.jpg', 'gijon', 'spain', ''),
 (2, 'Adrián', 'Page', 'pagemaster92@gmail.com', 123, '1992', 'https://fotografias.lasexta.com/clipping/cmsimages01/2017/07/26/F4F12168-6C10-45A3-AD81-6D7F5A567F58/98.jpg?crop=1086,611,x0,y39&width=1900&height=1069&optimize=high&format=webply', 'Gijon', 'Spain', ''),
 (3, 'Stella Maris', 'González Robert', 'Stella@hotmail.com', 123, '1990', 'https://hips.hearstapps.com/hmg-prod/images/beautiful-smooth-haired-red-cat-lies-on-the-sofa-royalty-free-image-1678488026.jpg?crop=0.668xw:1.00xh;0.119xw,0&resize=1200:*', 'Gijón', 'Spain', ''),
@@ -206,7 +205,7 @@ ALTER TABLE `hobbies`
 -- AUTO_INCREMENT de la tabla `post`
 --
 ALTER TABLE `post`
-  MODIFY `post_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `post_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `studies`
