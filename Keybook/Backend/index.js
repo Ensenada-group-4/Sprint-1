@@ -4,18 +4,11 @@
 const express = require('express');
 const app = express();
 const sequelize = require('./db/connection.js');
+const bodyParser = require("body-parser")
 var cors = require('cors')
+
 app.use(cors());
-
-async function findAllRows() {
-    return await sequelize.query("Select * from user", { type: sequelize.QueryTypes.SELECT })
-        .then(function (personas) {
-            // console.log(personas);
-
-        });
-}
-
-// findAllRows();
+app.use(bodyParser())
 
 app.get('/user', async function (req, res) {
     console.log("instance")
