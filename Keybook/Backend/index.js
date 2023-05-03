@@ -98,6 +98,31 @@ app.post("/register", async function (req, res) {
     }
 });
 
+//GET users by input
+app.get("/user", async function (req, res) {
+    const { searchKey } = req.query;
+    console.log("instance");
+    try {
+  
+      cond?true:false
+  
+      const personas = searchKey
+        ? await sequelize.query(
+            `SELECT * FROM user WHERE name % ${searchKey} OR email % ${searchKey}  `,
+            {
+              type: sequelize.QueryTypes.SELECT,
+            }
+          )
+        : await sequelize.query("SELECT * FROM user", {
+            type: sequelize.QueryTypes.SELECT,
+          });
+      console.log(personas);
+      res.send(personas);
+    } catch (error) {
+      console.error(error);
+      res.status(500).send("Error interno del servidor");
+    }
+  });
 
 
 
