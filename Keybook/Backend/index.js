@@ -59,7 +59,7 @@ app.get('/studies/studies_id_3', async function (req, res) {
 });
 
 // // el post para subir el usuario
-app.post("/login", (req, res) => {
+app.post("/register", (req, res) => {
     const username = req.body.user.name;
     const password = req.body.user.password;
     if (username && password) {
@@ -70,7 +70,7 @@ app.post("/login", (req, res) => {
                 if (results.length > 0) {
                     req.session.loggedin = true;
                     req.session.username = results[0].username;
-                    res.redirect("/dashboard.html");
+                    res.redirect("/home.html");
                 } else {
                     res.send("Usuario o contraseña incorrectos.");
                 }
