@@ -24,7 +24,7 @@ function validateLogin() {
       .then(function (response) {
         if (response.ok) {
           response.json().then(function (json) {
-            window.location.href = `feed-responsive.html?userId=${json.iser_id}`;
+            window.location.href = `feed-responsive.html?userId=${json.user_id}`;
           });
         } else {
           alert("email y/o contraseña incorrectos");

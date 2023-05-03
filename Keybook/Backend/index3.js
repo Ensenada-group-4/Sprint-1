@@ -102,19 +102,25 @@ app.post("/register", (req, res) => {
 // });
 
 //indexlogin funcional
-appendFile.get("/formLogin", async function (req, res) {
+app.get("/formLogin", async function (req, res) {
   let email = req.query.email;
   let password = req.query.password;
-  await sequalize.query("SELECT * FROM user WHERE email=? AND password =?"),
-    { type: sequalize.QueryTypes.SELECT, repalcements: [email, password] }.then(
-      function (response) {
-        if (response.length > 0) {
-          res.json({ user_id: response[0].user_id }).end();
-        } else {
-          res.status(401);
-        }
+  await sequelize
+    .query("SELECT * FROM user WHERE email=? AND password=?", {
+      replacements: [email, password],
+      type: sequelize.QueryTypes.SELECT,
+    })
+    .then(function (response) {
+      if (response.length > 0) {
+        res.json({ user_id: response[0].user_id });
+      } else {
+        res.status(401).send("Unauthorized");
       }
-    );
+    })
+    .catch(function (error) {
+      console.log(error);
+      res.status(500).send("Internal Server Error");
+    });
 });
 
 app.listen(3000, function () {
