@@ -8,7 +8,7 @@ const bodyParser = require("body-parser")
 var cors = require('cors')
 
 app.use(cors());
-app.use(bodyParser())
+app.use(bodyParser.json())
 
 app.get('/user', async function (req, res) {
     console.log("instance")
