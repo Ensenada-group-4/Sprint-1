@@ -51,6 +51,53 @@ app.get('/studies/studies_id_3', async function (req, res) {
     }
 });
 
+app.post("/register", async function (req, res) {    
+    try {
+        const { name, last_name, email, password } = req.body;
+        const newUser = await sequelize.query(
+            `INSERT INTO user (name, last_name, email, password) VALUES (?, ?, ?, ?)`,
+            {
+                type: sequelize.QueryTypes.INSERT,
+                replacements: [
+                    name,
+                    last_name,
+                    email,
+                    password
+                ],
+            }
+        );
+        res.status(200).send({
+            user_id: newUser[0],
+            name, 
+            last_name,
+            email, 
+            password
+        });
+        console.log("User created successfully")
+        console.log("New user data", req.body);
+    } catch (e) {
+        console.log(e);
+        res.status(400).send({ error: e.message });
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // // el post para subir el usuario
 app.post("/login", (req, res) => {
     const username = req.body.user.name;
