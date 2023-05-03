@@ -1,8 +1,10 @@
 const express = require('express');
-const app = express();
+const bcrypt = require("bcrypt");
 const sequelize = require('./db/connection.js');
 const bodyParser = require("body-parser")
 var cors = require('cors')
+
+const app = express();
 
 app.use(cors());
 app.use(bodyParser.json())
@@ -57,8 +59,9 @@ app.get('/studies/studies_id_3', async function (req, res) {
 app.post("/register", async function (req, res) {
 
     try {
-        const { name, last_name, email, password } = req.body;
+        const { name, email, password } = req.body;
         // Encrypt the password
+        // TODO cuando esté el login listo hay que revisar si funciona
         // const salt = await bcrypt.genSalt(10);
         // const hashPassword = await bcrypt.hash(password, salt);
 
@@ -70,12 +73,11 @@ app.post("/register", async function (req, res) {
         //         .json({ error: "El email ya está registrado })
         // }
         const newUser = await sequelize.query(
-            `INSERT INTO user (name, last_name, email, password) VALUES (?, ?, ?, ?)`,
+            `INSERT INTO user (name, email, password) VALUES (?, ?, ?)`,
             {
                 type: sequelize.QueryTypes.INSERT,
                 replacements: [
-                    name,
-                    last_name,
+                    name,                    
                     email,
                     password
                 ],
@@ -84,8 +86,7 @@ app.post("/register", async function (req, res) {
         res.status(200)
             .send({
                 user_id: newUser[0],
-                name,
-                last_name,
+                name,                
                 email,
                 password
             })
