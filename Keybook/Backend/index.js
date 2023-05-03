@@ -4,18 +4,11 @@
 const express = require('express');
 const app = express();
 const sequelize = require('./db/connection.js');
+const bodyParser = require("body-parser")
 var cors = require('cors')
+
 app.use(cors());
-
-async function findAllRows() {
-    return await sequelize.query("Select * from user", { type: sequelize.QueryTypes.SELECT })
-        .then(function (personas) {
-            // console.log(personas);
-
-        });
-}
-
-// findAllRows();
+app.use(bodyParser.json())
 
 app.get('/user', async function (req, res) {
     console.log("instance")
@@ -57,6 +50,53 @@ app.get('/studies/studies_id_3', async function (req, res) {
         res.status(500).send('Error interno del servidor');
     }
 });
+
+app.post("/register", async function (req, res) {    
+    try {
+        const { name, last_name, email, password } = req.body;
+        const newUser = await sequelize.query(
+            `INSERT INTO user (name, last_name, email, password) VALUES (?, ?, ?, ?)`,
+            {
+                type: sequelize.QueryTypes.INSERT,
+                replacements: [
+                    name,
+                    last_name,
+                    email,
+                    password
+                ],
+            }
+        );
+        res.status(200).send({
+            user_id: newUser[0],
+            name, 
+            last_name,
+            email, 
+            password
+        });
+        console.log("User created successfully")
+        console.log("New user data", req.body);
+    } catch (e) {
+        console.log(e);
+        res.status(400).send({ error: e.message });
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // // el post para subir el usuario
 app.post("/register", (req, res) => {
