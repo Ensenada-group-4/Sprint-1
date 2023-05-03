@@ -32,7 +32,7 @@ app.get("/user", async function (req, res) {
     res.status(500).send("Error interno del servidor");
   }
 });
-/*
+
 // el usuario alicia
 app.get("/user/id_5", async function (req, res) {
   console.log("instance");
@@ -89,6 +89,7 @@ app.post("/register", (req, res) => {
     res.end();
   }
 });
+
 // // Configurar middleware para validar sesión en todas las rutas excepto login
 // app.use((req, res, next) => {
 //     if (req.path === "/" || req.path === "/login") {
@@ -100,23 +101,25 @@ app.post("/register", (req, res) => {
 //     }
 // });
 
+//indexlogin funcional
+appendFile.get("/formLogin", async function (req, res) {
+  let email = req.query.email;
+  let password = req.query.password;
+  await sequalize.query("SELECT * FROM user WHERE email=? AND password =?"),
+    { type: sequalize.QueryTypes.SELECT, repalcements: [email, password] }.then(
+      function (response) {
+        if (response.length > 0) {
+          res.json({ user_id: response[0].user_id }).end();
+        } else {
+          res.status(401);
+        }
+      }
+    );
+});
+
 app.listen(3000, function () {
   console.log("Sistema funcionando en el puerto 3000");
 });
-
-//indexlogin funcional
-const contactForm = document.getElementById("login-form");
-contactForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const user = event.target.elements["username"].value.trim();
-  const pass = event.target.elements["password"].value.trim();
-  if (user == "Alicia" && pass == "1234") {
-    window.location.href = "./home.html";
-  } else {
-    alert("Usuario y/o contraseña incorrectas");
-  }
-});
-*/
 
 /*
 
@@ -272,67 +275,4 @@ app.get("/logout", function (req, res) {
 app.listen(3000, (req, res) => {
   console.log("SERVER RUNNING IN http://localhost:3000");
 });
-
-
-
 */
-// 1. Conexión a la base de datos con Sequelize
-//Se importa el paquete Sequelize para poder crear la conexión con
-//la base de datos y se define la instancia sequelize.
-const Sequelize = require("sequelize");
-const sequelize = new Sequelize("keybook", {
-  dialect: "mysql",
-});
-
-// 2. Definir un modelo para la tabla de usuarios
-//Se usa el método define como una función de sequelize para crear
-//un modelo llamado User para la tabla de usuarios.
-const User = sequelize.define("user", {
-  username: {
-    type: Sequelize.STRING,
-    allowNull: false,
-  },
-  password: {
-    type: Sequelize.STRING,
-    allowNull: false,
-  },
-});
-
-// 3. Verificar credenciales en la base de datos al enviar el formulario
-//Se obtiene el formulario con un ID especifico y se crea un evento de escucha
-//que escucha el evento submit del formulario.
-const formLogin = document.querySelector("submit");
-
-formLogin.addEventListener("submit", (event) => {
-  event.preventDefault();
-
-  //Se obtienen los valores de los campos 'username' y 'password' del formulario enviado
-  // con el evento target.
-  const username = event.target.elements.username.value;
-  const password = event.target.elements.password.value;
-
-  //Se utiliza el método findOne de Sequelize para buscar una entrada
-  //en la base de datos que tenga tanto el usuario como contraseña que
-  //se enviaron en el formulario.
-  User.findOne({
-    where: {
-      username: username,
-      password: password,
-    },
-  })
-    .then((user) => {
-      if (user) {
-        //Si se encuentra una coincidencia para el usuario y contraseña ingresada en la base de datos,
-        //se redirecciona al usuario a la página de inicio.
-        window.location.href = "./profileDbAlicia.html";
-      } else {
-        //Si no se encuentra una coincidencia, se muestra una alerta con un mensaje de error al usuario.
-        alert("Usuario y/o contraseña incorrectas");
-      }
-    })
-    .catch((error) => {
-      //Se registra un mensaje de error en la consola del navegador si ocurre algún
-      //error durante la búsqueda en la base de datos.
-      console.error("Error al buscar en la base de datos: ", error);
-    });
-});
