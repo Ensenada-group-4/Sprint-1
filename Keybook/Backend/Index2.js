@@ -37,7 +37,9 @@ app.post("/posts", async function (req, res) {
 app.get('/posts', async function (req, res) {
     console.log("instance")
     try {
-        const posts = await sequelize.query(`SELECT * FROM post, user`, { type: sequelize.QueryTypes.SELECT });
+        const posts = await sequelize.query(`SELECT * FROM user
+        JOIN post ON user.id = post.post_id_user
+        WHERE user.id;`, { type: sequelize.QueryTypes.SELECT });
 
         console.log(posts);
         res.send(posts);

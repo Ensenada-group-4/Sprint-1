@@ -35,7 +35,7 @@
 
 //   postElement.setAttribute("id", post.id);
 
-//   let postContent = `
+// let postContent = `
 //     <div class="default-card">
 //     <div class="post-author">      
 //         <img
@@ -54,31 +54,31 @@
 
 //   postElement.innerHTML = postContent;
 
-//   // añadimos el post a la lista por el principio
-//   postListElement.appendChild(postElement)
-//   postListElement.prepend(postElement)
+// // añadimos el post a la lista por el principio
+// postListElement.appendChild(postElement)
+// postListElement.prepend(postElement)
 
-//   //funcionalidad del botón "me gusta"
-//   const likeButton = postElement.querySelector(".buttonLike");
-//   const likeCount = postElement.querySelector(".count");
+// //funcionalidad del botón "me gusta"
+// const likeButton = postElement.querySelector(".buttonLike");
+// const likeCount = postElement.querySelector(".count");
 
-//   let likeCountNumber = parseInt(likeCount.textContent);
+// let likeCountNumber = parseInt(likeCount.textContent);
 
-//   let liked = false;
+// let liked = false;
 
-//   likeButton.addEventListener("click", () => {
-//     if (!liked) {
-//       likeCountNumber++;
-//       likeCount.textContent = `${likeCountNumber} Me gusta`;
-//       liked = true;
-//       likeButton.classList.add("clicked");
-//     } else {
-//       likeCountNumber--;
-//       likeCount.textContent = `${likeCountNumber} Me gusta`;
-//       liked = false;
-//       likeButton.classList.remove("clicked");
-//     }
-//   });
+// likeButton.addEventListener("click", () => {
+//   if (!liked) {
+//     likeCountNumber++;
+//     likeCount.textContent = `${likeCountNumber} Me gusta`;
+//     liked = true;
+//     likeButton.classList.add("clicked");
+//   } else {
+//     likeCountNumber--;
+//     likeCount.textContent = `${likeCountNumber} Me gusta`;
+//     liked = false;
+//     likeButton.classList.remove("clicked");
+//   }
+// });
 
 // }
 
@@ -95,35 +95,95 @@
 // drawPosts()
 
 
-async function getPost(done) {
-  const response = await fetch("http://localhost:3000/posts");
+// async function getPost(done) {
+//   const response = await fetch("http://localhost:3000/posts");
 
-  const data = await response.json()
+//   const data = await response.json()
 
 
-  try {
+//   try {
 
-    const postName = document.getElementById('posts');
-    postName.innerHTML = data[0].post_content + ' ' + data[0].name;
+//     const postName = document.getElementById('posts');
+//     postName.innerHTML = data[0].post_content + ' ' + data[0].name;
 
-    const postContent = document.createElement('div');
-    postContent.className = 'default-card';
-    postContent.innerHTML = data[0].post_content;
+//     const postContent = document.createElement('div');
+//     postContent.className = 'default-card';
+//     postContent.innerHTML = data[0].post_content;
 
-    const postAuthor = document.createElement('div');
-    postAuthor.className = 'post-author';
-    postAuthor.innerHTML = data[0].name;
+//     const postAuthor = document.createElement('div');
+//     postAuthor.className = 'post-author';
+//     postAuthor.innerHTML = data[0].name;
 
-    postName.appendChild(postContent);
-    postContent.appendChild(postAuthor);
+//     postName.appendChild(postContent);
+//     postContent.appendChild(postAuthor);
 
-    done();
-  }
-  catch (error) {
-    console.log('Ocurrio un error al solicitar los datos', error)
-  }
+//     done();
+//   }
+//   catch (error) {
+//     console.log('Ocurrio un error al solicitar los datos', error)
+//   }
+// }
+
+async function getPosts(done) {
+  fetch('http://localhost:3000/posts')
+
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+      data.forEach(posts => {
+        const postContent = document.createRange().createContextualFragment(
+          `
+          <div class="default-card">
+          <div class="post-author">     
+              <img
+                src="${posts.profile_picture}"
+                alt="avatar"
+                class="avatar"
+            />
+            <h4>${posts.name} </h4>
+          </div>
+          <p>
+          ${posts.post_content}
+          </p>    
+          <button class="buttonLike fa-solid fa-heart btn btn-lg "></button>
+          <span class="count"> Me gusta</span>   
+      `
+        );
+        postElement.innerHTML = postContent;
+        // añadimos el post a la lista por el principio
+        postListElement.appendChild(postElement)
+        postListElement.prepend(postElement)
+
+        //funcionalidad del botón "me gusta"
+        const likeButton = postElement.querySelector(".buttonLike");
+        const likeCount = postElement.querySelector(".count");
+
+        let likeCountNumber = parseInt(likeCount.textContent);
+
+        let liked = false;
+
+        likeButton.addEventListener("click", () => {
+          if (!liked) {
+            likeCountNumber++;
+            likeCount.textContent = `${likeCountNumber} Me gusta`;
+            liked = true;
+            likeButton.classList.add("clicked");
+          } else {
+            likeCountNumber--;
+            likeCount.textContent = `${likeCountNumber} Me gusta`;
+            liked = false;
+            likeButton.classList.remove("clicked");
+          }
+        });
+        console.log(posts.profile_picture)
+        const main = document.querySelector("article");
+        main.append(postContent);
+      });
+      done();
+    })
+    .catch((err) => console.log(err));
 }
 
-getPost(() => {
+getPosts(() => {
   console.log('Datos de post cargados');
 });
