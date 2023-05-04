@@ -95,6 +95,61 @@
 // drawPosts()
 
 
+async function getPosts(done) {
+  fetch('http://localhost:3000/posts')
+
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+      data.forEach(posts => {
+        const postContent = document.createRange().createContextualFragment(
+          `<div class="default-card">
+          <div class="post-author">     
+              <img
+                src="${posts.profile_picture}"
+                alt="avatar"
+                class="avatar"
+            />
+            <h4>${posts.name} </h4>
+          </div>
+          <p>
+          ${posts.post_content}
+          </p>    
+          <button class="buttonLike fa-solid fa-heart btn btn-lg "></button>
+          <span class="count"> Me gusta</span> `
+        );
+
+        //funcionalidad del botón "me gusta"
+        const likeButton = postContent.querySelector(".buttonLike");
+        const likeCount = postContent.querySelector(".count");
+
+        let likeCountNumber = 0; // lo tiro desde cero si no me daba problema de que no es numerico aunque lo parseara
+
+        let liked = false;
+
+        likeButton.addEventListener("click", () => {
+          if (!liked) {
+            likeCountNumber++;
+            likeCount.textContent = `${likeCountNumber} Me gusta`;
+            liked = true;
+            likeButton.classList.add("clicked");
+          } else {
+            likeCountNumber--;
+            likeCount.textContent = `${likeCountNumber} Me gusta`;
+            liked = false;
+            likeButton.classList.remove("clicked");
+          }
+        });
+
+        console.log(posts.profile_picture)
+        const main = document.querySelector("article");
+        main.append(postContent);
+      });
+      done();
+    })
+    .catch((err) => console.log(err));
+}
+
 // async function getPost(done) {
 //   const response = await fetch("http://localhost:3000/posts");
 
@@ -124,65 +179,6 @@
 //   }
 // }
 
-async function getPosts(done) {
-  fetch('http://localhost:3000/posts')
-
-    .then(response => response.json())
-    .then(data => {
-      console.log(data)
-      data.forEach(posts => {
-        const postContent = document.createRange().createContextualFragment(
-          `
-          <div class="default-card">
-          <div class="post-author">     
-              <img
-                src="${posts.profile_picture}"
-                alt="avatar"
-                class="avatar"
-            />
-            <h4>${posts.name} </h4>
-          </div>
-          <p>
-          ${posts.post_content}
-          </p>    
-          <button class="buttonLike fa-solid fa-heart btn btn-lg "></button>
-          <span class="count"> Me gusta</span>   
-      `
-        );
-        postElement.innerHTML = postContent;
-        // añadimos el post a la lista por el principio
-        postListElement.appendChild(postElement)
-        postListElement.prepend(postElement)
-
-        //funcionalidad del botón "me gusta"
-        const likeButton = postElement.querySelector(".buttonLike");
-        const likeCount = postElement.querySelector(".count");
-
-        let likeCountNumber = parseInt(likeCount.textContent);
-
-        let liked = false;
-
-        likeButton.addEventListener("click", () => {
-          if (!liked) {
-            likeCountNumber++;
-            likeCount.textContent = `${likeCountNumber} Me gusta`;
-            liked = true;
-            likeButton.classList.add("clicked");
-          } else {
-            likeCountNumber--;
-            likeCount.textContent = `${likeCountNumber} Me gusta`;
-            liked = false;
-            likeButton.classList.remove("clicked");
-          }
-        });
-        console.log(posts.profile_picture)
-        const main = document.querySelector("article");
-        main.append(postContent);
-      });
-      done();
-    })
-    .catch((err) => console.log(err));
-}
 
 getPosts(() => {
   console.log('Datos de post cargados');
