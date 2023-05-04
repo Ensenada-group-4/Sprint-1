@@ -110,9 +110,6 @@ app.post("/auth", async (req, res) => {
     }
   });
   
-  app.listen(3000, function () {
-    console.log("Sistema funcionando en el puerto 3000");
-  });
 
 //POST posts
 app.post("/posts", async function (req, res) {
