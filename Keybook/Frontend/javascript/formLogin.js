@@ -13,32 +13,31 @@ contactForm.addEventListener('submit', (event) => {
     }
 );
 */
-function validateLogin() {
-  const contactForm = document.getElementById("formLogin");
-  contactForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
+const contactForm = document.getElementById("login-form");
+const userDiv = document.getElementById("email");
+const passwordDiv = document.getElementById("password");
+const errorContainer = document.getElementById("error-container");
 
-    if (email == " " || password == " ") {
-      alert("Por favor ingrese un email y/o contraseña validos");
-    } else {
-      fetch(
-        `http://localhost:3000/formLogin?email=${email}&password=${password}`
-      )
-        .then(function (response) {
-          if (response.ok) {
-            response.json().then(function (json) {
-              window.location.href = `profileDbAlicia.html?userId=${json.user_id}`;
-              //No logro que me reenvie a la pagina del usuario e probado con home.html con profileDbAlicia.hmtl
-            });
-          } else {
-            alert("email y/o contraseña incorrectos");
-          }
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    }
+contactForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  if (!errorContainer.classList.contains("hidden")) {
+    errorContainer.classList.add("hidden");
+  }
+  const user = { email: userDiv.value };
+  const pass = passwordDiv.value;
+  const response = await fetch("http://localhost:3000/auth", {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+    },
+    body: JSON.stringify({ user, password: pass }),
   });
-}
+  const result = await response.json();
+  if (result.error) {
+    errorContainer.textContent = result.error;
+    errorContainer.classList.remove("hidden");
+  } else {
+    localStorage.setItem('userId', result.id)
+    window.location.href = "./home.html";
+  }
+});
