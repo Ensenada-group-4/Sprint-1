@@ -123,7 +123,7 @@ async function getPosts(done) {
         const likeButton = postContent.querySelector(".buttonLike");
         const likeCount = postContent.querySelector(".count");
 
-        let likeCountNumber = 0; // lo tiro desde cero si no me daba problema de que no es numerico aunque lo parseara
+        let likeCountNumber = 0; // lo tiro desde cero si no me daba problema de que no es numerico aunque lo parseara :(
 
         let liked = false;
 
@@ -143,7 +143,7 @@ async function getPosts(done) {
 
         console.log(posts.profile_picture)
         const main = document.querySelector("article");
-        main.append(postContent);
+        main.prepend(postContent)
       });
       done();
     })
