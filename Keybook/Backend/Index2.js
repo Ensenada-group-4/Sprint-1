@@ -10,8 +10,9 @@ app.use(bodyParser());
 app.post("/posts", async function (req, res) {
     console.log("req.body", req.body);
     try {
-        const { post_id_user, post_content } = req.body;
-        const post_date = new Date().toString();
+        const { post_content } = req.body;
+        const post_id_user = 1;
+        // const post_date = new Date().toString();
         const newPost = await sequelize.query(
             `INSERT INTO post (post_id_user, post_content) VALUES (?, ?)`,
             {
@@ -32,6 +33,34 @@ app.post("/posts", async function (req, res) {
         res.status(400).send({ error: e.message });
     }
 });
+
+app.get('/posts', async function (req, res) {
+    console.log("instance")
+    try {
+        const posts = await sequelize.query(`SELECT * FROM user
+        JOIN post ON user.id = post.post_id_user
+        WHERE user.id;`, { type: sequelize.QueryTypes.SELECT });
+
+        console.log(posts);
+        res.send(posts);
+    } catch (e) {
+        console.log(e);
+        res.status(400).send({ error: e.message });
+    }
+});
+
+// app.get('/user', async function (req, res) {
+//     console.log("instance")
+//     try {
+//         const personas = await sequelize.query("SELECT * FROM user", { type: sequelize.QueryTypes.SELECT });
+//         console.log(personas);
+//         res.send(personas);
+
+//     } catch (error) {
+//         console.error(error);
+//         res.status(500).send('Error interno del servidor');
+//     }
+// });
 
 app.listen(3000, function () {
     console.log("Sistema funcionando en el puerto 3000");

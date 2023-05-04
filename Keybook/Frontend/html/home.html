@@ -170,7 +170,7 @@
             <h3>
               <i class="fa-solid fa-pen-nib icon" title="Nueva publicación"></i>NUEVA PUBLICACIÓN
             </h3>
-            <form id="write-new-post" novalidate>
+            <form id="write-new-post" action="/posts" method="POST" novalidate>
               <textarea id="new-post-content" class="new-post" cols="70" rows="2"
                 placeholder="ESCRIBIR POST..."></textarea>
               <div class="insert">
@@ -186,7 +186,9 @@
           <!-- Muro -->
 
           <section id="post-list"></section>
-
+          <!-- posts -->
+          <ul id="posts"></ul>
+          <article></article>
           <div class="default-card">
             <div class="post-author">
               <a href="profilePepito.html"><img src="/Keybook/Frontend/img/avatares/pepito.png" alt="avatar"
@@ -365,6 +367,7 @@
   <script src="../javascript/greyscaleFunction.js"></script>
   <script src="/Keybook/Frontend/javascript/buttonComment-Like.js"></script>
   <script src="/Keybook/Frontend/javascript/postFeed.js"></script>
+  <script src="/Keybook/Frontend/javascript/postCreation.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
     crossorigin="anonymous"></script>
