@@ -57,7 +57,6 @@ app.get('/studies/studies_id_3', async function (req, res) {
 
 //POST new user
 app.post("/register", async function (req, res) {
-
     try {
         const { name, email, password } = req.body;
         // Encrypt the password
@@ -98,70 +97,92 @@ app.post("/register", async function (req, res) {
     }
 });
 
-//GET users by input
-app.get("/user", async function (req, res) {
-    const { searchKey } = req.query;
-    console.log("instance");
-    try {
-  
-      cond?true:false
-  
-      const personas = searchKey
-        ? await sequelize.query(
-            `SELECT * FROM user WHERE name % ${searchKey} OR email % ${searchKey}  `,
-            {
-              type: sequelize.QueryTypes.SELECT,
-            }
-          )
-        : await sequelize.query("SELECT * FROM user", {
-            type: sequelize.QueryTypes.SELECT,
-          });
-      console.log(personas);
-      res.send(personas);
-    } catch (error) {
-      console.error(error);
-      res.status(500).send("Error interno del servidor");
+//POST login 
+app.post("/auth", async (req, res) => {
+    const { user, password } = req.body;
+    const result = await sequelize.query(
+      `SELECT * FROM user WHERE (name = '${user.name}' OR email = '${user.email}') AND password = '${password}'`
+    );
+    if (result[0].length) {
+      res.status(200).send({ id: result[0][0].id });
+    } else {
+      res.status(400).send({ error: "Usuario o password incorrecto" });
     }
   });
+  
+  app.listen(3000, function () {
+    console.log("Sistema funcionando en el puerto 3000");
+  });
 
-
-
-
-
-// // el post para subir el usuario
-app.post("/login", (req, res) => {
-    const username = req.body.user.name;
-    const password = req.body.user.password;
-    if (username && password) {
-        connection.query(
-            `SELECT * FROM user WHERE (name = ? OR email = ?) AND password = ?`,
-            [username, username, password],
-            (error, results, fields) => {
-                if (results.length > 0) {
-                    req.session.loggedin = true;
-                    req.session.username = results[0].username;
-                    res.redirect("/dashboard.html");
-                } else {
-                    res.send("Usuario o contraseña incorrectos.");
-                }
-                res.end();
+//POST posts
+app.post("/posts", async function (req, res) {
+    console.log("req.body", req.body);
+    try {
+        const { post_content } = req.body;
+        const post_id_user = 1;
+        // const post_date = new Date().toString();
+        const newPost = await sequelize.query(
+            `INSERT INTO post (post_id_user, post_content) VALUES (?, ?)`,
+            {
+                type: sequelize.QueryTypes.INSERT,
+                replacements: [
+                    post_id_user,
+                    post_content
+                ],
             }
         );
-    } else {
-        res.send("Por favor, introduce tu nombre de usuario y contraseña.");
-        res.end();
+        res.status(200).send({
+            post_id: newPost[0],
+            post_id_user,
+            post_content
+        });
+    } catch (e) {
+        console.log(e);
+        res.status(400).send({ error: e.message });
     }
 });
-// // Configurar middleware para validar sesión en todas las rutas excepto login
-// app.use((req, res, next) => {
-//     if (req.path === "/" || req.path === "/login") {
-//         next();
-//     } else if (req.session.loggedin) {
-//         next();
-//     } else {
-//         res.redirect("/");
+
+//GET posts
+app.get('/posts', async function (req, res) {
+    console.log("instance")
+    try {
+        const posts = await sequelize.query(`SELECT * FROM user
+        JOIN post ON user.id = post.post_id_user
+        WHERE user.id;`, { type: sequelize.QueryTypes.SELECT });
+
+        console.log(posts);
+        res.send(posts);
+    } catch (e) {
+        console.log(e);
+        res.status(400).send({ error: e.message });
+    }
+});
+
+//TODO GET users by input
+// app.get("/user", async function (req, res) {
+//     const { searchKey } = req.query;
+//     console.log("instance");
+//     try {
+  
+//       cond?true:false
+  
+//       const personas = searchKey
+//         ? await sequelize.query(
+//             `SELECT * FROM user WHERE name % ${searchKey} OR email % ${searchKey}  `,
+//             {
+//               type: sequelize.QueryTypes.SELECT,
+//             }
+//           )
+//         : await sequelize.query("SELECT * FROM user", {
+//             type: sequelize.QueryTypes.SELECT,
+//           });
+//       console.log(personas);
+//       res.send(personas);
+//     } catch (error) {
+//       console.error(error);
+//       res.status(500).send("Error interno del servidor");
 //     }
-// });
+//   });
 
 app.listen(3000, function () {
     console.log("Sistema funcionando en el puerto 3000");
