@@ -23,7 +23,7 @@ contactForm.addEventListener("submit", async (event) => {
   if (!errorContainer.classList.contains("hidden")) {
     errorContainer.classList.add("hidden");
   }
-  const user = { email: userDiv.value };
+  const user = userDiv.value;
   const pass = passwordDiv.value;
   const response = await fetch("http://localhost:3000/auth", {
     method: "POST",
@@ -37,7 +37,7 @@ contactForm.addEventListener("submit", async (event) => {
     errorContainer.textContent = result.error;
     errorContainer.classList.remove("hidden");
   } else {
-    localStorage.setItem('userId', result.id)
+    localStorage.setItem("userId", result.id);
     window.location.href = "./home.html";
   }
 });
