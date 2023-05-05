@@ -1,4 +1,3 @@
-//en proyecto, no es funcional
 const form = document.querySelector("#write-new-post");
 form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -19,7 +18,7 @@ form.addEventListener("submit", (event) => {
         .then(response => response.json())
         .then(data => {
             console.log(data);
-            alert('Se envió el post')
+            alert('Post enviado correctamente');
         })
         .catch(error => {
             console.error(error);
