@@ -36,8 +36,10 @@ contactForm.addEventListener("submit", async (event) => {
   if (result.error) {
     errorContainer.textContent = result.error;
     errorContainer.classList.remove("hidden");
+    alert("Usuario y/o contraseña incorrectos");
   } else {
     localStorage.setItem("userId", result.id);
+    alert("Usuario logueado correctamente");
     window.location.href = "./home.html";
   }
 });
