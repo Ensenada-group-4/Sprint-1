@@ -47,6 +47,7 @@ async function getPosts(done) {
                 <img
                   src="${posts.profile_picture}"
                   alt="avatar"
+                  style="border-radius: 50%; width: 100px; height: 100px;"
                   class="avatar"
               />
               <h4>${posts.name} </h4>
@@ -54,6 +55,7 @@ async function getPosts(done) {
             <p>
             ${posts.post_content}
             </p>    
+            
             <button class="buttonLike fa-solid fa-heart btn btn-lg "></button>
             <span class="count"> Me gusta</span> `
                 );
