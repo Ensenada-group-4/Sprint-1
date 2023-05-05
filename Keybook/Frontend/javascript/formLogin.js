@@ -23,7 +23,7 @@ contactForm.addEventListener("submit", async (event) => {
   if (!errorContainer.classList.contains("hidden")) {
     errorContainer.classList.add("hidden");
   }
-  const user = { email: userDiv.value };
+  const user = userDiv.value;
   const pass = passwordDiv.value;
   const response = await fetch("http://localhost:3000/auth", {
     method: "POST",
@@ -36,8 +36,10 @@ contactForm.addEventListener("submit", async (event) => {
   if (result.error) {
     errorContainer.textContent = result.error;
     errorContainer.classList.remove("hidden");
+    alert("Usuario y/o contraseña incorrectos");
   } else {
-    localStorage.setItem('userId', result.id)
+    localStorage.setItem("userId", result.id);
+    alert("Usuario logueado correctamente");
     window.location.href = "./home.html";
   }
 });
