@@ -115,18 +115,19 @@ app.post("/auth", async (req, res) => {
 app.post("/posts", async function (req, res) {
     console.log("req.body", req.body);
     try {
-        const { post_content } = req.body;
-        const userId = req.session.userId; // retrieve user ID from session
+        const { post_id_user, post_content } = req.body;
+        // const userId = req.session.userId; // retrieve user ID from session
+        console.log(post_id_user)
         const newPost = await sequelize.query(
             `INSERT INTO post (post_id_user, post_content) VALUES (?, ?)`,
             {
                 type: sequelize.QueryTypes.INSERT,
-                replacements: [userId, post_content],
+                replacements: [post_id_user, post_content],
             }
         );
         res.status(200).send({
             post_id: newPost[0],
-            post_id_user: userId,
+            post_id_user,
             post_content,
         });
     } catch (e) {

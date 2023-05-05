@@ -1,6 +1,7 @@
 
 async function getUser(done) {
-    const response = await fetch("http://localhost:3000/user/id_5");
+    const post_id_user = localStorage.getItem('userId');
+    const response = await fetch(`http://localhost:3000/user/${post_id_user}`)
     const response_studies = await fetch("http://localhost:3000/studies/studies_id_3");
     const data = await response.json()
     const data_studies = await response_studies.json()
