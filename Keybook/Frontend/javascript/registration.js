@@ -27,7 +27,8 @@ form.addEventListener('submit', async (event) => {
         })
             .then(response => response.text())
             .then(result => console.log(result), alert("Usuario creado"),
-                window.location.replace("formLogin.html"))
+                // window.location.replace("formLogin.html")
+                )
             .catch(error => console.log('error', error));
     }
 })

@@ -2,12 +2,14 @@ const express = require('express');
 const bcrypt = require("bcrypt");
 const sequelize = require('./db/connection.js');
 const bodyParser = require("body-parser")
-var cors = require('cors')
+const cors = require('cors')
 
 const app = express();
 
 app.use(cors());
 app.use(bodyParser.json())
+
+const salt = 10;
 
 // GET home page
 app.get('/', function (req, res, next) {
@@ -60,9 +62,8 @@ app.post("/register", async function (req, res) {
     try {
         const { name, email, password } = req.body;
         // Encrypt the password
-        // TODO cuando esté el login listo hay que revisar si funciona
-        // const salt = await bcrypt.genSalt(10);
-        // const hashPassword = await bcrypt.hash(password, salt);
+        // TODO cuando esté el login listo hay que revisar si funciona        
+        const hashPassword = await bcrypt.hash(password, salt);
 
         //Impedimos que se cree cuenta si el email ya está registrado
         const emailExists = await sequelize.query("SELECT * FROM user WHERE email = ?", { type: sequelize.QueryTypes.SELECT, replacements: [email] })
@@ -78,7 +79,7 @@ app.post("/register", async function (req, res) {
                     replacements: [
                         name,
                         email,
-                        password
+                        hashPassword
                     ],
                 }
             );
@@ -87,7 +88,7 @@ app.post("/register", async function (req, res) {
                     user_id: newUser[0],
                     name,
                     email,
-                    password
+                    hashPassword
                 })
             console.log("Usuario creado con éxito")
         }
