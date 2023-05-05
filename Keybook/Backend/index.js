@@ -28,7 +28,7 @@ app.get('/users', async function (req, res) {
 });
 
 // GET user Alicia
-app.get('/user/id_5', async function (req, res) {
+app.get('/users/id_5', async function (req, res) {
     console.log("instance")
     try {
         const alicia = await sequelize.query("SELECT * FROM `user` WHERE USER.id = 5 ", { type: sequelize.QueryTypes.SELECT });
