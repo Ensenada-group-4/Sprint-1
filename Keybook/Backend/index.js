@@ -102,7 +102,7 @@ app.post("/register", async function (req, res) {
 app.post("/auth", async (req, res) => {
     const { user, password } = req.body;
     const result = await sequelize.query(
-        `SELECT * FROM user WHERE (name = '${user.name}' OR email = '${user.email}') AND password = '${password}'`
+        `SELECT * FROM user WHERE  email = '${user.email}' AND password = '${password}'`
     );
     if (result[0].length) {
         res.status(200).send({ id: result[0][0].id });
@@ -142,14 +142,11 @@ app.post("/posts", async function (req, res) {
 });
 
 //GET posts
-app.get('/posts', async function (req, res) {
-    console.log("instance")
+app.get('/posts', async function (req, res) {   
     try {
         const posts = await sequelize.query(`SELECT * FROM user
         JOIN post ON user.id = post.post_id_user
-        WHERE user.id;`, { type: sequelize.QueryTypes.SELECT });
-
-        console.log(posts);
+        WHERE user.id;`, { type: sequelize.QueryTypes.SELECT });        
         res.send(posts);
     } catch (e) {
         console.log(e);
