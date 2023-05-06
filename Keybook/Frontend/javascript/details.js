@@ -39,6 +39,7 @@ async function getUser(done) {
         photoField.style.width = '180px';
         photoField.style.height = '130px';
         photoField.classList("avatar-perfil");
+        photoField.classList("avatar-perfil");
 
         done();
     }
