@@ -100,18 +100,24 @@ app.post("/register", async function (req, res) {
 
 //POST login 
 app.post("/auth", async (req, res) => {
-    const { user, password } = req.body;
-    const result = await sequelize.query(
-        `SELECT * FROM user WHERE  email = '${user.email}' AND password = '${password}'`
-    );
-    if (result[0].length) {
-        res.status(200).send({ id: result[0][0].id });
-    } else {
-        res.status(400).send({ error: "Usuario o password incorrecto" });
+    try {
+        const { email, password} = req.body;
+        console.log(password)
+        const result = await sequelize.query(
+            `SELECT * FROM user WHERE  email = '${email}'`);
+        if (result[0].length) {
+            const validPassword = await bcrypt.compare(password, result[0][0].password)
+            if (validPassword) { res.status(200).send({ id: result[0][0].id }); } else {
+                res.status(400).send({ error: "Contraseña incorrecta" });
+            }
+        } else {
+            res.status(400).send({ error: "Email no encontrado en base de datos" });
+        }
+    } catch (e) {
+        console.log(e);
+        res.status(400).send({ error: e.message });
     }
 });
-
-
 
 //POST posts
 app.post("/posts", async function (req, res) {
@@ -142,11 +148,11 @@ app.post("/posts", async function (req, res) {
 });
 
 //GET posts
-app.get('/posts', async function (req, res) {   
+app.get('/posts', async function (req, res) {
     try {
         const posts = await sequelize.query(`SELECT * FROM user
         JOIN post ON user.id = post.post_id_user
-        WHERE user.id;`, { type: sequelize.QueryTypes.SELECT });        
+        WHERE user.id;`, { type: sequelize.QueryTypes.SELECT });
         res.send(posts);
     } catch (e) {
         console.log(e);
