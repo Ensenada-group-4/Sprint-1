@@ -23,7 +23,7 @@ contactForm.addEventListener("submit", async (event) => {
   if (!errorContainer.classList.contains("hidden")) {
     errorContainer.classList.add("hidden");
   }
-  const user = userDiv.value;
+  const user = { email: userDiv.value };
   const pass = passwordDiv.value;
   const response = await fetch("http://localhost:3000/auth", {
     method: "POST",

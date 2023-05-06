@@ -1,10 +1,11 @@
 
 async function getUser(done) {
     const id = localStorage.getItem('userId');
-    console.log(id)
+
     const response = await fetch(`http://localhost:3000/users/${id}`)
     // const response_studies = await fetch("http://localhost:3000/studies/studies_id_3");
     const data = await response.json()
+    console.log(id)
     // const data_studies = await response_studies.json()
 
     try {
@@ -35,6 +36,8 @@ async function getUser(done) {
         photoField.src = data.profile_picture;
         photoField.alt = data.name;
         photoField.style.borderRadius = '50%';
+        photoField.style.width = '180px';
+        photoField.style.height = '130px';
         photoField.classList("avatar-perfil");
 
         done();
