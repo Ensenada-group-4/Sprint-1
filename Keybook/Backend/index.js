@@ -100,9 +100,9 @@ app.post("/register", async function (req, res) {
 
 //POST login 
 app.post("/auth", async (req, res) => {
-    const { user } = req.body;
+    const { user, password } = req.body;
     const result = await sequelize.query(
-        `SELECT * FROM user WHERE email = '${user.email}' AND password = '${user.password}'`
+        `SELECT * FROM user WHERE (name = '${user.name}' OR email = '${user.email}') AND password = '${password}'`
     );
     if (result[0].length) {
         res.status(200).send({ id: result[0][0].id });
@@ -110,6 +110,7 @@ app.post("/auth", async (req, res) => {
         res.status(400).send({ error: "Usuario o password incorrecto" });
     }
 });
+
 
 
 //POST posts
