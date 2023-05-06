@@ -41,17 +41,28 @@ app.get('/users/id_5', async function (req, res) {
     }
 });
 
-// GET user Alicia.studies
-app.get('/studies/studies_id_3', async function (req, res) {
-    console.log("instance")
-    try {
-        const alicia_studios = await sequelize.query("SELECT * FROM `studies` WHERE STUDIES.studies_id = 3 ", { type: sequelize.QueryTypes.SELECT });
-        console.log(alicia_studios);
-        res.send(alicia_studios);
+// GET user studies
+// app.get('/studies/:studies_user_id', async function (req, res) {
+//     console.log("instance")
+//     try {
+//         const studios = await sequelize.query(`SELECT * FROM `studies` WHERE studies_id = ${studies_user_id} `, { type: sequelize.QueryTypes.SELECT });
+//         console.log(studios);
+//         res.send(studios);
 
-    } catch (error) {
-        console.error(error);
-        res.status(500).send('Error interno del servidor');
+//     } catch (error) {
+//         console.error(error);
+//         res.status(500).send('Error interno del servidor');
+//     }
+// });
+app.get('/studies/:studies_user_id', async function (req, res) {
+    const userId = req.params.studies_user_id;
+    const result = await sequelize.query(
+        `SELECT * FROM studies WHERE studies_user_id = ${userId}`
+    );
+    if (result[0].length) {
+        res.status(200).send(result[0][0]);
+    } else {
+        res.status(404).send({ error: "Usuario no encontrado" });
     }
 });
 
