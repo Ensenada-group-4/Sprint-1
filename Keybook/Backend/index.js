@@ -1,158 +1,156 @@
-const express = require('express');
+const express = require("express");
 const bcrypt = require("bcrypt");
-const sequelize = require('./db/connection.js');
-const bodyParser = require("body-parser")
-var cors = require('cors')
+const sequelize = require("./db/connection.js");
+const bodyParser = require("body-parser");
+var cors = require("cors");
 
 const app = express();
 
 app.use(cors());
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 
 // GET home page
-app.get('/', function(req, res, next) {
-    res.send("Keybook server");
-  });
+app.get("/", function (req, res, next) {
+  res.send("Keybook server");
+});
 
 //GET users list
-app.get('/users', async function (req, res) {   
-    try {
-        const usersList = await sequelize.query("SELECT * FROM user", { type: sequelize.QueryTypes.SELECT });
-        console.log(usersList);
-        res.send(usersList);
-
-    } catch (error) {
-        console.error(error);
-        res.status(500).send('Error interno del servidor');
-    }
+app.get("/users", async function (req, res) {
+  try {
+    const usersList = await sequelize.query("SELECT * FROM user", {
+      type: sequelize.QueryTypes.SELECT,
+    });
+    console.log(usersList);
+    res.send(usersList);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Error interno del servidor");
+  }
 });
 
 // GET user Alicia
-app.get('/user/id_5', async function (req, res) {
-    console.log("instance")
-    try {
-        const alicia = await sequelize.query("SELECT * FROM `user` WHERE USER.id = 5 ", { type: sequelize.QueryTypes.SELECT });
-        console.log(alicia);
-        res.send(alicia);
-
-    } catch (error) {
-        console.error(error);
-        res.status(500).send('Error interno del servidor');
-    }
+app.get("/user/id_5", async function (req, res) {
+  console.log("instance");
+  try {
+    const alicia = await sequelize.query(
+      "SELECT * FROM `user` WHERE USER.id = 5 ",
+      { type: sequelize.QueryTypes.SELECT }
+    );
+    console.log(alicia);
+    res.send(alicia);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Error interno del servidor");
+  }
 });
 
 // GET user Alicia.studies
-app.get('/studies/studies_id_3', async function (req, res) {
-    console.log("instance")
-    try {
-        const alicia_studios = await sequelize.query("SELECT * FROM `studies` WHERE STUDIES.studies_id = 3 ", { type: sequelize.QueryTypes.SELECT });
-        console.log(alicia_studios);
-        res.send(alicia_studios);
-
-    } catch (error) {
-        console.error(error);
-        res.status(500).send('Error interno del servidor');
-    }
+app.get("/studies/studies_id_3", async function (req, res) {
+  console.log("instance");
+  try {
+    const alicia_studios = await sequelize.query(
+      "SELECT * FROM `studies` WHERE STUDIES.studies_id = 3 ",
+      { type: sequelize.QueryTypes.SELECT }
+    );
+    console.log(alicia_studios);
+    res.send(alicia_studios);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Error interno del servidor");
+  }
 });
 
 //POST new user
 app.post("/register", async function (req, res) {
-    try {
-        const { name, email, password } = req.body;
-        // Encrypt the password
-        // TODO cuando esté el login listo hay que revisar si funciona
-        // const salt = await bcrypt.genSalt(10);
-        // const hashPassword = await bcrypt.hash(password, salt);
+  try {
+    const { name, email, password } = req.body;
+    // Encrypt the password
+    // TODO cuando esté el login listo hay que revisar si funciona
+    // const salt = await bcrypt.genSalt(10);
+    // const hashPassword = await bcrypt.hash(password, salt);
 
-        //Check if email already registered
-        // const emailExists = await sequelize.query("SELECT * FROM user WHERE email = ?", { type: sequelize.QueryTypes.SELECT, replacements: [email] })
-        // if (emailExists) {
-        //     return res
-        //         .status(400)
-        //         .json({ error: "El email ya está registrado })
-        // }
-        const newUser = await sequelize.query(
-            `INSERT INTO user (name, email, password) VALUES (?, ?, ?)`,
-            {
-                type: sequelize.QueryTypes.INSERT,
-                replacements: [
-                    name,                    
-                    email,
-                    password
-                ],
-            }
-        );
-        res.status(200)
-            .send({
-                user_id: newUser[0],
-                name,                
-                email,
-                password
-            })
-        console.log("Usuario creado con éxito")
-
-    } catch (e) {
-        console.log(e);
-        res.status(400).send({ error: e.message });
-    }
+    //Check if email already registered
+    // const emailExists = await sequelize.query("SELECT * FROM user WHERE email = ?", { type: sequelize.QueryTypes.SELECT, replacements: [email] })
+    // if (emailExists) {
+    //     return res
+    //         .status(400)
+    //         .json({ error: "El email ya está registrado })
+    // }
+    const newUser = await sequelize.query(
+      `INSERT INTO user (name, email, password) VALUES (?, ?, ?)`,
+      {
+        type: sequelize.QueryTypes.INSERT,
+        replacements: [name, email, password],
+      }
+    );
+    res.status(200).send({
+      user_id: newUser[0],
+      name,
+      email,
+      password,
+    });
+    console.log("Usuario creado con éxito");
+  } catch (e) {
+    console.log(e);
+    res.status(400).send({ error: e.message });
+  }
 });
 
-//POST login 
+//POST login
 app.post("/auth", async (req, res) => {
-    const { user, password } = req.body;
-    const result = await sequelize.query(
-      `SELECT * FROM user WHERE (name = '${user.name}' OR email = '${user.email}') AND password = '${password}'`
-    );
-    if (result[0].length) {
-      res.status(200).send({ id: result[0][0].id });
-    } else {
-      res.status(400).send({ error: "Usuario o password incorrecto" });
-    }
-  });
-  
+  const { user, password } = req.body;
+  const result = await sequelize.query(
+    `SELECT * FROM user WHERE (name = '${user.name}' OR email = '${user.email}') AND password = '${password}'`
+  );
+  if (result[0].length) {
+    res.status(200).send({ id: result[0][0].id });
+  } else {
+    res.status(400).send({ error: "Usuario o password incorrecto" });
+  }
+});
 
 //POST posts
 app.post("/posts", async function (req, res) {
-    console.log("req.body", req.body);
-    try {
-        const { post_content } = req.body;
-        const post_id_user = 1;
-        // const post_date = new Date().toString();
-        const newPost = await sequelize.query(
-            `INSERT INTO post (post_id_user, post_content) VALUES (?, ?)`,
-            {
-                type: sequelize.QueryTypes.INSERT,
-                replacements: [
-                    post_id_user,
-                    post_content
-                ],
-            }
-        );
-        res.status(200).send({
-            post_id: newPost[0],
-            post_id_user,
-            post_content
-        });
-    } catch (e) {
-        console.log(e);
-        res.status(400).send({ error: e.message });
-    }
+  console.log("req.body", req.body);
+  try {
+    const { post_content } = req.body;
+    const post_id_user = 1;
+    // const post_date = new Date().toString();
+    const newPost = await sequelize.query(
+      `INSERT INTO post (post_id_user, post_content) VALUES (?, ?)`,
+      {
+        type: sequelize.QueryTypes.INSERT,
+        replacements: [post_id_user, post_content],
+      }
+    );
+    res.status(200).send({
+      post_id: newPost[0],
+      post_id_user,
+      post_content,
+    });
+  } catch (e) {
+    console.log(e);
+    res.status(400).send({ error: e.message });
+  }
 });
 
 //GET posts
-app.get('/posts', async function (req, res) {
-    console.log("instance")
-    try {
-        const posts = await sequelize.query(`SELECT * FROM user
+app.get("/posts", async function (req, res) {
+  console.log("instance");
+  try {
+    const posts = await sequelize.query(
+      `SELECT * FROM user
         JOIN post ON user.id = post.post_id_user
-        WHERE user.id;`, { type: sequelize.QueryTypes.SELECT });
+        WHERE user.id;`,
+      { type: sequelize.QueryTypes.SELECT }
+    );
 
-        console.log(posts);
-        res.send(posts);
-    } catch (e) {
-        console.log(e);
-        res.status(400).send({ error: e.message });
-    }
+    console.log(posts);
+    res.send(posts);
+  } catch (e) {
+    console.log(e);
+    res.status(400).send({ error: e.message });
+  }
 });
 
 //TODO GET users by input
@@ -160,9 +158,9 @@ app.get('/posts', async function (req, res) {
 //     const { searchKey } = req.query;
 //     console.log("instance");
 //     try {
-  
+
 //       cond?true:false
-  
+
 //       const personas = searchKey
 //         ? await sequelize.query(
 //             `SELECT * FROM user WHERE name % ${searchKey} OR email % ${searchKey}  `,
@@ -181,6 +179,35 @@ app.get('/posts', async function (req, res) {
 //     }
 //   });
 
+// Defining the GET /user route to retrieve users based on input
+app.get("/user", async function (req, res) {
+  // Getting search information from the request
+  const { searchKey } = req.query;
+
+  console.log("instance"); // Printing a string to the console
+
+  try {
+    // Using a ternary operator to determine whether to use a SQL query with a WHERE that matches the search value or execute a standard SQL query to get all users
+    const personas = searchKey
+      ? await sequelize.query(
+          `SELECT * FROM user WHERE name LIKE '%${searchKey}%' OR email LIKE '%${searchKey}%'`,
+          {
+            type: sequelize.QueryTypes.SELECT,
+          }
+        )
+      : await sequelize.query("SELECT * FROM user", {
+          type: sequelize.QueryTypes.SELECT,
+        });
+
+    console.log(personas); // Printing the results to the console
+    res.send(personas); // Sending the results as a response to the client
+  } catch (error) {
+    console.error(error); // Printing the error to the console
+    res.status(500).send("Internal server error");
+    // Sending an error message as a response to the client with a 500 status code
+  }
+});
+
 app.listen(3000, function () {
-    console.log("Sistema funcionando en el puerto 3000");
+  console.log("Sistema funcionando en el puerto 3000");
 });
