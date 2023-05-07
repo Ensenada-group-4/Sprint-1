@@ -147,15 +147,26 @@ app.post("/posts", async function (req, res) {
     }
 });
 // edicion perfil
-app.put("/users/:id/edit", async (req, res) => {
-    const userId = req.params.id;
-    const newEmail = req.body.email;
+app.put("/users/email", async (req, res) => {
+    const { id, email } = req.body;
     try {
-        await sequelize.query(`UPDATE user SET email = '${newEmail}' WHERE id = ${userId}`);
+        await sequelize.query(`UPDATE user SET email = '${email}' WHERE id = ${id}`);
         res.status(200).send({ message: "Correo electrónico actualizado correctamente" });
     } catch (error) {
         console.error(error);
         res.status(500).send({ error: "Error al actualizar el correo electrónico" });
+    }
+});
+//modificar telefono
+app.put("/users/:id/phone", async (req, res) => {
+    const userId = req.params.id;
+    const newPhone = req.body.phone;
+    try {
+        await sequelize.query(`UPDATE user SET phone = '${newPhone}' WHERE id = ${userId}`);
+        res.status(200).send({ message: "Telefono actualizado correctamente" });
+    } catch (error) {
+        console.error(error);
+        res.status(500).send({ error: "Error al actualizar el Teléfono" });
     }
 });
 
