@@ -60,9 +60,8 @@ app.get('/studies/studies_id_3', async function (req, res) {
 //POST new user
 app.post("/register", async function (req, res) {
     try {
-        const { name, email, password } = req.body;
-        // Encrypt the password
-        // TODO cuando esté el login listo hay que revisar si funciona        
+        const { name, lastName, dob, city, country, phone, email, password } = req.body;
+        // Encrypt the password                
         const hashPassword = await bcrypt.hash(password, salt);
 
         //Impedimos que se cree cuenta si el email ya está registrado
@@ -73,13 +72,11 @@ app.post("/register", async function (req, res) {
                 .json({ error: "El email ya está registrado" })
         } else {
             const newUser = await sequelize.query(
-                `INSERT INTO user (name, email, password) VALUES (?, ?, ?)`,
+                `INSERT INTO user (name, last_name, email, password, date_of_birth, city, country, phone) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
                 {
                     type: sequelize.QueryTypes.INSERT,
                     replacements: [
-                        name,
-                        email,
-                        hashPassword
+                        name, lastName, email, hashPassword, dob, city, country, phone
                     ],
                 }
             );
@@ -101,10 +98,10 @@ app.post("/register", async function (req, res) {
 //POST login 
 app.post("/auth", async (req, res) => {
     try {
-        const { email, password} = req.body;
+        const { user, password } = req.body;
         console.log(password)
         const result = await sequelize.query(
-            `SELECT * FROM user WHERE  email = '${email}'`);
+            `SELECT * FROM user WHERE  email = '${user.email}'`);
         if (result[0].length) {
             const validPassword = await bcrypt.compare(password, result[0][0].password)
             if (validPassword) { res.status(200).send({ id: result[0][0].id }); } else {
