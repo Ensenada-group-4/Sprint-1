@@ -1,18 +1,3 @@
-/*const contactForm = document.getElementById('login-form');
-contactForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const user = event.target.elements['username'].value.trim();
-    const pass = event.target.elements['password'].value.trim();
-    if (user == "Alicia" && pass == "1234")
-    {
-        window.location.href = "./home.html";
-    }
-    else {
-        alert("Usuario y/o contraseña incorrectas");
-    }
-    }
-);
-*/
 const contactForm = document.getElementById("login-form");
 const userDiv = document.getElementById("email");
 const passwordDiv = document.getElementById("password");
@@ -43,38 +28,3 @@ contactForm.addEventListener("submit", async (event) => {
     window.location.href = "./home.html";
   }
 });
-
-
-
-
-// contactForm.addEventListener("submit", async (event) => {
-//   event.preventDefault();
-
-//   const email = document.getElementById("email").value
-//   const password = document.getElementById("password").value
-
-//   const user = {
-//     "email": email,
-//     "password": password
-//   };
-
-//   console.log(user)
-
-//   const response = await fetch("http://localhost:3000/auth", {
-//     method: "POST",
-//     headers: {
-//       "content-type": "application/json",
-//     },
-//     body: JSON.stringify(user),
-//   })
-
-//     .then(response => response.text())
-//     .then(result => console.log(result),
-//       // localStorage.setItem("userId", result.id),
-//       alert("Usuario logueado correctamente"),
-//       // window.location.href = "./home.html"
-//       )
-//     .catch(error => console.log('error', error),
-//       alert("Usuario y/o contraseña incorrectos"));
-
-// });
