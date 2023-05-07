@@ -146,6 +146,18 @@ app.post("/posts", async function (req, res) {
         res.status(400).send({ error: e.message });
     }
 });
+// edicion perfil
+app.put("/users/:id/edit", async (req, res) => {
+    const userId = req.params.id;
+    const newEmail = req.body.email;
+    try {
+        await sequelize.query(`UPDATE user SET email = '${newEmail}' WHERE id = ${userId}`);
+        res.status(200).send({ message: "Correo electrónico actualizado correctamente" });
+    } catch (error) {
+        console.error(error);
+        res.status(500).send({ error: "Error al actualizar el correo electrónico" });
+    }
+});
 
 //GET posts
 app.get('/posts', async function (req, res) {
