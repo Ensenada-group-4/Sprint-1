@@ -56,10 +56,13 @@ app.get('/studies/:studies_user_id', async function (req, res) {
     }
 });
 
+
 //POST new user
 app.post("/register", async function (req, res) {
     try {
         const { name, lastName, dob, city, country, phone, email, password } = req.body;
+        const blankPhoto = "https://i.postimg.cc/SNk2LBzX/blank-Avatar.png"
+
         // Encrypt the password                
         const hashPassword = await bcrypt.hash(password, salt);
 
@@ -71,11 +74,11 @@ app.post("/register", async function (req, res) {
                 .json({ error: "El email ya está registrado" })
         } else {
             const newUser = await sequelize.query(
-                `INSERT INTO user (name, last_name, email, password, date_of_birth, city, country, phone) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+                `INSERT INTO user (name, last_name, email, password, date_of_birth, profile_picture, city, country, phone) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
                 {
                     type: sequelize.QueryTypes.INSERT,
                     replacements: [
-                        name, lastName, email, hashPassword, dob, city, country, phone
+                        name, lastName, email, hashPassword, dob, blankPhoto, city, country, phone
                     ],
                 }
             );
