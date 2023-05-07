@@ -1,5 +1,5 @@
 const express = require('express');
-// const bcrypt = require("bcrypt");
+const bcrypt = require("bcrypt");
 const sequelize = require('./db/connection.js');
 const bodyParser = require("body-parser")
 const cors = require('cors')
@@ -13,13 +13,11 @@ const salt = 10;
 
 // GET home page
 app.get('/', function (req, res, next) {
-app.get('/', function (req, res, next) {
     res.send("Keybook server");
 });
-});
+
 
 //GET users list
-app.get('/users', async function (req, res) {
 app.get('/users', async function (req, res) {
     try {
         const usersList = await sequelize.query("SELECT * FROM user", { type: sequelize.QueryTypes.SELECT });
@@ -32,33 +30,20 @@ app.get('/users', async function (req, res) {
     }
 });
 
-// GET user Alicia
-app.get('/users/id_5', async function (req, res) {
-    console.log("instance")
-    try {
-        const alicia = await sequelize.query("SELECT * FROM `user` WHERE USER.id = 5 ", { type: sequelize.QueryTypes.SELECT });
-        console.log(alicia);
-        res.send(alicia);
-
-    } catch (error) {
-        console.error(error);
-        res.status(500).send('Error interno del servidor');
+// GET logged user by ID
+app.get("/users/:userId", async (req, res) => {
+    const userId = req.params.userId;
+    const result = await sequelize.query(
+        `SELECT * FROM user WHERE id = ${userId}`
+    );
+    if (result[0].length) {
+        res.status(200).send(result[0][0]);
+    } else {
+        res.status(404).send({ error: "Usuario no encontrado" });
     }
 });
 
-// GET user studies
-// app.get('/studies/:studies_user_id', async function (req, res) {
-//     console.log("instance")
-//     try {
-//         const studios = await sequelize.query(`SELECT * FROM `studies` WHERE studies_id = ${studies_user_id} `, { type: sequelize.QueryTypes.SELECT });
-//         console.log(studios);
-//         res.send(studios);
-
-//     } catch (error) {
-//         console.error(error);
-//         res.status(500).send('Error interno del servidor');
-//     }
-// });
+// GET logged user studies
 app.get('/studies/:studies_user_id', async function (req, res) {
     const userId = req.params.studies_user_id;
     const result = await sequelize.query(
@@ -75,6 +60,8 @@ app.get('/studies/:studies_user_id', async function (req, res) {
 app.post("/register", async function (req, res) {
     try {
         const { name, lastName, dob, city, country, phone, email, password } = req.body;
+        const blankPhoto = "https://i.postimg.cc/SNk2LBzX/blank-Avatar.png"
+
         // Encrypt the password                
         const hashPassword = await bcrypt.hash(password, salt);
 
@@ -86,11 +73,11 @@ app.post("/register", async function (req, res) {
                 .json({ error: "El email ya está registrado" })
         } else {
             const newUser = await sequelize.query(
-                `INSERT INTO user (name, last_name, email, password, date_of_birth, city, country, phone) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+                `INSERT INTO user (name, last_name, email, password, date_of_birth, profile_picture, city, country, phone) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
                 {
                     type: sequelize.QueryTypes.INSERT,
                     replacements: [
-                        name, lastName, email, hashPassword, dob, city, country, phone
+                        name, lastName, email, hashPassword, dob, blankPhoto, city, country, phone
                     ],
                 }
             );
@@ -131,8 +118,6 @@ app.post("/auth", async (req, res) => {
 });
 
 
-});
-
 //POST posts
 app.post("/posts", async function (req, res) {
     console.log("req.body", req.body);
@@ -171,18 +156,7 @@ app.get('/posts', async function (req, res) {
     }
 });
 
-//endpoint para los user.id del login
-app.get("/users/:userId", async (req, res) => {
-    const userId = req.params.userId;
-    const result = await sequelize.query(
-        `SELECT * FROM user WHERE id = ${userId}`
-    );
-    if (result[0].length) {
-        res.status(200).send(result[0][0]);
-    } else {
-        res.status(404).send({ error: "Usuario no encontrado" });
-    }
-});
+
 
 //TODO GET users by input
 // app.get("/user", async function (req, res) {
