@@ -186,17 +186,19 @@
               </h4>
               <ul class="profile-data">
                 <li id="profile-email">Correo</li>
-                <button class="reply btn btn-warning">Editar</button>
-                <form action="/users/email" method="put" class="reply" style="display: none">
-                  <input id="new-email"></input>
-                  <button id="edit-email" class="send-reply btn btn-warning">
-                    Enviar respuesta
-                  </button>
-                  <button class="close-reply btn btn-warning" id="close-button">
-                    Cerrar
+                <form id="email-edit-form" action="/users/${id}/email" method="POST">
+                  <input id="new-email" placeholder="EMAIL"></input>
+                  <button type="submit" id="edit-email" class=" btn btn-warning btn-sm">
+                    Editar
                   </button>
                 </form>
                 <li id="profile-phone">Teléfono</li>
+                <form id="phone-edit-form" action="/users/${id}/phone" method="POST">
+                  <input id="new-phone" placeholder="TELEFONO"></input>
+                  <button type="submit" id="edit-phone" class=" btn btn-warning btn-sm">
+                    Editar
+                  </button>
+                </form>
                 <a href="https://www.facebook.com/" class="fa-brands fa-facebook icon" title="Facebook"
                   target="”_blank”"></a>
                 <a href="https://www.linkedin.com/feed/" class="fa-brands fa-linkedin icon" title="Linkedin"
@@ -235,7 +237,7 @@
   <script src="/Keybook/Frontend/javascript/dbLoggedUser.js"></script>
   <script src="../javascript/greyscaleFunction.js"></script>
   <script src="../javascript/editProfile.js"></script>
-  <script src="/Keybook/Frontend/javascript/buttonComment-Like.js"></script>
+  <!-- <script src="/Keybook/Frontend/javascript/buttonComment-Like.js"></script> -->
   <script src="/Keybook/Frontend/javascript/animationToggler.js"></script>
 </body>
 
