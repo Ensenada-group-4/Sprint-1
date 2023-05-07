@@ -626,3 +626,8 @@ input:focus {
   background: #52b352;
   border-radius: inherit;
 }
+/*BOTON BUSQUEDA AMIGOS*/
+button.search-button {
+  border: none;
+  background-color:  aliceblue;
+}

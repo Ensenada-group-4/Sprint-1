@@ -190,8 +190,9 @@ app.get("/user", async function (req, res) {
     // Using a ternary operator to determine whether to use a SQL query with a WHERE that matches the search value or execute a standard SQL query to get all users
     const personas = searchKey
       ? await sequelize.query(
-          `SELECT * FROM user WHERE name LIKE '%${searchKey}%' OR email LIKE '%${searchKey}%'`,
+          `SELECT * FROM user WHERE name = :searchKey OR email = :searchKey`,
           {
+            replacements: { searchKey },
             type: sequelize.QueryTypes.SELECT,
           }
         )
