@@ -113,20 +113,12 @@
               <label for="">
                 <h4>COMUNIDAD</h4>
               </label>
-              <form action="/searchKey" method="GET" id="find-user-form">
-                <div class="input-group">
-                  <span class="input-group-text" id="basic-addon1">
-                    <input class="form-control me-2 search-content-input" type="search" placeholder="Búsqueda..."
-                      aria-label="Buscar" size="50" />
-                      <form action="/" method="post">
-                       
-                        <button type="searchKey" class="search-button"><i class="fa-solid fa-magnifying-glass icon search-icon"></i></button>
-                      </form>
-                      
-                  </span>
-                </div>
+              <form id="find-user-form" class="d-flex">
+                <input class="form-control me-2 search-content-input" type="search" name="searchKey" placeholder="Búsqueda..." aria-label="Buscar" size="50" />
+                <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass icon search-icon"></i></button>
               </form>
               
+
               
               
               </div>

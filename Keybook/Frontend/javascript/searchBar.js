@@ -1,30 +1,29 @@
-const form = document.getElementById("searchForm");
+const form = document.getElementById("find-user-form");
+const userList = document.querySelector(".friends-row");
+
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
-  const input = document.getElementById("find-user-form");
-  const key = input.value;
+  const input = document.querySelector(".search-content-input");
+  const searchKey = input.value;
 
-  fetch(`http://localhost:3000/user?searchKey=${searchKey}`)
+  fetch(`http://localhost:3000/searchkey?searchKey=\${searchKey}`)
     .then((response) => response.json())
     .then((data) => {
-      data
-        .forEach((user) => {
-          const li = document.createElement("li");
-          li.textContent = user.name;
-          userList.appendChild(li);
-          console.log(users);
-          users.map((user) => {
-            const { id, name, email, phone } = user;
-            return {
-              id,
-              name,
-              email,
-              phone,
-            };
-          });
-        })
-        .catch((error) => console.error(error));
-
-      const users = response.json();
-    });
+      const users = data.map((user) => {
+        const { id, name, email, phone } = user;
+        return {
+          id,
+          name,
+          email,
+          phone,
+        };
+      });
+      userList.innerHTML = ""; // Clearing the list before adding new data
+      users.forEach((user) => {
+        const li = document.createElement("li");
+        li.textContent = user.name;
+        userList.appendChild(li);
+      });
+    })
+    .catch((error) => console.error(error));
 });
