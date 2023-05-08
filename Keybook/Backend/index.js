@@ -62,6 +62,8 @@ app.post("/register", async function (req, res) {
     try {
         const { name, lastName, dob, city, country, phone, email, password } = req.body;
         const blankPhoto = "https://i.postimg.cc/SNk2LBzX/blank-Avatar.png"
+        // const studies = "Añada su formación"
+        // const studiesDate = "Duracion del curso"
 
         // Encrypt the password                
         const hashPassword = await bcrypt.hash(password, salt);
@@ -91,6 +93,16 @@ app.post("/register", async function (req, res) {
                 })
             console.log("Usuario creado con éxito")
         }
+
+        // const newStudies = await sequelize.query(
+        //     `INSERT INTO studies WHERE studies_user_id = (studies_course, studies_date) VALUES (?, ?)`,
+        //     {
+        //         type: sequelize.QueryTypes.INSERT,
+        //         replacements: [
+        //             studies, studiesDate
+        //         ],
+        //     }
+        // );
     } catch (e) {
         console.log(e);
         res.status(400).send({ error: e.message });
@@ -120,7 +132,7 @@ app.post("/auth", async (req, res) => {
 
 // DELETE user by ID
 app.delete("/users/:id/delete", async (req, res) => {
-    const userId = req.params.id;    
+    const userId = req.params.id;
     try {
         await sequelize.query(`DELETE FROM user WHERE id = ${userId}`);
         res.status(200).send({ message: "Cuanta borrada con éxito" });
@@ -131,7 +143,7 @@ app.delete("/users/:id/delete", async (req, res) => {
 });
 
 //POST posts
-app.post("/posts", async function (req, res) {   
+app.post("/posts", async function (req, res) {
     try {
         const { post_id_user, post_content } = req.body;
         // const userId = req.session.userId; // retrieve user ID from session
