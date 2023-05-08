@@ -1,4 +1,4 @@
-//en proyecto, no es funcional
+//registro user
 const form = document.querySelector("form-register");
 form.addEventListener("submit", (event) => {
     event.preventDefault();

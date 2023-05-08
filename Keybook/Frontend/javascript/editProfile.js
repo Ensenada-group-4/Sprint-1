@@ -26,8 +26,6 @@ form.addEventListener("submit", async (event) => {
             console.log(id)
 
             alert('email actualizado correctamente');
-            // const emailField = document.getElementById('profile-email');
-            // emailField.innerHTML = newEmail;
             location.reload();
         })
         .catch(error => {
