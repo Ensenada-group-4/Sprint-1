@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const bcrypt = require("bcrypt");
 const sequelize = require("./db/connection.js");
@@ -10,6 +11,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const salt = 10;
+const port = process.env.PORT
 
 
 //CRUD
@@ -242,6 +244,6 @@ app.get("/user", async function (req, res) {
     }
 });
 
-app.listen(3000, function () {
-    console.log("Sistema funcionando en el puerto 3000");
+app.listen(port, function () {
+    console.log(`Sistema funcionando en el puerto ${port}`);
 });
