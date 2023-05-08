@@ -3,7 +3,7 @@ async function getUser(done) {
     const id = localStorage.getItem('userId');
 
     const response = await fetch(`http://localhost:3000/users/${id}`)
-    const response_studies = await fetch(`http://localhost:3000/studies/${id}`);
+    // const response_studies = await fetch(`http://localhost:3000/studies/${id}`);
     const data = await response.json()
     console.log(id)
     const data_studies = await response_studies.json()
@@ -29,9 +29,10 @@ async function getUser(done) {
         const phoneField = document.getElementById('profile-phone');
         phoneField.textContent = data.phone
 
-        //parte de studies
-        const studiesField = document.getElementById('formacion');
-        studiesField.textContent = data_studies.studies_course + '\n' + data_studies.studies_institution + '\n' + data_studies.studies_date + '\n' + data_studies.studies_level;
+        //Temporlamente deshabilitado
+        // const studiesField = document.getElementById('formacion');
+        // studiesField.textContent = data_studies.studies_course + '\n' + data_studies.studies_institution + '\n' + data_studies.studies_date + '\n' + data_studies.studies_level;
+
         //imagenes
         const photoField = document.getElementById('profile-avatar');
         photoField.src = data.profile_picture;
