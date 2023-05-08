@@ -6,8 +6,6 @@ for (let i = 0; i < randomUser; i++) {
     getUsuariosRandom();
 }
 
-
-
 async function getUsuariosRandom() {
     const response = await fetch(url);
     const data = await response.json();
@@ -40,12 +38,6 @@ async function getUsuariosRandom() {
         button.classList.add('btn', 'btn-outline-warning', 'btn-sm');
         button.textContent = 'Enviar solicitud';
         container.appendChild(button);
-        // button.onclick = function () {            
-        //     button.classList.toggle("btn-danger")
-        //     if (button.hasClass("btn-danger")) {
-        //         button.innerHTML = 'Cancelar'
-        //     }
-        // }
     }
     catch (error) {
         console.log('Ocurrió un error al solicitar los datos', error)

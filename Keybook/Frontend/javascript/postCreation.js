@@ -64,7 +64,7 @@ async function getPosts(done) {
                 const likeButton = postContent.querySelector(".buttonLike");
                 const likeCount = postContent.querySelector(".count");
 
-                let likeCountNumber = 0; // lo tiro desde cero si no me daba problema de que no es numerico aunque lo parseara :(
+                let likeCountNumber = 0;
 
                 let liked = false;
 
