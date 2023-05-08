@@ -6,7 +6,7 @@ async function getUser(done) {
     // const response_studies = await fetch(`http://localhost:3000/studies/${id}`);
     const data = await response.json()
     console.log(id)
-    const data_studies = await response_studies.json()
+    // const data_studies = await response_studies.json()
 
 
     try {
