@@ -118,10 +118,20 @@ app.post("/auth", async (req, res) => {
     }
 });
 
+// DELETE user by ID
+app.delete("/users/:id/delete", async (req, res) => {
+    const userId = req.params.id;    
+    try {
+        await sequelize.query(`DELETE FROM user WHERE id = ${userId}`);
+        res.status(200).send({ message: "Cuanta borrada con éxito" });
+    } catch (error) {
+        console.error(error);
+        res.status(500).send({ error: "Error al borrar cuenta" });
+    }
+});
 
 //POST posts
-app.post("/posts", async function (req, res) {
-    console.log("req.body", req.body);
+app.post("/posts", async function (req, res) {   
     try {
         const { post_id_user, post_content } = req.body;
         // const userId = req.session.userId; // retrieve user ID from session
