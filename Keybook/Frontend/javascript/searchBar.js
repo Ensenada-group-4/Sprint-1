@@ -2,9 +2,11 @@ const form = document.getElementById("find-user-form");
 const main = document.querySelector("article");
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
-  const input = document.querySelector(".search-content-input");
+  const input = document.querySelector("#searchFriends");
   const searchKey = input.value;
-  const response = await fetch(`http://localhost:3000/user?searchKey=${searchKey}`);
+  const response = await fetch(
+    `http://localhost:3000/user?searchKey=${searchKey}`
+  );
   const data = await response.json();
   const filter = document.createRange().createContextualFragment(`
     <div class="col-sm-3 default-card friend-box">
