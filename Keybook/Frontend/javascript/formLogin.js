@@ -1,18 +1,3 @@
-/*const contactForm = document.getElementById('login-form');
-contactForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const user = event.target.elements['username'].value.trim();
-    const pass = event.target.elements['password'].value.trim();
-    if (user == "Alicia" && pass == "1234")
-    {
-        window.location.href = "./home.html";
-    }
-    else {
-        alert("Usuario y/o contraseña incorrectas");
-    }
-    }
-);
-*/
 const contactForm = document.getElementById("login-form");
 const userDiv = document.getElementById("email");
 const passwordDiv = document.getElementById("password");
@@ -23,7 +8,7 @@ contactForm.addEventListener("submit", async (event) => {
   if (!errorContainer.classList.contains("hidden")) {
     errorContainer.classList.add("hidden");
   }
-  const user = userDiv.value;
+  const user = { email: userDiv.value };
   const pass = passwordDiv.value;
   const response = await fetch("http://localhost:3000/auth", {
     method: "POST",
