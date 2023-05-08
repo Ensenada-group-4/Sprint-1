@@ -113,16 +113,11 @@
               <label for="">
                 <h4>COMUNIDAD</h4>
               </label>
-              <div class="search-friends-input">
-                <!-- <i class="fas fa-search icon" title="Lupa"></i> -->
-                <span class="input-group-text" id="basic-addon1">
-                  <form action="/users" method="GET" id="find-user-form">
-                  <input class="form-control me-2 search-content-input" type="search" placeholder="Búsqueda..."
-                    aria-label="Buscar" size="50" />
-                  <i class="fa-solid fa-magnifying-glass icon search-icon"> </i>
-                  <button type="submit" class="btn icon search-icon">Buscar</button>
-                  <!-- <i class="fa fa-filter icon search-icon"></i></span> -->
-                </form>
+              <form id="find-user-form" class="d-flex">
+                <input class="form-control me-2 search-content-input" type="search" name="searchKey" placeholder="Búsqueda..." aria-label="Buscar" size="50" />
+                <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass icon search-icon"></i></button>
+              </form>
+              
               </div>
             </div>
           </div>
