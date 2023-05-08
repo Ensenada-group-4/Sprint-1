@@ -36,7 +36,7 @@ async function getUser(done) {
         photoField.src = data.profile_picture;
         photoField.alt = data.name;
         photoField.style.borderRadius = '50%';
-        photoField.style.width = '180px';
+        photoField.style.width = '130px';
         photoField.style.height = '130px';
         photoField.classList("avatar-perfil");
         photoField.classList("avatar-perfil");
