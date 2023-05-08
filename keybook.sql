@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-05-2023 a las 12:32:03
+-- Tiempo de generación: 08-05-2023 a las 16:48:53
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -85,8 +85,10 @@ CREATE TABLE `post` (
 INSERT INTO `post` (`post_id`, `post_id_user`, `post_content`) VALUES
 (1, 2, 'No! odio esto! que alguien me salve, ayuda!'),
 (2, 1, 'Adios mundo, me caes mal'),
-(3, 8, 'Hoola hola'),
-(4, 8, 'Hoola amigos');
+(4, 2, 'Hola amigos de keybook'),
+(11, 3, 'ayayai esto es un  lio!'),
+(28, 1, 'Hola soy lucia y esto fue una prueba de posicionamiento'),
+(41, 2, 'soy adrian y esto es una prueba');
 
 -- --------------------------------------------------------
 
@@ -98,19 +100,17 @@ CREATE TABLE `studies` (
   `studies_id` bigint(20) NOT NULL,
   `studies_user_id` bigint(20) NOT NULL,
   `studies_course` varchar(255) NOT NULL,
-  `studies_institution` varchar(255) NOT NULL,
-  `studies_date` year(4) NOT NULL,
-  `studies_level` varchar(100) NOT NULL
+  `studies_date` year(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `studies`
 --
 
-INSERT INTO `studies` (`studies_id`, `studies_user_id`, `studies_course`, `studies_institution`, `studies_date`, `studies_level`) VALUES
-(1, 2, 'PHP, JS, PYTHON', 'ATC Gijón', '2022', '3'),
-(2, 4, 'JS, PHP,MySQL', 'Laboral', '2023', '2'),
-(3, 5, 'PHP, MySQL, JavaScript', 'Academia Tecla', '2022', 'Certificado de Profesionalidad - Grado 3');
+INSERT INTO `studies` (`studies_id`, `studies_user_id`, `studies_course`, `studies_date`) VALUES
+(1, 2, 'PHP, JS, PYTHON', '2022'),
+(2, 4, 'JS, PHP,MySQL', '2023'),
+(3, 5, 'PHP, MySQL, JavaScript', '2022');
 
 -- --------------------------------------------------------
 
@@ -123,7 +123,7 @@ CREATE TABLE `user` (
   `name` varchar(200) NOT NULL,
   `last_name` varchar(200) NOT NULL,
   `email` varchar(200) NOT NULL,
-  `password` int(11) NOT NULL,
+  `password` varchar(250) NOT NULL,
   `date_of_birth` year(4) NOT NULL,
   `profile_picture` varchar(250) NOT NULL,
   `city` varchar(255) NOT NULL,
@@ -136,14 +136,14 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `last_name`, `email`, `password`, `date_of_birth`, `profile_picture`, `city`, `country`, `phone`) VALUES
-(1, 'Lucia', 'Saenz', 'lucia@gmail.com', 123, '1992', 'https://i.redd.it/lgshxkmdoeez.jpg', 'gijon', 'spain', ''),
-(2, 'Adrián', 'Page', 'pagemaster92@gmail.com', 123, '1992', 'https://fotografias.lasexta.com/clipping/cmsimages01/2017/07/26/F4F12168-6C10-45A3-AD81-6D7F5A567F58/98.jpg?crop=1086,611,x0,y39&width=1900&height=1069&optimize=high&format=webply', 'Gijon', 'Spain', ''),
-(3, 'Stella Maris', 'González Robert', 'Stella@hotmail.com', 123, '1990', 'https://hips.hearstapps.com/hmg-prod/images/beautiful-smooth-haired-red-cat-lies-on-the-sofa-royalty-free-image-1678488026.jpg?crop=0.668xw:1.00xh;0.119xw,0&resize=1200:*', 'Gijón', 'Spain', ''),
-(4, 'Maxi', 'Maxi apellido', 'maxi@gmail.com', 123, '2023', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8e2-1u9crd8jmkImLIjGj_a-vYCgifsQvvA&usqp=CAU', 'gijon', 'Spain', ''),
-(5, 'Alicia', 'Gimena', 'AliciaG@gmail.com', 123, '1993', 'https://images.saymedia-content.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:eco%2Cw_1200/MTk2NzY3MjA5ODc0MjY5ODI2/top-10-cutest-cat-photos-of-all-time.jpg', 'Gijon', 'Spain', '985-35-66-66'),
-(6, 'Xavi', 'Perez', 'xavi@gmail.com', 123, '1989', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFwRCkULtgx1xasCUPMVv62oFVLiElHojAag&usqp=CAU', 'Gijon', 'Spain', '984-34-88-88'),
-(7, 'Silvia', 'Buenapuente', 'silvia@hotmail.com', 123, '0000', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHNtsoBWEPmaF6K5QPFNXbytJzuLRhwl576g&usqp=CAU', 'Gijon', 'Spain', '984-99-77-44'),
-(8, 'Jorge', 'Mocho', 'Kalimotxo@gmail.com', 123, '1992', 'https://i.pinimg.com/originals/1a/72/5a/1a725a448537d6a8eed111814fcae27b.jpg', 'Avilés', 'Spain', '985-32-10-11');
+(1, 'Lucia', 'Saenz', 'rreo@gmail.com', '123', '1992', 'https://i.postimg.cc/05TysNgK/lucia.png', 'gijon', 'spain', ''),
+(2, 'Adrián', 'Page', 'pagemaster92@gmail.com', '123', '1992', 'https://i.postimg.cc/PJ89yhKB/adrian.png', 'Gijon', 'Spain', '98544444'),
+(3, 'Stella Maris', 'González Robert', 'Stella@hotmail.com', '123', '1990', 'https://i.postimg.cc/9M4C66JB/stella.png', 'Gijón', 'Spain', ''),
+(4, 'Rodrigo', 'Maxi apellido', 'rodri@gmail.com', '123', '2023', 'https://i.postimg.cc/xTLTTSYx/rafael.png', 'gijon', 'Spain', ''),
+(5, 'Alicia', 'Gimena', 'AliciaG@gmail.com', '123', '1993', 'https://i.postimg.cc/rzXbYbPz/alicia.png', 'Gijon', 'Spain', '985-35-66-66'),
+(6, 'Pepe', 'Perez', 'pepe@gmail.com', '123', '1989', 'https://i.postimg.cc/NjYGKPjg/cristina.png', 'Gijon', 'Spain', '984-34-88-88'),
+(7, 'Antonio', 'Buenapuente', 'antonio@hotmail.com', '123', '0000', 'https://i.postimg.cc/HLvTPY4x/lupita.png', 'Gijon', 'Spain', '984-99-77-44'),
+(13, 'ivan', 'ramos', 'ivan@gmail.com', '$2b$10$5q7XNP/3iWgkV2Z.v75yBeTXgmzvmVocdxDpi14RbVPPOT3vYRlpi', '1997', 'https://i.postimg.cc/SNk2LBzX/blank-Avatar.png', 'Gijon', 'España', '987847463');
 
 --
 -- Índices para tablas volcadas
@@ -199,25 +199,25 @@ ALTER TABLE `friend`
 -- AUTO_INCREMENT de la tabla `hobbies`
 --
 ALTER TABLE `hobbies`
-  MODIFY `hobby_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `hobby_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `post`
 --
 ALTER TABLE `post`
-  MODIFY `post_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `post_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT de la tabla `studies`
 --
 ALTER TABLE `studies`
-  MODIFY `studies_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `studies_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id de usuario', AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id de usuario', AUTO_INCREMENT=16;
 
 --
 -- Restricciones para tablas volcadas
@@ -227,26 +227,26 @@ ALTER TABLE `user`
 -- Filtros para la tabla `friend`
 --
 ALTER TABLE `friend`
-  ADD CONSTRAINT `friend_ibfk_1` FOREIGN KEY (`friend_user_id_1`) REFERENCES `user` (`id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `friend_ibfk_2` FOREIGN KEY (`friend_user_id_2`) REFERENCES `user` (`id`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `friend_ibfk_1` FOREIGN KEY (`friend_user_id_1`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `friend_ibfk_2` FOREIGN KEY (`friend_user_id_2`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `hobbies`
 --
 ALTER TABLE `hobbies`
-  ADD CONSTRAINT `hobbies_ibfk_1` FOREIGN KEY (`hobby_user_id`) REFERENCES `user` (`id`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `hobbies_ibfk_1` FOREIGN KEY (`hobby_user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `post`
 --
 ALTER TABLE `post`
-  ADD CONSTRAINT `post_ibfk_1` FOREIGN KEY (`post_id_user`) REFERENCES `user` (`id`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `post_ibfk_1` FOREIGN KEY (`post_id_user`) REFERENCES `user` (`id`) ON DELETE CASCADE;
 
 --
 -- Filtros para la tabla `studies`
 --
 ALTER TABLE `studies`
-  ADD CONSTRAINT `studies_ibfk_1` FOREIGN KEY (`studies_user_id`) REFERENCES `user` (`id`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `studies_ibfk_1` FOREIGN KEY (`studies_user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

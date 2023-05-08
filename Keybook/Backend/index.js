@@ -11,6 +11,9 @@ app.use(bodyParser.json());
 
 const salt = 10;
 
+
+//CRUD
+
 // GET home page
 app.get("/", function (req, res, next) {
     res.send("Keybook server");
@@ -181,7 +184,7 @@ app.get("/posts", async function (req, res) {
     }
 });
 
-// edicion perfil
+// PUT email
 app.put("/users/:id/email", async (req, res) => {
     const userId = req.params.id;
     const newEmail = req.body.email;
@@ -199,7 +202,7 @@ app.put("/users/:id/email", async (req, res) => {
             .send({ error: "Error al actualizar el correo electrónico" });
     }
 });
-//modificar telefono
+//PUT phone
 app.put("/users/:id/phone", async (req, res) => {
     const userId = req.params.id;
     const newPhone = req.body.phone;
@@ -214,7 +217,7 @@ app.put("/users/:id/phone", async (req, res) => {
     }
 });
 
-// Defining the GET /user route to retrieve users based on input
+//GET user by name or email (based on input)
 app.get("/user", async function (req, res) {
     const { searchKey } = req.query;
     console.log("instance");
