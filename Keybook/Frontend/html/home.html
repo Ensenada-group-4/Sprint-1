@@ -93,7 +93,7 @@
             </li>
             <!-- Logout -->
             <li class="nav-item">
-              <a class="dropdown-item active" id="logout" onclick="logout()">                
+              <a class="dropdown-item active" href="/logout">
                 <span class="fas fa-sign-out-alt icon" title="Desconectarse"></span>
               </a>
             </li>
@@ -108,9 +108,9 @@
       <div class="row">
         <div class="col-sm-5 col-md-4 col-lg-3">
           <div class="default-card profile-index">
-            <a title="Mi perfil" href="/Keybook/Frontend/html/profileLogged.html">
-              <img id="profile-logged-image" alt="avatar" class="avatar avatar-perfil" /></a>
-            <p id="profile-logged"></p>
+            <a href="profileAlicia.html" title="Mi perfil"><img src="/Keybook/Frontend/img/avatares/alicia.png"
+                alt="avatar" class="avatar avatar-perfil" /></a>
+            <h4>Alicia Gimenez</h4>
           </div>
           <div class="default-card">
             <h4>
@@ -136,6 +136,10 @@
             <h4>
               <i class="fa-solid fa-person icon" title="Solicitudes"></i>SOLICITUDES
             </h4>
+            <li>
+              <a href="./profileStella.html" title="Perfil Stella">
+              </a>Stella
+            </li>
             <ul>
               <li>
                 <img src="/Keybook/Frontend/img/avatares/rafael.png" alt="avatar" class="avatar" />
@@ -184,7 +188,58 @@
           <section id="post-list"></section>
           <!-- posts -->
           <ul id="posts"></ul>
-          <article></article>               
+          <article></article>
+          <div class="default-card">
+            <div class="post-author">
+              <a href="profilePepito.html"><img src="/Keybook/Frontend/img/avatares/pepito.png" alt="avatar"
+                  class="avatar" /></a>
+              <h4>Pepito</h4>
+            </div>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta,
+              velit, suscipit ratione dolore, quibusdam praesentium at amet
+              adipisci nihil similique tempore aspernatur? Nulla officiis
+              veniam possimus repudiandae enim! Est, cumque.
+            </p>
+            <button class="reply btn btn-warning">Responder</button>
+            <div class="reply" style="display: none">
+              <textarea rows="2" cols="70"></textarea>
+              <button class="send-reply btn btn-warning">
+                Enviar respuesta
+              </button>
+              <button class="close-reply btn btn-warning" id="close-button">
+                Cerrar
+              </button>
+            </div>
+            <button class="buttonLike fa-solid fa-heart btn btn-lg "></button>
+            <span class="count">0 Me gusta</span>
+          </div>
+
+          <div class="default-card">
+            <div class="post-author">
+              <img src="/Keybook/Frontend/img/avatares/lupita.png" alt="avatar" class="avatar" />
+              <h4>Lupita</h4>
+            </div>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta,
+              velit, suscipit ratione dolore, quibusdam praesentium at amet
+              adipisci nihil similique tempore aspernatur? Nulla officiis
+              veniam possimus repudiandae enim! Est, cumque.
+            </p>
+            <button class="reply btn btn-warning">Responder</button>
+            <div class="reply" style="display: none">
+              <textarea rows="2" cols="70"></textarea>
+              <button class="send-reply btn btn-warning">
+                Enviar respuesta
+              </button>
+              <button class="close-reply btn btn-warning" id="close-button">
+                Cerrar
+              </button>
+            </div>
+            <button class="buttonLike fa-solid fa-heart btn btn-lg "></button>
+            <span class="count">0 Me gusta</span>
+          </div>
+
           <div class="default-card">
             <div class="post-author">
               <img src="/Keybook/Frontend/img/avatares/alicia.png" alt="avatar" class="avatar" />
@@ -313,9 +368,6 @@
   <script src="/Keybook/Frontend/javascript/buttonComment-Like.js"></script>
   <script src="/Keybook/Frontend/javascript/postFeed.js"></script>
   <script src="/Keybook/Frontend/javascript/postCreation.js"></script>
-  <script src="/Keybook/Frontend/javascript/userId.js"></script>
-  <script src="/Keybook/Frontend/javascript/details.js"></script>
-  <script src="/Keybook/Frontend/javascript/logout.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
     crossorigin="anonymous"></script>
