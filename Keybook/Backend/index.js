@@ -111,10 +111,10 @@ app.post("/register", async function (req, res) {
 //POST login
 app.post("/auth", async (req, res) => {
     try {
-        const { user, password } = req.body;
-        console.log(password);
+        const { email, password } = req.body;
+        
         const result = await sequelize.query(
-            `SELECT * FROM user WHERE  email = '${user.email}'`
+            `SELECT * FROM user WHERE  email = '${email}'`
         );
         if (result[0].length) {
             const validPassword = await bcrypt.compare(
