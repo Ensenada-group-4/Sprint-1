@@ -2,7 +2,6 @@ const contactForm = document.getElementById("login-form");
 const emailDiv = document.getElementById("email");
 const passwordDiv = document.getElementById("password");
 const errorContainer = document.getElementById("error-container");
-const jwt = require("jsonwebtoken");
 
 contactForm.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -10,7 +9,7 @@ contactForm.addEventListener("submit", async (event) => {
   const user = {
     email: emailDiv.value,
     password: passwordDiv.value
-  }  
+  }
 
   const response = await fetch("http://localhost:3000/auth", {
     method: "POST",
@@ -21,11 +20,13 @@ contactForm.addEventListener("submit", async (event) => {
   });
   const result = await response.json();
 
-  if (result.error) {
-    alert("Usuario y/o contraseña incorrectos");
-  } else {
-    localStorage.setItem("userId", result.id);
+  if (result.token) {
+    localStorage.setItem("userData", JSON.stringify("userId", result.id))
+    localStorage.setItem("token", JSON.stringify("token", result.token))
     alert("Usuario logueado correctamente");
     window.location.href = "./home.html";
+  } else {
+    alert("Usuario y/o contraseña incorrectos");
   }
+
 });
