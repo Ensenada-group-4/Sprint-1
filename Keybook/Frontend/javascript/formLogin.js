@@ -2,6 +2,7 @@ const contactForm = document.getElementById("login-form");
 const emailDiv = document.getElementById("email");
 const passwordDiv = document.getElementById("password");
 const errorContainer = document.getElementById("error-container");
+const jwt = require("jsonwebtoken");
 
 contactForm.addEventListener("submit", async (event) => {
   event.preventDefault();
