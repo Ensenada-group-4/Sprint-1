@@ -1,8 +1,9 @@
 const form = document.getElementById('form-register')
+
 form.addEventListener('submit', async (event) => {
     event.preventDefault()
 
-    const name = document.getElementById('name').value
+    const firstName = document.getElementById('name').value
     const lastName = document.getElementById('lastName').value
     const dob = document.getElementById('dob').value
     const city = document.getElementById('city').value
@@ -12,20 +13,19 @@ form.addEventListener('submit', async (event) => {
     const password = document.getElementById('password').value
     const repeatPassword = document.getElementById('repeat-password').value
 
-    console.log(name, lastName, dob, city, country, phone, email, password, repeatPassword)
+    console.log(firstName, lastName, dob, city, country, phone, email, password, repeatPassword)
 
     if (password !== repeatPassword) {
         alert("Passwords must match")
 
     } else {
-
-        await fetch("http://localhost:3000/register", {
+        const response = await fetch("http://localhost:3000/register", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
             },
             body: JSON.stringify({
-                "name": name,
+                "name": firstName,
                 "lastName": lastName,
                 "dob": dob,
                 "city": city,
@@ -35,10 +35,13 @@ form.addEventListener('submit', async (event) => {
                 "password": password
             }),
         })
-            .then(response => response.text())
-            .then(result => console.log(result), alert("Usuario creado"),
+
+        const result = await response.json();
+        if (result.error) {
+            alert("Dirección de correo ya en uso. Pruebe otra vez");
+        } else {
+            console.log(result), alert("Usuario creado"),
                 window.location.replace("formLogin.html")
-                )
-            .catch(error => console.log('error', error));
+        }
     }
 })
