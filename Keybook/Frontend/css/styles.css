@@ -21,8 +21,9 @@ html, body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.hidden {
-  display: none !important;
+.error {
+  color: red;
+  /* display: none !important; */
 }
 
 input {

@@ -9,28 +9,22 @@ form.addEventListener("submit", async (event) => {
     const data = {
         email
     };
-    console.log(data)
-    console.log(email)
 
-
-    await fetch(`http://localhost:3000/users/${id}/email`, {
+    const response = await fetch(`http://localhost:3000/users/${id}/email`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(data)
     })
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            console.log(id)
 
-            alert('email actualizado correctamente');
-            location.reload();
-        })
-        .catch(error => {
-            console.error(error);
-        });
+    const result = await response.json();
+    if (result.error) {
+        alert("Dirección de correo ya en uso. Pruebe otra vez");
+    } else {
+        alert('Email actualizado correctamente');
+        location.reload();
+    }
 });
 
 const form_phone = document.querySelector("#phone-edit-form");
