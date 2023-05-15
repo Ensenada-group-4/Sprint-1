@@ -3,6 +3,7 @@ const express = require("express");
 const bcrypt = require("bcrypt");
 const sequelize = require("./db/connection.js");
 const bodyParser = require("body-parser");
+const jwt = require("jsonwebtoken");
 const cors = require("cors");
 
 const app = express();
@@ -111,10 +112,10 @@ app.post("/register", async function (req, res) {
 //POST login
 app.post("/auth", async (req, res) => {
     try {
-        const { user, password } = req.body;
-        console.log(password);
+        const { email, password } = req.body;
+        
         const result = await sequelize.query(
-            `SELECT * FROM user WHERE  email = '${user.email}'`
+            `SELECT * FROM user WHERE  email = '${email}'`
         );
         if (result[0].length) {
             const validPassword = await bcrypt.compare(
@@ -122,7 +123,8 @@ app.post("/auth", async (req, res) => {
                 result[0][0].password
             );
             if (validPassword) {
-                res.status(200).send({ id: result[0][0].id });
+                const token = jwt.sign({ id: result[0][0].id }, process.env.JWT_KEY, { expiresIn: "2h" });
+                res.status(200).send({ id: result[0][0].id, token: token })
             } else {
                 res.status(400).send({ error: "Contraseña incorrecta" });
             }
