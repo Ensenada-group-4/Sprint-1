@@ -190,6 +190,15 @@ app.get("/posts", async function (req, res) {
 app.put("/users/:id/email", async (req, res) => {
     const userId = req.params.id;
     const newEmail = req.body.email;
+
+    const emailExists = await sequelize.query(
+        "SELECT * FROM user WHERE email = ?",
+        { type: sequelize.QueryTypes.SELECT, replacements: [newEmail] }
+    );
+    if (emailExists.length > 0) {
+        return res.status(400).json({ error: "El email ya está registrado" })
+    };    
+
     try {
         await sequelize.query(
             `UPDATE user SET email = '${newEmail}' WHERE id = ${userId}`

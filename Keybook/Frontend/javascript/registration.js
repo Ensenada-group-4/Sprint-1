@@ -48,8 +48,10 @@ form.addEventListener('submit', async (event) => {
     }
 
     if (password !== repeatPassword) {
-        alert("Passwords must match")
+        alert("Las contraseñas deben coincidir")
     }
+
+    //If all fields are valid, we send request to server
     const response = await fetch("http://localhost:3000/register", {
         method: "POST",
         headers: {
@@ -74,5 +76,4 @@ form.addEventListener('submit', async (event) => {
         console.log(result), alert("Usuario creado")
         window.location.replace("formLogin.html")
     }
-
 })
