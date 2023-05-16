@@ -9,14 +9,14 @@ async function getUsers(done) {
             <img class="friend-avatar" style="border-radius: 50%; width: 150px; height: 150px;" src=${user.profile_picture} ></img>
             <a>${user.name}</a>
             <p>${user.email}</p>
-            <a href="friendsProfile.html?id=${user.id}">Ver perfil</a>
+            <a href="friendsProfile.html" id='profileLink'>Ver perfil</a>
             <button class="btn btn-outline-warning btn-sm">Enviar solicitud</button>
         </div>`);
         console.log(user.profile_picture)
         // listener de evento para el clic en el elemento a
-        follow.querySelector('a').addEventListener('click', () => {
+        follow.querySelector('#profileLink').addEventListener('click', () => {
             localStorage.setItem('friendId', user.id);
-            window.location.href = 'friendProfile.html';
+            // window.location.href = 'friendsProfile.html';
         });
         const main = document.querySelector("article");
         main.append(follow);
